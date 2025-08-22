@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplenty - Educação Comportamental</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Literata', 'Georgia', serif;
+            background-color: #0D2D2C;
+            color: #F9F9F9;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: rgba(13, 45, 44, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .site-logo {
+            height: 50px;
+            width: auto;
+            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
+        }
+
+        .brand-text {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: #D4AF37;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-menu li a {
+            color: #F9F9F9;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        .nav-menu li a:hover {
+            color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .produtos-menu {
+            position: relative;
+        }
+
+        .produtos-menu > a::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 8px;
+            color: #D4AF37;
+            transition: transform 0.3s ease;
+        }
+
+        .produtos-menu:hover > a::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(13, 45, 44, 0.98);
+            backdrop-filter: blur(20px);
+            list-style: none;
+            padding: 0.5rem 0;
+            min-width: 200px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .produtos-menu:hover .dropdown {
+            display: block;
+            animation: fadeInDown 0.3s ease;
+        }
+
+        .dropdown li a {
+            display: block;
+            padding: 12px 20px;
+            color: #F9F9F9;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 0;
+        }
+
+        .dropdown li a:hover {
+            background: #D4AF37;
+            color: #0D2D2C;
+        }
+
+        .sou-aluno {
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            color: #0D2D2C !important;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .sou-aluno:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            background: #D4AF37 !important;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #F9F9F9;
+            font-size: 28px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: #D4AF37;
+        }
+
+        /* Hero Section */
+         .hero {
+    background: linear-gradient(135deg, rgba(10,26,42,0.9), rgba(26,58,90,0.9)), 
+                url("/WhatsApp\ Image\ 2025-08-19\ at\ 7.09.31\ PM.jpeg") center/cover no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 120px 2rem 60px;
+    overflow: hidden;
+}
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1), transparent 50%);
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .prime-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #F9F9F9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+            font-weight: 300;
+            color: #F9F9F9;
+        }
+
+        .hero-highlight {
+            color: #D4AF37;
+            font-weight: 600;
+        }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(249, 249, 249, 0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            color: #D4AF37;
+        }
+
+        .info-text {
+            text-align: left;
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #F9F9F9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            color: #0D2D2C;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            font-family: 'Literata', serif;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #F9F9F9;
+            padding: 18px 40px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            font-family: 'Literata', serif;
+        }
+
+        .btn-secondary:hover {
+            border-color: #D4AF37;
+            color: #D4AF37;
+            transform: translateY(-3px);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #0D2D2C, #1A1A1A);
+            padding: 6rem 2rem 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .footer-logo-section {
+            grid-column: 1;
+        }
+
+        .footer-section h3 {
+            font-family: 'Cinzel', serif;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(249, 249, 249, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .footer-section ul li a:hover {
+            color: #D4AF37;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            color: rgba(249, 249, 249, 0.8);
+        }
+
+        .footer-contact-icon {
+            color: #D4AF37;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .footer-contact-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-contact-label {
+            font-weight: 600;
+            color: #F9F9F9;
+            margin-bottom: 4px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 4rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-copyright {
+            color: rgba(249, 249, 249, 0.6);
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(249, 249, 249, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #D4AF37;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D4AF37;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .social-icon:hover {
+            background: #D4AF37;
+            color: #0D2D2C;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .hero-info {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(13, 45, 44, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                border-top: 1px solid rgba(212, 175, 55, 0.2);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .prime-logo {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-info {
+                flex-direction: column;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .info-item {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                
+                padding: 15px 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+            }
+
+            .brand-text {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 1rem 40px;
+            }
+
+            .prime-logo {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .info-item {
+                padding: 0.8rem 1rem;
+            }
+
+            .info-icon {
+                font-size: 1.5rem;
+            }
+
+            .brand-text {
+                font-size: 20px;
+                letter-spacing: 1px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-title {
+            animation-delay: 0.2s;
+        }
+
+        .hero-subtitle {
+            animation-delay: 0.4s;
+        }
+
+        .hero-info {
+            animation-delay: 0.6s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.8s;
+        }
+
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:wght@300;400;600;700&display=swap');
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">
+                <div class="brand-text">APLENTY</div>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="produtos-menu">
+                        <a href="#servicos">Serviços</a>
+                        <ul class="dropdown">
+                            <li><a href="/service1.html">Curso Gravado</a></li>
+                            <li><a href="#avaliacao">Avaliação de Perfil</a></li>
+                            <li><a href="#palestra">Palestras</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#sobre">Sobre nós</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#area-aluno" class="sou-aluno">Área do Aluno</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="prime-logo">APLENTY</div>
+            <h1 class="hero-title">Educação Comportamental</h1>
+            <p class="hero-subtitle">
+                Transforme resultados através do <span class="hero-highlight">conhecimento comportamental</span><br>
+                <span class="hero-highlight">Desenvolva pessoas e potencialize negócios</span>
+            </p>
+            
+            <div class="hero-info">
+                <div class="info-item">
+                    <div class="info-icon">🎯</div>
+                    <div class="info-text">
+                        <div class="info-label">Especialização</div>
+                        <div class="info-value">Perfis Comportamentais</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">👥</div>
+                    <div class="info-text">
+                        <div class="info-label">Modalidade</div>
+                        <div class="info-value">Online e Presencial</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">📈</div>
+                    <div class="info-text">
+                        <div class="info-label">Resultado</div>
+                        <div class="info-value">Transformação Real</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToSection('servicos')">Nossos Serviços</button>
+                <button class="btn-secondary" onclick="openWhatsApp()">Fale Conosco</button>
+            </div>
+        </div>
+    </main>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplenty - Sobre Nós</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Literata', 'Georgia', serif;
+            background-color: #0D2D2C;
+            color: #F9F9F9;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, #0D2D2C 0%, #1A1A1A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cdefs%3E%3Cpattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(212,175,55,0.05)" stroke-width="0.5"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100" height="100" fill="url(%23grid)"/%3E%3C/svg%3E') center/cover;
+            opacity: 0.3;
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-content {
+            margin-bottom: 100px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #F9F9F9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-description {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #F9F9F9;
+            line-height: 1.7;
+        }
+
+        .about-mission {
+            font-size: 1.2rem;
+            color: rgba(249, 249, 249, 0.9);
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Values Section */
+        .values-section {
+            margin-top: 80px;
+        }
+
+        .values-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: rgba(249, 249, 249, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .value-card:hover::before {
+            left: 100%;
+        }
+
+        .value-number {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            color: #0D2D2C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .value-content h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: #D4AF37;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .value-content p {
+            color: rgba(249, 249, 249, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: rgba(249, 249, 249, 0.03);
+            border-radius: 25px;
+            padding: 60px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .founder-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .founder-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            color: #0D2D2C;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .founder-info {
+            padding-top: 1rem;
+        }
+
+        .founder-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .founder-description,
+        .founder-credentials,
+        .founder-mission {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: rgba(249, 249, 249, 0.9);
+        }
+
+        .founder-description strong,
+        .founder-credentials strong,
+        .founder-mission strong {
+            color: #D4AF37;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .founder-content {
+                grid-template-columns: 250px 1fr;
+                gap: 3rem;
+            }
+
+            .founder-img {
+                height: 350px;
+            }
+
+            .section-title {
+                font-size: 3rem;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 80px 1rem 60px;
+            }
+
+            .founder-section {
+                padding: 40px 30px;
+            }
+
+            .founder-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .founder-image {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .founder-img {
+                height: 320px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .values-title {
+                font-size: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .value-card {
+                padding: 1.5rem;
+            }
+
+            .about-description {
+                font-size: 1.1rem;
+            }
+
+            .about-mission {
+                font-size: 1rem;
+            }
+
+            .founder-title {
+                font-size: 2rem;
+            }
+
+            .founder-description,
+            .founder-credentials,
+            .founder-mission {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-section {
+                padding: 60px 1rem 40px;
+            }
+
+            .founder-section {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .values-title {
+                font-size: 1.8rem;
+            }
+
+            .value-card {
+                padding: 1.2rem;
+                gap: 1rem;
+            }
+
+            .value-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .value-content h4 {
+                font-size: 1.1rem;
+            }
+
+            .founder-img {
+                height: 280px;
+            }
+
+            .founder-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .about-content,
+        .founder-section {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .value-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .value-card:nth-child(1) { animation-delay: 0.1s; }
+        .value-card:nth-child(2) { animation-delay: 0.2s; }
+        .value-card:nth-child(3) { animation-delay: 0.3s; }
+        .value-card:nth-child(4) { animation-delay: 0.4s; }
+        .value-card:nth-child(5) { animation-delay: 0.5s; }
+        .value-card:nth-child(6) { animation-delay: 0.6s; }
+        .value-card:nth-child(7) { animation-delay: 0.7s; }
+    </style>
+</head>
+<body>
+    <!-- About Section -->
+    <section class="about-section" id="sobre">
+        <div class="about-container">
+            <!-- About Content -->
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre nós</h2>
+                    <p class="about-description">
+                        A <strong>APLENTY</strong> nasceu com um propósito ousado de <strong>elevar o desempenho humano pessoal e organizacional</strong>, desenvolvendo uma mentalidade de crescimento consistente.
+                    </p>
+                    <p class="about-mission">
+                        Nossa missão é transformar PESSOAS, e organizações, através da educação emocional comportamental e corporativa, para contribuírem de forma abundante com o mundo.
+                    </p>
+                </div>
+
+                <!-- Values Grid -->
+                <div class="values-section">
+                    <h3 class="values-title">Valores</h3>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-number">1</div>
+                            <div class="value-content">
+                                <h4>Foco</h4>
+                                <p>Concentramos energia no que realmente gera impacto e elimina ruídos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-number">2</div>
+                            <div class="value-content">
+                                <h4>Servir</h4>
+                                <p>Servimos com dedicação e presença emocional</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-number">3</div>
+                            <div class="value-content">
+                                <h4>Cliente</h4>
+                                <p>Compromisso real com a transformação de nossos clientes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-number">4</div>
+                            <div class="value-content">
+                                <h4>Excelência</h4>
+                                <p>Fazer sempre o melhor em tudo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-number">5</div>
+                            <div class="value-content">
+                                <h4>Educação</h4>
+                                <p>O conhecimento e ação é a chave para evolução</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-number">6</div>
+                            <div class="value-content">
+                                <h4>Confiança</h4>
+                                <p>Agir com transparência, ética, respeito e responsabilidade</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-number">7</div>
+                            <div class="value-content">
+                                <h4>Espiritualidade</h4>
+                                <p>O sentido que une mentalidade e força</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Founder Section -->
+            <div class="founder-section">
+                <div class="founder-content">
+                    <div class="founder-image">
+                        <img src="/WhatsApp Image 2025-08-19 at 7.09.32 PM (1).jpeg" alt="Joice Mendes - Fundadora da Aplenty" class="founder-img">
+                        <div class="founder-badge">
+                            <span class="badge-text">Fundadora</span>
+                        </div>
+                    </div>
+                    
+                    <div class="founder-info">
+                        <h3 class="founder-title">A fundadora</h3>
+                        <p class="founder-description">
+                            Formada em Ciências Contábeis, com mais de 18 anos de experiência na área tributária em empresas de pequeno a grande porte, e vivência prática como empreendedora do varejo, <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>. 
+                        </p>
+                        <p class="founder-credentials">
+                            É formada em desenvolvimento humano pela <strong>Febracis, a maior escola de negócios da América Latina</strong>, e certificada em <strong>Assessment baseado em 4 teorias científicas</strong>, metodologia utilizada em diversos países. 
+                        </p>
+                        <p class="founder-mission">
+                            Hoje, dedica sua trajetória a <strong>impulsionar pessoas e organizações a crescerem de forma consistente, produtiva e sustentável</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplenty - Contato</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Literata', 'Georgia', serif;
+            background-color: #0D2D2C;
+            color: #F9F9F9;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, #0D2D2C 0%, #1A1A1A 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cdefs%3E%3Cpattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(212,175,55,0.05)" stroke-width="0.5"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100" height="100" fill="url(%23grid)"/%3E%3C/svg%3E') center/cover;
+            opacity: 0.3;
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #F9F9F9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            text-align: center;
+            color: rgba(249, 249, 249, 0.8);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: rgba(249, 249, 249, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            border-color: rgba(212, 175, 55, 0.3);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            color: #0D2D2C;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-details h4 {
+            font-family: 'Cinzel', serif;
+            color: #D4AF37;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            color: rgba(249, 249, 249, 0.9);
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: #F9F9F9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: #D4AF37;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(249, 249, 249, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #D4AF37;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(249, 249, 249, 0.1);
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            border-radius: 12px;
+            color: #F9F9F9;
+            font-size: 1rem;
+            font-family: 'Literata', serif;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+            background: rgba(249, 249, 249, 0.15);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(249, 249, 249, 0.6);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #D4AF37, #FFD700);
+            color: #0D2D2C;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            font-family: 'Literata', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        /* WhatsApp CTA */
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 25px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.2);
+        }
+
+        .whatsapp-cta h3 {
+            font-family: 'Cinzel', serif;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .whatsapp-cta p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .whatsapp-btn {
+            background: white;
+            color: #25D366;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: 'Literata', serif;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .contact-content {
+                gap: 4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 80px 1rem 60px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-item {
+                padding: 1rem;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-section {
+                padding: 60px 1rem 40px;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .whatsapp-cta {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contact-info,
+        .contact-form {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .contact-item {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .contact-item:nth-child(1) { animation-delay: 0.1s; }
+        .contact-item:nth-child(2) { animation-delay: 0.2s; }
+        .contact-item:nth-child(3) { animation-delay: 0.3s; }
+        .contact-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .whatsapp-cta {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+        <div class="contact-container">
+            <h2 class="section-title">Fale Conosco</h2>
+            <p class="section-subtitle">
+                Entre em contato conosco e descubra como a Aplenty pode transformar seus resultados através da educação comportamental.
+            </p>
+
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:aplentytreinamentos@gmail.com">aplentytreinamentos@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/5534999326520" target="_blank">(34) 99932-6520</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a sexta: 9h às 18h<br>Resposta em até 24 horas</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🎯</div>
+                        <div class="contact-details">
+                            <h4>Especialidades</h4>
+                            <p>Assessment Comportamental<br>Desenvolvimento Humano<br>Treinamento Corporativo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3>Envie sua Mensagem</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome Completo *</label>
+                                <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone">Telefone/WhatsApp</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="interesse">Interesse</label>
+                                <select id="interesse" name="interesse">
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="curso">Curso Gravado</option>
+                                    <option value="avaliacao">Avaliação de Perfil</option>
+                                    <option value="palestra">Palestras</option>
+                                    <option value="consultoria">Consultoria</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="empresa">Empresa (opcional)</label>
+                            <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" required placeholder="Conte-nos mais sobre seu interesse e como podemos ajudar..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- WhatsApp CTA -->
+            <div class="whatsapp-cta">
+                <h3>Prefere conversar no WhatsApp?</h3>
+                <p>Clique no botão abaixo e fale diretamente conosco. Resposta rápida garantida!</p>
+                <a href="https://wa.me/5534999326520?text=Olá! Gostaria de saber mais sobre os serviços da Aplenty." target="_blank" class="whatsapp-btn">
+                    💬 Chamar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const nome = formData.get('nome');
+            const email = formData.get('email');
+            const telefone = formData.get('telefone');
+            const interesse = formData.get('interesse');
+            const empresa = formData.get('empresa');
+            const mensagem = formData.get('mensagem');
+
+            // Create WhatsApp message
+            const whatsappMessage = `*Nova mensagem do site Aplenty*
+            
+*Nome:* ${nome}
+*E-mail:* ${email}
+${telefone ? `*Telefone:* ${telefone}` : ''}
+${empresa ? `*Empresa:* ${empresa}` : ''}
+${interesse ? `*Interesse:* ${interesse}` : ''}
+
+*Mensagem:*
+${mensagem}`;
+
+            // Open WhatsApp with the message
+            const whatsappURL = `https://wa.me/5534999326520?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+
+            // Show success message
+            alert('Redirecionando para WhatsApp! Sua mensagem será enviada automaticamente.');
+
+            // Reset form
+            this.reset();
+        });
+
+        // Phone number formatting
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+            value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+            e.target.value = value;
+        });
+
+        // Form validation styling
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value) {
+                    this.style.borderColor = '#ff6b6b';
+                } else {
+                    this.style.borderColor = 'rgba(212, 175, 55, 0.2)';
+                }
+            });
+
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#D4AF37';
+            });
+        });
+    </script>
+</body>
+</html>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-logo-section">
+                <div class="logo-container" style="margin-bottom: 2rem;">
+                    <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">
+                    <div class="brand-text">APLENTY</div>
+                </div>
+                <p style="color: rgba(249, 249, 249, 0.8); font-size: 14px; line-height: 1.6;">
+                    Especializados em educação comportamental, desenvolvemos pessoas e potencializamos resultados através do conhecimento dos perfis comportamentais.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Serviços</h3>
+                <ul>
+                    <li><a href="#curso">Curso Gravado</a></li>
+                    <li><a href="#avaliacao">Avaliação de Perfil</a></li>
+                    <li><a href="#palestra">Palestras</a></li>
+                    <li><a href="#consultoria">Consultoria</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#metodologia">Metodologia</a></li>
+                    <li><a href="#cases">Cases de Sucesso</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#area-aluno">Área do Aluno</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#ajuda">Central de Ajuda</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#termos">Termos de Uso</a></li>
+                    <li><a href="#privacidade">Política de Privacidade</a></li>
+                    <li><a href="#cookies">Cookies</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <div class="footer-contact">
+                    <span class="footer-contact-icon">📧</span>
+                    <div class="footer-contact-text">
+                        <div class="footer-contact-label">E-mail:</div>
+                        <div>aplentytreinamentos@gmail.com</div>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <span class="footer-contact-icon">📱</span>
+                    <div class="footer-contact-text">
+                        <div class="footer-contact-label">WhatsApp:</div>
+                        <div>(34) 99932-6520</div>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <span class="footer-contact-icon">⏰</span>
+                    <div class="footer-contact-text">
+                        <div class="footer-contact-label">Atendimento:</div>
+                        <div>Segunda a sexta, das 9h às 18h</div>
+                    </div>
+                </div>
+                
+                <div class="social-icons" style="margin-top: 2rem;">
+                    <a href="#" class="social-icon" title="LinkedIn">💼</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                    <a href="#" class="social-icon" title="YouTube">🎥</a>
+                    <a href="#" class="social-icon" title="WhatsApp">💬</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">© 2025 Aplenty Educação Ltda - Todos os Direitos Reservados</div>
+            <div class="footer-links">
+                <a href="#privacidade">Política de Privacidade</a>
+                <a href="#termos">Termos de Uso</a>
+                <a href="#cookies">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.textContent = navMenu.classList.contains('active') ? '×' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.textContent = '☰';
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(13, 45, 44, 0.98)';
+            } else {
+                header.style.background = 'rgba(13, 45, 44, 0.95)';
+            }
+        });
+
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // WhatsApp contact function
+        function openWhatsApp() {
+            const phoneNumber = '5534999326520';
+            const message = 'Olá! Gostaria de saber mais sobre os serviços da Aplenty.';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close dropdown on click outside
+        document.addEventListener('click', (e) => {
+            const produtosMenu = document.querySelector('.produtos-menu');
+            if (!produtosMenu.contains(e.target)) {
+                produtosMenu.blur();
+            }
+        });
+    </script>
+</body>
+</html>
