@@ -643,9 +643,26 @@
                     <li class="produtos-menu">
                         <a href="#servicos">Serviços</a>
                         <ul class="dropdown">
-                            <li><a href="/service1.html">Curso Gravado</a></li>
-                            <li><a href="#avaliacao">Avaliação de Perfil</a></li>
-                            <li><a href="#palestra">Palestras</a></li>
+                            <li class="dropdown-category">
+                                <span class="category-title">PARA EMPRESAS</span>
+                                <div class="category-items">
+                                    <a href="/service1.html">SSK para equipes</a>
+                                    <a href="#ll5-lideres">LL5 Líderes</a>
+                                    <a href="#consultoria">Consultoria</a>
+                                    <a href="#palestras">Palestras</a>
+                                    <a href="#contratacao">Contratação estratégica</a>
+                                    <a href="#pgr-nr01">PGR NR01</a>
+                                </div>
+                            </li>
+                            <li class="dropdown-category">
+                                <span class="category-title">PARA PESSOAS</span>
+                                <div class="category-items">
+                                    <a href="#desenvolvimento">Desenvolvimento pessoal sistêmico</a>
+                                    <a href="#destrave-se">Destrave se</a>
+                                    <a href="#chp">CHP</a>
+                                    <a href="#mda">MDA</a>
+                                </div>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="#sobre">Sobre nós</a></li>
@@ -701,6 +718,7 @@
             </div>
         </div>
     </main>
+    
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -875,158 +893,84 @@
         }
 
         /* Founder Section */
-        .founder-section {
-            background: rgba(249, 249, 249, 0.03);
-            border-radius: 25px;
-            padding: 60px;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
+.founder-section {
+    background: linear-gradient(135deg, #0D2D2C, #1A1A1A);
+    border-radius: 25px;
+    padding: 60px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
 
-        .founder-content {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
+.founder-content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 4rem;
+    align-items: center;
+}
 
-        .founder-image {
-            position: relative;
-        }
+/* Founder Image – no hard frame, just soft blending */
+.founder-image {
+    position: relative;
+}
 
-        .founder-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            border: 3px solid rgba(212, 175, 55, 0.3);
-        }
+.founder-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 18px; /* smooth corners */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.45); /* subtle depth */
+    border: none; /* no visible frame */
+}
 
-        .founder-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: linear-gradient(135deg, #D4AF37, #FFD700);
-            color: #0D2D2C;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-        }
+/* Badge */
+.founder-badge {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(212,175,55,0.9);
+    color: #0D2D2C;
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+}
 
-        .founder-info {
-            padding-top: 1rem;
-        }
+/* Founder Info */
+.founder-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #D4AF37;
+    margin-bottom: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .founder-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            color: #D4AF37;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+.founder-description,
+.founder-credentials,
+.founder-mission {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: rgba(249, 249, 249, 0.9);
+}
 
-        .founder-description,
-        .founder-credentials,
-        .founder-mission {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: rgba(249, 249, 249, 0.9);
-        }
+/* Responsive */
+@media (max-width: 768px) {
+    .founder-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
 
-        .founder-description strong,
-        .founder-credentials strong,
-        .founder-mission strong {
-            color: #D4AF37;
-            font-weight: 600;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .founder-content {
-                grid-template-columns: 250px 1fr;
-                gap: 3rem;
-            }
-
-            .founder-img {
-                height: 350px;
-            }
-
-            .section-title {
-                font-size: 3rem;
-            }
-
-            .values-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .about-section {
-                padding: 80px 1rem 60px;
-            }
-
-            .founder-section {
-                padding: 40px 30px;
-            }
-
-            .founder-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .founder-image {
-                max-width: 280px;
-                margin: 0 auto;
-            }
-
-            .founder-img {
-                height: 320px;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .values-title {
-                font-size: 2rem;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .value-card {
-                padding: 1.5rem;
-            }
-
-            .about-description {
-                font-size: 1.1rem;
-            }
-
-            .about-mission {
-                font-size: 1rem;
-            }
-
-            .founder-title {
-                font-size: 2rem;
-            }
-
-            .founder-description,
-            .founder-credentials,
-            .founder-mission {
-                font-size: 1rem;
-                text-align: left;
-            }
-        }
+    .founder-img {
+        height: 320px;
+    }
+}
 
         @media (max-width: 480px) {
             .about-section {
@@ -1178,30 +1122,51 @@
                 </div>
             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             <!-- Founder Section -->
-            <div class="founder-section">
-                <div class="founder-content">
-                    <div class="founder-image">
-                        <img src="/WhatsApp Image 2025-08-19 at 7.09.32 PM (1).jpeg" alt="Joice Mendes - Fundadora da Aplenty" class="founder-img">
-                        <div class="founder-badge">
-                            <span class="badge-text">Fundadora</span>
-                        </div>
-                    </div>
-                    
-                    <div class="founder-info">
-                        <h3 class="founder-title">A fundadora</h3>
-                        <p class="founder-description">
-                            Formada em Ciências Contábeis, com mais de 18 anos de experiência na área tributária em empresas de pequeno a grande porte, e vivência prática como empreendedora do varejo, <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>. 
-                        </p>
-                        <p class="founder-credentials">
-                            É formada em desenvolvimento humano pela <strong>Febracis, a maior escola de negócios da América Latina</strong>, e certificada em <strong>Assessment baseado em 4 teorias científicas</strong>, metodologia utilizada em diversos países. 
-                        </p>
-                        <p class="founder-mission">
-                            Hoje, dedica sua trajetória a <strong>impulsionar pessoas e organizações a crescerem de forma consistente, produtiva e sustentável</strong>.
-                        </p>
-                    </div>
-                </div>
+           <!-- Founder Section -->
+<div class="founder-section">
+    <div class="founder-content">
+        <div class="founder-image">
+            <img src="/WhatsApp Image 2025-08-19 at 7.09.32 PM (1).jpeg" 
+                 alt="Joice Mendes - Fundadora da Aplenty" 
+                 class="founder-img">
+            <div class="founder-badge">
+                <span class="badge-text">Fundadora</span>
             </div>
+        </div>
+        
+        <div class="founder-info">
+            <h3 class="founder-title">A fundadora</h3>
+            <p class="founder-description">
+                Formada em Ciências Contábeis, com mais de 18 anos de experiência na área tributária em empresas de pequeno a grande porte, e vivência prática como empreendedora do varejo, <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>. 
+            </p>
+            <p class="founder-credentials">
+                É formada em desenvolvimento humano pela <strong>Febracis, a maior escola de negócios da América Latina</strong>, e certificada em <strong>Assessment baseado em 4 teorias científicas</strong>, metodologia utilizada em diversos países. 
+            </p>
+            <p class="founder-mission">
+                Hoje, dedica sua trajetória a <strong>impulsionar pessoas e organizações a crescerem de forma consistente, produtiva e sustentável</strong>.
+            </p>
+        </div>
+    </div>
+</div>
+
         </div>
     </section>
 </body>

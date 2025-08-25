@@ -840,15 +840,25 @@
             font-weight: 600;
         }
 
-        .commitment-highlight {
-            background: rgba(212, 175, 55, 0.1);
-            border-left: 4px solid #D4AF37;
-            padding: 1.5rem 2rem;
-            border-radius: 0 10px 10px 0;
-            margin: 2rem 0;
-            font-style: italic;
-            font-size: 1.1rem;
-        }
+        /* Remove italics from highlighted blocks */
+.commitment-highlight {
+    background: rgba(212, 175, 55, 0.1);
+    border-left: 4px solid #D4AF37;
+    padding: 1.5rem 2rem;
+    border-radius: 0 10px 10px 0;
+    margin: 2rem 0;
+    font-size: 1.1rem;
+    color: rgba(249, 249, 249, 0.9); /* keep neutral */
+}
+
+/* Highlights inside text should not use gold anymore */
+.hero-highlight,
+.ssk-highlight,
+.why-ssk-paragraph strong {
+    color: #F9F9F9;   /* neutral white */
+    font-weight: 600;
+}
+
 
         /* CTA Section */
         .cta-section {
@@ -1188,7 +1198,7 @@
                     Descubra como o programa SSK pode revolucionar o desempenho e engajamento da sua equipe através do desenvolvimento de soft skills essenciais.
                 </p>
                 <a href="#" class="btn-primary" onclick="openWhatsApp()">
-                    👉 Quero saber mais
+                     Quero saber mais
                 </a>
             </div>
         </div>
