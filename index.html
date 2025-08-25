@@ -1140,37 +1140,244 @@
 
             
             <!-- Founder Section -->
-           <!-- Founder Section -->
-<div class="founder-section">
-    <div class="founder-content">
-        <div class="founder-image">
-            <img src="/WhatsApp Image 2025-08-19 at 7.09.32 PM (1).jpeg" 
-                 alt="Joice Mendes - Fundadora da Aplenty" 
-                 class="founder-img">
-            <div class="founder-badge">
-                <span class="badge-text">Fundadora</span>
-            </div>
-        </div>
-        
-        <div class="founder-info">
-            <h3 class="founder-title">A fundadora</h3>
-            <p class="founder-description">
-                Formada em Ciências Contábeis, com mais de 18 anos de experiência na área tributária em empresas de pequeno a grande porte, e vivência prática como empreendedora do varejo, <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>. 
-            </p>
-            <p class="founder-credentials">
-                É formada em desenvolvimento humano pela <strong>Febracis, a maior escola de negócios da América Latina</strong>, e certificada em <strong>Assessment baseado em 4 teorias científicas</strong>, metodologia utilizada em diversos países. 
-            </p>
-            <p class="founder-mission">
-                Hoje, dedica sua trajetória a <strong>impulsionar pessoas e organizações a crescerem de forma consistente, produtiva e sustentável</strong>.
-            </p>
-        </div>
-    </div>
+          
 </div>
 
         </div>
     </section>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplenty - Founder Section</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:wght@300;400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Literata', 'Georgia', serif;
+      background-color: #0D2D2C;
+      color: #F9F9F9;
+      line-height: 1.6;
+    }
+
+    /* Founder Section */
+   .founder-section {
+  background: 
+    linear-gradient(90deg, rgba(13,45,44,0.92) 0%, rgba(13,45,44,0.6) 45%, transparent 70%),
+    url('/11.png') no-repeat;
+  background-position: right center;   /* pushes focus to the right */
+  background-size: contain;            /* zooms out (shows full image) */
+  background-color: #0D2D2C;           /* fallback color */
+}
+
+
+    .founder-container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .founder-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #D4AF37;
+      letter-spacing: 3px;
+    }
+
+    .founder-title {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 700px;
+      background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #F9F9F9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .founder-subtitle {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      max-width: 600px;
+      color: rgba(249, 249, 249, 0.9);
+      font-weight: 300;
+    }
+
+    .founder-description {
+      font-size: 1.1rem;
+      max-width: 650px;
+      color: rgba(249, 249, 249, 0.85);
+    }
+
+    .founder-description strong {
+      color: #D4AF37;
+      font-weight: 600;
+    }
+
+    .founder-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+      color: #0D2D2C;
+      padding: 15px 35px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .founder-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Badge */
+    .founder-badge {
+      position: absolute;
+      top: 40px;
+      left: 60px;
+      background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+      color: #0D2D2C;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Achievements */
+    .achievements-overlay {
+      margin-top: 3rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .achievement-card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 10px;
+      padding: 12px 18px;
+      color: #F9F9F9;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s ease;
+      min-width: 140px;
+    }
+
+    .achievement-card:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+
+    .achievement-number {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #D4AF37;
+      font-family: 'Cinzel', serif;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .founder-section {
+        background-position: 70% center;
+        text-align: center;
+      }
+
+      .founder-container {
+        align-items: center;
+        padding: 0 30px;
+      }
+
+      .founder-title {
+        font-size: 2.4rem;
+      }
+
+      .achievements-overlay {
+        justify-content: center;
+      }
+
+      .founder-badge {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .founder-title {
+        font-size: 2rem;
+      }
+      .founder-subtitle {
+        font-size: 1.1rem;
+      }
+      .founder-description {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="founder-section">
+    
+    <div class="founder-container">
+      <div class="founder-logo">APLENTY</div>
+      <h1 class="founder-title">A maior autoridade em desenvolvimento humano do Brasil no palco do seu evento</h1>
+      <p class="founder-subtitle">
+        Reconhecida pela Febracis como especialista em crescimento pessoal e organizacional, com metodologia científica aplicada em diversos países.
+      </p>
+      <p class="founder-description">
+        Formada em Ciências Contábeis, com mais de <strong>18 anos de experiência</strong> na área tributária e vivência prática como empreendedora, <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>.
+      </p>
+      <a href="#" class="founder-cta">Contratar Palestra</a>
+
+      <div class="achievements-overlay">
+        <div class="achievement-card">
+          <span class="achievement-number">18+</span>
+          Anos de Experiência
+        </div>
+        <div class="achievement-card">
+          <span class="achievement-number">500+</span>
+          Pessoas Transformadas
+        </div>
+        <div class="achievement-card">
+          <span class="achievement-number">50+</span>
+          Empresas Atendidas
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
