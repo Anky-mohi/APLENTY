@@ -1033,6 +1033,29 @@ ease;
                 justify-content: center;
             }
         }
+
+
+        @media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr); /* two columns instead of full width */
+        gap: 20px;
+    }
+
+    .footer-column {
+        text-align: left;
+    }
+
+    .footer-logo-section {
+        grid-column: 1 / -1; /* logo takes full width */
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .footer-contact {
+        grid-column: 1 / -1; /* contact full width below */
+    }
+}
+
     </style>
 </head>
 <body>
