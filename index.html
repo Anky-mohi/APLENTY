@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplenty - Educação Comportamental</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -12,31 +14,33 @@
         }
 
         body {
-            font-family: sans-serif;
-            background-color: #0D2D2C;
-            color: #F9F9F9;
+            font-family: 'Inter', sans-serif;
+            background-color: #0B1426;
+            color: #FFFFFF;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* Header Styles */
         .header {
-            background-color: rgba(13, 45, 44, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
+            background-color: rgba(11, 20, 38, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 40px;
+            height: 80px;
         }
 
         .logo-container {
@@ -46,41 +50,39 @@
         }
 
         .site-logo {
-            height: 50px;
+            height: 49px;
             width: auto;
-            filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3));
         }
 
         .brand-text {
-            font-family: 'Cinzel', serif;
-            font-size: 28px;
-            font-weight: bold;
-            color: #caae5c;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
-        }
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #ceae5c;
+    letter-spacing: 1px;
+    margin-left: -15px;
+    margin-top: 9px;
+}
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 40px;
             align-items: center;
         }
 
         .nav-menu li a {
-            color: #F9F9F9;
+            color: #FFFFFF;
             text-decoration: none;
-            font-weight: 400;
+            font-weight: 300;
             font-size: 16px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             position: relative;
-            padding: 8px 12px;
-            border-radius: 6px;
+            padding: 8px 0;
         }
 
         .nav-menu li a:hover {
-            color: #caae5c;
-            background: rgba(212, 175, 55, 0.1);
+            color: #ceae5c;
         }
 
         .produtos-menu {
@@ -89,10 +91,10 @@
 
         .produtos-menu > a::after {
             content: '▼';
-            font-size: 10px;
-            margin-left: 8px;
-            color: #caae5c;
-            transition: transform 0.3s ease;
+            font-size: 8px;
+            margin-left: 6px;
+            color: #ceae5c;
+            transition: transform 0.2s ease;
         }
 
         .produtos-menu:hover > a::after {
@@ -103,51 +105,148 @@
             display: none;
             position: absolute;
             top: 100%;
-            left: 0;
-            background: rgba(13, 45, 44, 0.98);
-            backdrop-filter: blur(20px);
+            left: -20px;
+            background: rgba(11, 20, 38, 0.98);
+            backdrop-filter: blur(30px);
             list-style: none;
-            padding: 0.5rem 0;
-            min-width: 200px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 20px 0;
+            min-width: 280px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-top: 8px;
         }
 
         .produtos-menu:hover .dropdown {
             display: block;
-            animation: fadeInDown 0.3s ease;
+            animation: fadeInDown 0.2s ease;
         }
 
-        .dropdown li a {
+        .dropdown-category {
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .category-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
             display: block;
-            padding: 12px 20px;
-            color: #F9F9F9;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-radius: 0;
         }
 
-        .dropdown li a:hover {
-            background: #caae5c;
-            color: #0D2D2C;
+        .category-items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .category-items a {
+            display: block;
+            padding: 8px 0;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .category-items a:hover {
+            color: #ceae5c;
+            padding-left: 8px;
         }
 
         .sou-aluno {
-            background: linear-gradient(135deg, #caae5c, #caae5c);
-            color: #0D2D2C !important;
-            padding: 12px 24px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
+    /* background: linear-gradient(135deg, #ffffff, #ceae5c); */
+    color: #ccaa59 !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s 
+ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
         .sou-aluno:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-            background: #caae5c !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .nav-separator {
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 300;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sou-aluno-menu {
+            position: relative;
+        }
+
+        .sou-aluno-menu > a::after {
+            content: '▼';
+            font-size: 8px;
+            margin-left: 6px;
+            color: #ccaa59 ;
+            transition: transform 0.2s ease;
+        }
+
+        .sou-aluno-menu:hover > a::after {
+            transform: rotate(180deg);
+        }
+
+        .sou-aluno-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(11, 20, 38, 0.98);
+            backdrop-filter: blur(30px);
+            list-style: none;
+            padding: 20px 0;
+            min-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-top: 8px;
+        }
+
+        .sou-aluno-menu:hover .sou-aluno-dropdown {
+            display: block;
+            animation: fadeInDown 0.2s ease;
+        }
+
+        .sou-aluno-dropdown li {
+            padding: 0 20px;
+            margin-bottom: 8px;
+        }
+
+        .sou-aluno-dropdown li:last-child {
+            margin-bottom: 0;
+        }
+
+        .sou-aluno-dropdown a {
+            display: block;
+            padding: 8px 0;
+            color: #ceae5c;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0;
+            background: none !important;
+            border-radius: 0 !important;
+        }
+
+        .sou-aluno-dropdown a:hover {
+            color: #FFFFFF;
+            padding-left: 8px;
         }
 
         /* Mobile Menu */
@@ -155,28 +254,23 @@
             display: none;
             background: none;
             border: none;
-            color: #F9F9F9;
-            font-size: 28px;
+            color: #FFFFFF;
+            font-size: 24px;
             cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .mobile-menu-toggle:hover {
-            color: #D4AF37;
         }
 
         /* Hero Section */
-         .hero {
-    background: linear-gradient(135deg, rgba(10,26,42,0.9), rgba(26,58,90,0.9)), 
-                url("/WhatsApp\ Image\ 2025-08-19\ at\ 7.09.31\ PM.jpeg") center/cover no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 120px 2rem 60px;
-    overflow: hidden;
-}
+        .hero {
+            background: linear-gradient(135deg, rgba(11,20,38,0.95), rgba(26,58,90,0.9)), 
+                        url("/WhatsApp\ Image\ 2025-08-19\ at\ 7.09.31\ PM.jpeg") center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 70px 40px 0;
+            overflow: hidden;
+        }
 
         .hero::before {
             content: '';
@@ -185,310 +279,205 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1), transparent 50%);
-            opacity: 0.6;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.08), transparent 60%);
         }
 
         .hero-content {
             text-align: center;
-            max-width: 1000px;
+            max-width: 900px;
             position: relative;
             z-index: 2;
+            padding-top: 60px;
         }
 
         .prime-logo {
-            font-family: sans-serif;
-            font-size: 4rem;
-            font-weight: 300;
-            letter-spacing: 8px;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg,#caae5c, #caae5c);
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
 
         .hero-title {
-            font-family: sans-serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #caae5c 0%, #caae5c 50%, #caae5c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-family: 'Inter', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
         }
 
         .hero-subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 3rem;
-            line-height: 1.4;
+            font-size: 1.25rem;
+            margin-bottom: 48px;
+            line-height: 1.5;
             font-weight: 300;
-            color: #F9F9F9;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-highlight {
-            color: #caae5c;
+            color: #D4AF37;
             font-weight: 600;
         }
 
         .hero-info {
             display: flex;
             justify-content: center;
-            gap: 4rem;
-            margin-bottom: 3rem;
+            gap: 60px;
+            margin-bottom: 48px;
             flex-wrap: wrap;
         }
 
         .info-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            background: rgba(249, 249, 249, 0.1);
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.3s ease;
+            gap: 16px;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            backdrop-filter: none;
+            border: none;
+            transition: none;
+            min-width: auto;
         }
 
         .info-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+            transform: none;
+            border-color: transparent;
+            background: transparent;
         }
 
         .info-icon {
-            font-size: 2rem;
-            color: #caae5c;
+            width: 44px;
+            height: 44px;
+            
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            
         }
 
         .info-text {
             text-align: left;
+            flex: 1;
         }
 
         .info-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 0.25rem;
+            font-size: 14px;
+            opacity: 1;
+            margin-bottom: 2px;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 400;
+            color: #FFFFFF;
         }
 
         .info-value {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #F9F9F9;
+            font-size: 14px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+
+        .info-separator {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 18px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #caae5c, #caae5c);
-            color: #0D2D2C;
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            color: #0B1426;
             padding: 18px 40px;
             border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
+            border-radius: 50px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-            font-family: 'Literata', serif;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 180px;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
-            color: #F9F9F9;
+            color: #FFFFFF;
             padding: 18px 40px;
-            border: 2px solid rgba(212, 175, 55, 0.5);
-            border-radius: 30px;
-            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             backdrop-filter: blur(10px);
-            font-family: 'Literata', serif;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 180px;
         }
 
         .btn-secondary:hover {
             border-color: #D4AF37;
             color: #D4AF37;
-            transform: translateY(-3px);
-            background: rgba(212, 175, 55, 0.1);
-        }
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #0D2D2C, #1A1A1A);
-            padding: 6rem 2rem 3rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .footer-logo-section {
-            grid-column: 1;
-        }
-
-        .footer-section h3 {
-            font-family: 'Cinzel', serif;
-            color: #D4AF37;
-            margin-bottom: 2rem;
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 1.2rem;
-        }
-
-        .footer-section ul li a {
-            color: rgba(249, 249, 249, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
-        .footer-section ul li a:hover {
-            color: #D4AF37;
-        }
-
-        .footer-contact {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            color: rgba(249, 249, 249, 0.8);
-        }
-
-        .footer-contact-icon {
-            color: #D4AF37;
-            font-size: 1.2rem;
-            margin-top: 2px;
-        }
-
-        .footer-contact-text {
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .footer-contact-label {
-            font-weight: 600;
-            color: #F9F9F9;
-            margin-bottom: 4px;
-        }
-
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 4rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-copyright {
-            color: rgba(249, 249, 249, 0.6);
-            font-size: 14px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: rgba(249, 249, 249, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 14px;
-        }
-
-        .footer-links a:hover {
-            color: #D4AF37;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #D4AF37;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 18px;
-        }
-
-        .social-icon:hover {
-            background: #D4AF37;
-            color: #0D2D2C;
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 24px;
+            }
+            
+            .hero {
+                padding: 70px 24px 0;
+            }
+            
             .hero-info {
-                gap: 2rem;
+                gap: 24px;
             }
         }
 
         @media (max-width: 768px) {
-            .header {
-                padding: 1rem;
-            }
-
             .nav-menu {
                 display: none;
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: 0;
                 width: 100%;
-                background: rgba(13, 45, 44, 0.98);
-                backdrop-filter: blur(20px);
+                background: rgba(11, 20, 38, 0.98);
+                backdrop-filter: blur(30px);
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-top: 1px solid rgba(212, 175, 55, 0.2);
+                padding: 32px 24px;
+                gap: 24px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                height: calc(100vh - 70px);
+                overflow-y: auto;
             }
 
             .nav-menu.active {
@@ -499,65 +488,88 @@
                 display: block;
             }
 
+            .nav-separator {
+                display: none;
+            }
+
+            .info-separator {
+                display: none;
+            }
+
+            .dropdown {
+                position: static;
+                display: block;
+                background: rgba(255, 255, 255, 0.05);
+                border: none;
+                border-radius: 8px;
+                margin: 8px 0 0 0;
+                box-shadow: none;
+            }
+
+            .sou-aluno-dropdown {
+                position: static;
+                display: block;
+                background: rgba(255, 255, 255, 0.05);
+                border: none;
+                border-radius: 8px;
+                margin: 8px 0 0 0;
+                box-shadow: none;
+            }
+
+            .sou-aluno-menu > a::after {
+                display: none;
+            }
+
+            .produtos-menu > a::after {
+                display: none;
+            }
+
             .prime-logo {
-                font-size: 2.5rem;
-                letter-spacing: 4px;
+                font-size: 1.8rem;
             }
 
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 2.4rem;
             }
 
             .hero-subtitle {
-                font-size: 1.4rem;
-                margin-bottom: 2rem;
+                font-size: 1.1rem;
+                margin-bottom: 32px;
             }
 
             .hero-info {
                 flex-direction: column;
-                gap: 1.5rem;
-                margin-bottom: 2rem;
+                gap: 16px;
+                margin-bottom: 32px;
             }
 
             .info-item {
-                padding: 1rem 1.5rem;
+                min-width: auto;
+                padding: 12px 16px;
             }
 
             .hero-buttons {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 12px;
             }
 
             .btn-primary, .btn-secondary {
                 width: 100%;
-                
-                padding: 15px 30px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-                gap: 1.5rem;
-            }
-
-            .brand-text {
-                font-size: 22px;
+                padding: 14px 24px;
             }
         }
 
         @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+
             .hero {
-                padding: 100px 1rem 40px;
+                padding: 70px 16px 0;
             }
 
             .prime-logo {
-                font-size: 2rem;
-                letter-spacing: 2px;
+                font-size: 1.6rem;
             }
 
             .hero-title {
@@ -565,28 +577,15 @@
             }
 
             .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .info-item {
-                padding: 0.8rem 1rem;
-            }
-
-            .info-icon {
-                font-size: 1.5rem;
-            }
-
-            .brand-text {
-                font-size: 20px;
-                letter-spacing: 1px;
+                font-size: 1rem;
             }
         }
 
         /* Animations */
-        @keyframes fadeInUp {
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-8px);
             }
             to {
                 opacity: 1;
@@ -594,10 +593,10 @@
             }
         }
 
-        @keyframes fadeInDown {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(-10px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -606,27 +605,24 @@
         }
 
         .hero-content > * {
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.6s ease-out forwards;
         }
 
         .hero-title {
-            animation-delay: 0.2s;
+            animation-delay: 0.1s;
         }
 
         .hero-subtitle {
-            animation-delay: 0.4s;
+            animation-delay: 0.2s;
         }
 
         .hero-info {
-            animation-delay: 0.6s;
+            animation-delay: 0.3s;
         }
 
         .hero-buttons {
-            animation-delay: 0.8s;
+            animation-delay: 0.4s;
         }
-
-        /* Google Fonts Import */
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:wght@300;400;600;700&display=swap');
     </style>
 </head>
 <body>
@@ -641,7 +637,7 @@
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li class="produtos-menu">
-                        <a href="#servicos">Serviços</a>
+                        <a href="#servicos">Produtos</a>
                         <ul class="dropdown">
                             <li class="dropdown-category">
                                 <span class="category-title">PARA EMPRESAS</span>
@@ -666,10 +662,20 @@
                         </ul>
                     </li>
                     <li><a href="#sobre">Sobre nós</a></li>
-                    <li><a href="#beneficios">Benefícios</a></li>
-                    <li><a href="#depoimentos">Depoimentos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="#area-aluno" class="sou-aluno">Área do Aluno</a></li>
+                    <li><a href="#cases">Cases</a></li>
+                    <li><a href="#carreiras">Carreiras</a></li>
+                    <li><a href="#atendimento">Atendimento</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li class="nav-separator">|</li>
+                    <li class="sou-aluno-menu">
+                        <a href="#area-aluno" class="sou-aluno">Sou Aluno</a>
+                        <ul class="sou-aluno-dropdown">
+                            <li><a href="#prosperus-club">Prosperus Club</a></li>
+                            <li><a href="#lumiere-club">Lumiere Club</a></li>
+                            <li><a href="#corporate">Corporate</a></li>
+                            <li><a href="#mp-start">MP Start</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
             </nav>
@@ -680,1351 +686,48 @@
     <main class="hero">
         <div class="hero-content">
             <div class="prime-logo">APLENTY</div>
-            <h1 class="hero-title">Educação Comportamental</h1>
+            <h1 class="hero-title">EXPERIENCE</h1>
             <p class="hero-subtitle">
-                Transforme resultados através do <span class="hero-highlight">conhecimento comportamental</span><br>
-                <span class="hero-highlight">Desenvolva pessoas e potencialize negócios</span>
+                Em 2 dias, descubra como <span class="hero-highlight">As 5 Inteligências em Vendas</span> podem<br>
+                <span class="hero-highlight">transformar os resultados do seu negócio</span>
             </p>
             
             <div class="hero-info">
                 <div class="info-item">
-                    <div class="info-icon">🎯</div>
+                    <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none"><path d="M10.2681 34.1221C6.49727 35.2533 4.16602 36.8158 4.16602 38.5419C4.16602 41.9939 13.4931 44.7919 24.9994 44.7919C36.5056 44.7919 45.8327 41.9939 45.8327 38.5419C45.8327 36.8158 43.5004 35.2533 39.7306 34.1221" stroke="white" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M24.9997 36.4584C24.9997 36.4584 38.5413 27.6084 38.5413 17.3772C38.5413 10.0813 32.4788 4.16675 24.9997 4.16675C17.5205 4.16675 11.458 10.0813 11.458 17.3772C11.458 27.6084 24.9997 36.4584 24.9997 36.4584Z" stroke="white" stroke-width="4.16667" stroke-linejoin="round"></path><path d="M24.9993 22.9168C26.3807 22.9168 27.7054 22.3681 28.6822 21.3913C29.6589 20.4146 30.2077 19.0898 30.2077 17.7085C30.2077 16.3271 29.6589 15.0024 28.6822 14.0256C27.7054 13.0489 26.3807 12.5001 24.9993 12.5001C23.618 12.5001 22.2933 13.0489 21.3165 14.0256C20.3397 15.0024 19.791 16.3271 19.791 17.7085C19.791 19.0898 20.3397 20.4146 21.3165 21.3913C22.2933 22.3681 23.618 22.9168 24.9993 22.9168Z" stroke="white" stroke-width="4.16667" stroke-linejoin="round"></path></svg></div>
                     <div class="info-text">
-                        <div class="info-label">Especialização</div>
-                        <div class="info-value">Perfis Comportamentais</div>
+                        <div class="info-label">Local:</div>
+                        <div class="info-value">São Paulo/SP</div>
                     </div>
                 </div>
                 
+                <div class="info-separator">|</div>
+                
                 <div class="info-item">
-                    <div class="info-icon">👥</div>
+                    <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none"><path d="M25.0006 21.9842C23.001 21.9842 21.0832 21.1898 19.6693 19.7758C18.2553 18.3619 17.4609 16.4441 17.4609 14.4445C17.4609 12.4448 18.2553 10.5271 19.6693 9.11311C21.0832 7.69914 23.001 6.90479 25.0006 6.90479C27.0003 6.90479 28.918 7.69914 30.332 9.11311C31.7459 10.5271 32.5403 12.4448 32.5403 14.4445C32.5403 16.4441 31.7459 18.3619 30.332 19.7758C28.918 21.1898 27.0003 21.9842 25.0006 21.9842ZM25.0006 9.92066C22.4974 9.92066 20.4768 11.9413 20.4768 14.4445C20.4768 16.9476 22.4974 18.9683 25.0006 18.9683C27.5038 18.9683 29.5244 16.9476 29.5244 14.4445C29.5244 11.9413 27.5038 9.92066 25.0006 9.92066Z" fill="white"></path><path d="M43.0951 34.0476C42.2507 34.0476 41.5872 33.3842 41.5872 32.5397C41.5872 31.6953 42.2507 31.0318 43.0951 31.0318C43.9396 31.0318 44.6031 30.3683 44.6031 29.5238C44.6031 27.5242 43.8087 25.6064 42.3948 24.1925C40.9808 22.7785 39.063 21.9842 37.0634 21.9842H34.0475C33.2031 21.9842 32.5396 21.3207 32.5396 20.4762C32.5396 19.6318 33.2031 18.9683 34.0475 18.9683C36.5507 18.9683 38.5713 16.9476 38.5713 14.4445C38.5713 11.9413 36.5507 9.92066 34.0475 9.92066C33.2031 9.92066 32.5396 9.25717 32.5396 8.41272C32.5396 7.56828 33.2031 6.90479 34.0475 6.90479C36.0472 6.90479 37.9649 7.69914 39.3789 9.11311C40.7929 10.5271 41.5872 12.4448 41.5872 14.4445C41.5872 16.3143 40.9237 18.0032 39.7777 19.3302C44.2713 20.5365 47.619 24.6381 47.619 29.5238C47.619 32.027 45.5983 34.0476 43.0951 34.0476ZM6.90467 34.0476C4.40149 34.0476 2.38086 32.027 2.38086 29.5238C2.38086 24.6381 5.69832 20.5365 10.2221 19.3302C9.10626 18.0032 8.41261 16.3143 8.41261 14.4445C8.41261 12.4448 9.20696 10.5271 10.6209 9.11311C12.0349 7.69914 13.9526 6.90479 15.9523 6.90479C16.7967 6.90479 17.4602 7.56828 17.4602 8.41272C17.4602 9.25717 16.7967 9.92066 15.9523 9.92066C13.4491 9.92066 11.4285 11.9413 11.4285 14.4445C11.4285 16.9476 13.4491 18.9683 15.9523 18.9683C16.7967 18.9683 17.4602 19.6318 17.4602 20.4762C17.4602 21.3207 16.7967 21.9842 15.9523 21.9842H12.9364C10.9368 21.9842 9.01902 22.7785 7.60505 24.1925C6.19109 25.6064 5.39673 27.5242 5.39673 29.5238C5.39673 30.3683 6.06022 31.0318 6.90467 31.0318C7.74911 31.0318 8.41261 31.6953 8.41261 32.5397C8.41261 33.3842 7.74911 34.0476 6.90467 34.0476ZM34.0475 43.0953H15.9523C13.4491 43.0953 11.4285 41.0746 11.4285 38.5715V35.5556C11.4285 29.7349 16.1634 25 21.984 25H28.0158C33.8364 25 38.5713 29.7349 38.5713 35.5556V38.5715C38.5713 41.0746 36.5507 43.0953 34.0475 43.0953ZM21.984 28.0159C19.9844 28.0159 18.0666 28.8103 16.6527 30.2242C15.2387 31.6382 14.4444 33.5559 14.4444 35.5556V38.5715C14.4444 39.4159 15.1078 40.0794 15.9523 40.0794H34.0475C34.892 40.0794 35.5555 39.4159 35.5555 38.5715V35.5556C35.5555 33.5559 34.7611 31.6382 33.3471 30.2242C31.9332 28.8103 30.0154 28.0159 28.0158 28.0159H21.984Z" fill="white"></path></svg></div>
                     <div class="info-text">
-                        <div class="info-label">Modalidade</div>
-                        <div class="info-value">Online e Presencial</div>
+                        <div class="info-label">Modelo:</div>
+                        <div class="info-value">Presencial</div>
                     </div>
                 </div>
                 
+                <div class="info-separator">|</div>
+                
                 <div class="info-item">
-                    <div class="info-icon">📈</div>
+                    <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none"><path d="M39.5833 10.4166H10.4167C8.11548 10.4166 6.25 12.2821 6.25 14.5833V41.6666C6.25 43.9678 8.11548 45.8333 10.4167 45.8333H39.5833C41.8845 45.8333 43.75 43.9678 43.75 41.6666V14.5833C43.75 12.2821 41.8845 10.4166 39.5833 10.4166Z" stroke="white" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5833 4.16663V10.4166M35.4167 4.16663V10.4166M6.25 20.8333H43.75" stroke="white" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
                     <div class="info-text">
-                        <div class="info-label">Resultado</div>
-                        <div class="info-value">Transformação Real</div>
+                        <div class="info-label">Próxima turma:</div>
+                        <div class="info-value">24/09 e 25/09</div>
                     </div>
                 </div>
             </div>
             
             <div class="hero-buttons">
-                <button class="btn-primary" onclick="scrollToSection('servicos')">Nossos Serviços</button>
-                <button class="btn-secondary" onclick="openWhatsApp()">Fale Conosco</button>
+                <button class="btn-primary" onclick="scrollToSection('servicos')">Quero participar</button>
+                <button class="btn-secondary" onclick="openWhatsApp()">Quero saber mais</button>
             </div>
         </div>
     </main>
-    
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplenty - Sobre Nós</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:wght@300;400;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: sans-serif;
-            background-color: #0D2D2C;
-            color: #F9F9F9;
-            line-height: 1.6;
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 120px 2rem 80px;
-            background: linear-gradient(135deg, #0D2D2C 0%, #1A1A1A 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cdefs%3E%3Cpattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(212,175,55,0.05)" stroke-width="0.5"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100" height="100" fill="url(%23grid)"/%3E%3C/svg%3E') center/cover;
-            opacity: 0.3;
-        }
-
-        .about-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-content {
-            margin-bottom: 100px;
-        }
-
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto 60px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #F9F9F9 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .about-description {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: #F9F9F9;
-            line-height: 1.7;
-        }
-
-        .about-mission {
-            font-size: 1.2rem;
-            color: rgba(249, 249, 249, 0.9);
-            line-height: 1.7;
-           
-        }
-
-        /* Values Section */
-        .values-section {
-            margin-top: 80px;
-        }
-
-        .values-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #D4AF37;
-            text-align: center;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: rgba(249, 249, 249, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 15px;
-            padding: 2rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .value-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(212, 175, 55, 0.4);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .value-card:hover::before {
-            left: 100%;
-        }
-
-        .value-number {
-            flex-shrink: 0;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #D4AF37, #FFD700);
-            color: #0D2D2C;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .value-content h4 {
-            font-family: sans-serif;
-            font-size: 1.3rem;
-            color: #D4AF37;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .value-content p {
-            color: rgba(249, 249, 249, 0.9);
-            line-height: 1.6;
-            font-size: 1rem;
-        }
-
-        /* Founder Section */
-.founder-section {
-    background: linear-gradient(135deg, #0D2D2C, #1A1A1A);
-    border-radius: 25px;
-    padding: 60px;
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    position: relative;
-}
-
-.founder-content {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-/* Founder Image – no hard frame, just soft blending */
-.founder-image {
-    position: relative;
-}
-
-.founder-img {
-    width: 100%;
-    height: 420px;
-    object-fit: cover;
-    border-radius: 18px; /* smooth corners */
-    box-shadow: 0 25px 50px rgba(0,0,0,0.45); /* subtle depth */
-    border: none; /* no visible frame */
-}
-
-/* Badge */
-.founder-badge {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    background: rgba(212,175,55,0.9);
-    color: #0D2D2C;
-    padding: 6px 18px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(212,175,55,0.3);
-}
-
-/* Founder Info */
-.founder-title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
-    color: #D4AF37;
-    margin-bottom: 1.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.founder-description,
-.founder-credentials,
-.founder-mission {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    color: rgba(249, 249, 249, 0.9);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .founder-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .founder-img {
-        height: 320px;
-    }
-}
-
-        @media (max-width: 480px) {
-            .about-section {
-                padding: 60px 1rem 40px;
-            }
-
-            .founder-section {
-                padding: 30px 20px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .values-title {
-                font-size: 1.8rem;
-            }
-
-            .value-card {
-                padding: 1.2rem;
-                gap: 1rem;
-            }
-
-            .value-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-
-            .value-content h4 {
-                font-size: 1.1rem;
-            }
-
-            .founder-img {
-                height: 280px;
-            }
-
-            .founder-title {
-                font-size: 1.8rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .about-content,
-        .founder-section {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .value-card {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .value-card:nth-child(1) { animation-delay: 0.1s; }
-        .value-card:nth-child(2) { animation-delay: 0.2s; }
-        .value-card:nth-child(3) { animation-delay: 0.3s; }
-        .value-card:nth-child(4) { animation-delay: 0.4s; }
-        .value-card:nth-child(5) { animation-delay: 0.5s; }
-        .value-card:nth-child(6) { animation-delay: 0.6s; }
-        .value-card:nth-child(7) { animation-delay: 0.7s; }
-    </style>
-</head>
-<body>
-    <!-- About Section -->
-    <section class="about-section" id="sobre">
-        <div class="about-container">
-            <!-- About Content -->
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">Sobre nós</h2>
-                    <p class="about-description">
-                        A <strong>APLENTY</strong> nasceu com um propósito ousado de <strong>elevar o desempenho humano pessoal e organizacional</strong>, desenvolvendo uma mentalidade de crescimento consistente.
-                    </p>
-                    <p class="about-mission">
-                        Nossa missão é transformar PESSOAS, e organizações, através da educação emocional comportamental e corporativa, para contribuírem de forma abundante com o mundo.
-                    </p>
-                </div>
-
-                <!-- Values Grid -->
-                <div class="values-section">
-                    <h3 class="values-title">Valores</h3>
-                    <div class="values-grid">
-                        <div class="value-card">
-                            <div class="value-number">1</div>
-                            <div class="value-content">
-                                <h4>Foco</h4>
-                                <p>Concentramos energia no que realmente gera impacto e elimina ruídos</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-number">2</div>
-                            <div class="value-content">
-                                <h4>Servir</h4>
-                                <p>Servimos com dedicação e presença emocional</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-number">3</div>
-                            <div class="value-content">
-                                <h4>Cliente</h4>
-                                <p>Compromisso real com a transformação de nossos clientes</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-number">4</div>
-                            <div class="value-content">
-                                <h4>Excelência</h4>
-                                <p>Fazer sempre o melhor em tudo</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-number">5</div>
-                            <div class="value-content">
-                                <h4>Educação</h4>
-                                <p>O conhecimento e ação é a chave para evolução</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-number">6</div>
-                            <div class="value-content">
-                                <h4>Confiança</h4>
-                                <p>Agir com transparência, ética, respeito e responsabilidade</p>
-                            </div>
-                        </div>
-                        
-                        <div class="value-card">
-                            <div class="value-number">7</div>
-                            <div class="value-content">
-                                <h4>Espiritualidade</h4>
-                                <p>O sentido que une mentalidade e força</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-            <!-- Founder Section -->
-          
-</div>
-
-        </div>
-    </section>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aplenty - Founder Section</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:wght@300;400;600;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Literata', 'Georgia', serif;
-      background-color: #0D2D2C;
-      color: #F9F9F9;
-      line-height: 1.6;
-    }
-
-    /* Founder Section */
-   .founder-section {
-  background: 
-    linear-gradient(90deg, rgba(13,45,44,0.92) 0%, rgba(13,45,44,0.6) 45%, transparent 70%),
-    url('/11.png') no-repeat;
-  background-position: right center;   /* pushes focus to the right */
-  background-size: contain;            /* zooms out (shows full image) */
-  background-color: #0D2D2C;           /* fallback color */
-}
-
-
-    .founder-container {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-
-    .founder-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #D4AF37;
-      letter-spacing: 3px;
-    }
-
-    .founder-title {
-      font-family: 'Cinzel', serif;
-      font-size: 3rem;
-      font-weight: 700;
-      line-height: 1.2;
-      max-width: 700px;
-      background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #F9F9F9 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .founder-subtitle {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      max-width: 600px;
-      color: rgba(249, 249, 249, 0.9);
-      font-weight: 300;
-    }
-
-    .founder-description {
-      font-size: 1.1rem;
-      max-width: 650px;
-      color: rgba(249, 249, 249, 0.85);
-    }
-
-    .founder-description strong {
-      color: #D4AF37;
-      font-weight: 600;
-    }
-
-    .founder-cta {
-      display: inline-block;
-      background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
-      color: #0D2D2C;
-      padding: 15px 35px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-    }
-
-    .founder-cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
-    }
-
-    /* Badge */
-    .founder-badge {
-      position: absolute;
-      top: 40px;
-      left: 60px;
-      background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
-      color: #0D2D2C;
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      font-family: 'Cinzel', serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-    }
-
-    /* Achievements */
-    .achievements-overlay {
-      margin-top: 3rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .achievement-card {
-      background: rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      border-radius: 10px;
-      padding: 12px 18px;
-      color: #F9F9F9;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-align: center;
-      transition: all 0.3s ease;
-      min-width: 140px;
-    }
-
-    .achievement-card:hover {
-      background: rgba(212, 175, 55, 0.1);
-      border-color: rgba(212, 175, 55, 0.5);
-    }
-
-    .achievement-number {
-      display: block;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #D4AF37;
-      font-family: 'Cinzel', serif;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .founder-section {
-        background-position: 70% center;
-        text-align: center;
-      }
-
-      .founder-container {
-        align-items: center;
-        padding: 0 30px;
-      }
-
-      .founder-title {
-        font-size: 2.4rem;
-      }
-
-      .achievements-overlay {
-        justify-content: center;
-      }
-
-      .founder-badge {
-        position: relative;
-        top: 0;
-        left: 0;
-        margin-bottom: 1.5rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .founder-title {
-        font-size: 2rem;
-      }
-      .founder-subtitle {
-        font-size: 1.1rem;
-      }
-      .founder-description {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <section class="founder-section">
-    
-    <div class="founder-container">
-      <div class="founder-logo">APLENTY</div>
-      <h1 class="founder-title">A maior autoridade em desenvolvimento humano do Brasil no palco do seu evento</h1>
-      <p class="founder-subtitle">
-        Reconhecida pela Febracis como especialista em crescimento pessoal e organizacional, com metodologia científica aplicada em diversos países.
-      </p>
-      <p class="founder-description">
-        Formada em Ciências Contábeis, com mais de <strong>18 anos de experiência</strong> na área tributária e vivência prática como empreendedora, <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>.
-      </p>
-      <a href="#" class="founder-cta">Contratar Palestra</a>
-
-      <div class="achievements-overlay">
-        <div class="achievement-card">
-          <span class="achievement-number">18+</span>
-          Anos de Experiência
-        </div>
-        <div class="achievement-card">
-          <span class="achievement-number">500+</span>
-          Pessoas Transformadas
-        </div>
-        <div class="achievement-card">
-          <span class="achievement-number">50+</span>
-          Empresas Atendidas
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplenty - Contato</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Literata:wght@300;400;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Literata', 'Georgia', serif;
-            background-color: #0D2D2C;
-            color: #F9F9F9;
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 120px 2rem 80px;
-            background: linear-gradient(135deg, #0D2D2C 0%, #1A1A1A 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cdefs%3E%3Cpattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(212,175,55,0.05)" stroke-width="0.5"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100" height="100" fill="url(%23grid)"/%3E%3C/svg%3E') center/cover;
-            opacity: 0.3;
-        }
-
-        .contact-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #F9F9F9 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: center;
-        }
-
-        .section-subtitle {
-            font-size: 1.3rem;
-            text-align: center;
-            color: rgba(249, 249, 249, 0.8);
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: start;
-        }
-
-        /* Contact Info */
-        .contact-info {
-            background: rgba(249, 249, 249, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 25px;
-            padding: 3rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-info h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: #D4AF37;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(212, 175, 55, 0.05);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .contact-item:hover {
-            transform: translateX(10px);
-            border-color: rgba(212, 175, 55, 0.3);
-            background: rgba(212, 175, 55, 0.1);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #D4AF37, #FFD700);
-            color: #0D2D2C;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .contact-details h4 {
-            font-family: 'Cinzel', serif;
-            color: #D4AF37;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .contact-details p {
-            color: rgba(249, 249, 249, 0.9);
-            line-height: 1.6;
-        }
-
-        .contact-details a {
-            color: #F9F9F9;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-details a:hover {
-            color: #D4AF37;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            background: rgba(249, 249, 249, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 25px;
-            padding: 3rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-form h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: #D4AF37;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: #D4AF37;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px 20px;
-            background: rgba(249, 249, 249, 0.1);
-            border: 2px solid rgba(212, 175, 55, 0.2);
-            border-radius: 12px;
-            color: #F9F9F9;
-            font-size: 1rem;
-            font-family: 'Literata', serif;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #D4AF37;
-            background: rgba(249, 249, 249, 0.15);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(249, 249, 249, 0.6);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #D4AF37, #FFD700);
-            color: #0D2D2C;
-            padding: 18px 40px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-            font-family: 'Literata', serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
-        }
-
-        /* WhatsApp CTA */
-        .whatsapp-cta {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            border-radius: 25px;
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.2);
-        }
-
-        .whatsapp-cta h3 {
-            font-family: 'Cinzel', serif;
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .whatsapp-cta p {
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 1.5rem;
-        }
-
-        .whatsapp-btn {
-            background: white;
-            color: #25D366;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            font-family: 'Literata', serif;
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .contact-content {
-                gap: 4rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .contact-section {
-                padding: 80px 1rem 60px;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .contact-info,
-            .contact-form {
-                padding: 2rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .contact-item {
-                padding: 1rem;
-            }
-
-            .contact-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .contact-section {
-                padding: 60px 1rem 40px;
-            }
-
-            .contact-info,
-            .contact-form {
-                padding: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .whatsapp-cta {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .contact-info,
-        .contact-form {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .contact-item {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .contact-item:nth-child(1) { animation-delay: 0.1s; }
-        .contact-item:nth-child(2) { animation-delay: 0.2s; }
-        .contact-item:nth-child(3) { animation-delay: 0.3s; }
-        .contact-item:nth-child(4) { animation-delay: 0.4s; }
-
-        .whatsapp-cta {
-            animation: fadeInUp 0.8s ease-out forwards;
-            animation-delay: 0.5s;
-        }
-    </style>
-</head>
-<body>
-    <!-- Contact Section -->
-    <section class="contact-section" id="contato">
-        <div class="contact-container">
-            <h2 class="section-title">Fale Conosco</h2>
-            <p class="section-subtitle">
-                Entre em contato conosco e descubra como a Aplenty pode transformar seus resultados através da educação comportamental.
-            </p>
-
-            <div class="contact-content">
-                <!-- Contact Information -->
-                <div class="contact-info">
-                    <h3>Informações de Contato</h3>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h4>E-mail</h4>
-                            <p><a href="mailto:aplentytreinamentos@gmail.com">aplentytreinamentos@gmail.com</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-details">
-                            <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/5534999326520" target="_blank">(34) 99932-6520</a></p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">⏰</div>
-                        <div class="contact-details">
-                            <h4>Horário de Atendimento</h4>
-                            <p>Segunda a sexta: 9h às 18h<br>Resposta em até 24 horas</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">🎯</div>
-                        <div class="contact-details">
-                            <h4>Especialidades</h4>
-                            <p>Assessment Comportamental<br>Desenvolvimento Humano<br>Treinamento Corporativo</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form">
-                    <h3>Envie sua Mensagem</h3>
-                    <form id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="nome">Nome Completo *</label>
-                                <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-mail *</label>
-                                <input type="email" id="email" name="email" required placeholder="seu@email.com">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="telefone">Telefone/WhatsApp</label>
-                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
-                            </div>
-                            <div class="form-group">
-                                <label for="interesse">Interesse</label>
-                                <select id="interesse" name="interesse">
-                                    <option value="">Selecione uma opção</option>
-                                    <option value="curso">Curso Gravado</option>
-                                    <option value="avaliacao">Avaliação de Perfil</option>
-                                    <option value="palestra">Palestras</option>
-                                    <option value="consultoria">Consultoria</option>
-                                    <option value="outro">Outro</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="empresa">Empresa (opcional)</label>
-                            <input type="text" id="empresa" name="empresa" placeholder="Nome da sua empresa">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mensagem">Mensagem *</label>
-                            <textarea id="mensagem" name="mensagem" required placeholder="Conte-nos mais sobre seu interesse e como podemos ajudar..."></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn">Enviar Mensagem</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- WhatsApp CTA -->
-            <div class="whatsapp-cta">
-                <h3>Prefere conversar no WhatsApp?</h3>
-                <p>Clique no botão abaixo e fale diretamente conosco. Resposta rápida garantida!</p>
-                <a href="https://wa.me/5534999326520?text=Olá! Gostaria de saber mais sobre os serviços da Aplenty." target="_blank" class="whatsapp-btn">
-                     Chamar no WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const nome = formData.get('nome');
-            const email = formData.get('email');
-            const telefone = formData.get('telefone');
-            const interesse = formData.get('interesse');
-            const empresa = formData.get('empresa');
-            const mensagem = formData.get('mensagem');
-
-            // Create WhatsApp message
-            const whatsappMessage = `*Nova mensagem do site Aplenty*
-            
-*Nome:* ${nome}
-*E-mail:* ${email}
-${telefone ? `*Telefone:* ${telefone}` : ''}
-${empresa ? `*Empresa:* ${empresa}` : ''}
-${interesse ? `*Interesse:* ${interesse}` : ''}
-
-*Mensagem:*
-${mensagem}`;
-
-            // Open WhatsApp with the message
-            const whatsappURL = `https://wa.me/5534999326520?text=${encodeURIComponent(whatsappMessage)}`;
-            window.open(whatsappURL, '_blank');
-
-            // Show success message
-            alert('Redirecionando para WhatsApp! Sua mensagem será enviada automaticamente.');
-
-            // Reset form
-            this.reset();
-        });
-
-        // Phone number formatting
-        document.getElementById('telefone').addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
-            value = value.replace(/(\d)(\d{4})$/, '$1-$2');
-            e.target.value = value;
-        });
-
-        // Form validation styling
-        const inputs = document.querySelectorAll('input, select, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.hasAttribute('required') && !this.value) {
-                    this.style.borderColor = '#ff6b6b';
-                } else {
-                    this.style.borderColor = 'rgba(212, 175, 55, 0.2)';
-                }
-            });
-
-            input.addEventListener('focus', function() {
-                this.style.borderColor = '#D4AF37';
-            });
-        });
-    </script>
-</body>
-</html>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section footer-logo-section">
-                <div class="logo-container" style="margin-bottom: 2rem;">
-                    <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">
-                    <div class="brand-text">APLENTY</div>
-                </div>
-                <p style="color: rgba(249, 249, 249, 0.8); font-size: 14px; line-height: 1.6;">
-                    Especializados em educação comportamental, desenvolvemos pessoas e potencializamos resultados através do conhecimento dos perfis comportamentais.
-                </p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Serviços</h3>
-                <ul>
-                    <li><a href="#curso">Curso Gravado</a></li>
-                    <li><a href="#avaliacao">Avaliação de Perfil</a></li>
-                    <li><a href="#palestra">Palestras</a></li>
-                    <li><a href="#consultoria">Consultoria</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Empresa</h3>
-                <ul>
-                    <li><a href="#sobre">Sobre Nós</a></li>
-                    <li><a href="#metodologia">Metodologia</a></li>
-                    <li><a href="#cases">Cases de Sucesso</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Suporte</h3>
-                <ul>
-                    <li><a href="#area-aluno">Área do Aluno</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#ajuda">Central de Ajuda</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="#termos">Termos de Uso</a></li>
-                    <li><a href="#privacidade">Política de Privacidade</a></li>
-                    <li><a href="#cookies">Cookies</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <div class="footer-contact">
-                    <span class="footer-contact-icon">📧</span>
-                    <div class="footer-contact-text">
-                        <div class="footer-contact-label">E-mail:</div>
-                        <div>aplentytreinamentos@gmail.com</div>
-                    </div>
-                </div>
-                <div class="footer-contact">
-                    <span class="footer-contact-icon">📱</span>
-                    <div class="footer-contact-text">
-                        <div class="footer-contact-label">WhatsApp:</div>
-                        <div>(34) 99932-6520</div>
-                    </div>
-                </div>
-                <div class="footer-contact">
-                    <span class="footer-contact-icon">⏰</span>
-                    <div class="footer-contact-text">
-                        <div class="footer-contact-label">Atendimento:</div>
-                        <div>Segunda a sexta, das 9h às 18h</div>
-                    </div>
-                </div>
-                
-                <div class="social-icons" style="margin-top: 2rem;">
-                    <a href="#" class="social-icon" title="LinkedIn">💼</a>
-                    <a href="#" class="social-icon" title="Instagram">📷</a>
-                    <a href="#" class="social-icon" title="YouTube">🎥</a>
-                    <a href="#" class="social-icon" title="WhatsApp">💬</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-copyright">© 2025 Aplenty Educação Ltda - Todos os Direitos Reservados</div>
-            <div class="footer-links">
-                <a href="#privacidade">Política de Privacidade</a>
-                <a href="#termos">Termos de Uso</a>
-                <a href="#cookies">Cookies</a>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Mobile menu toggle
@@ -2047,10 +750,12 @@ ${mensagem}`;
         // Header background on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(13, 45, 44, 0.98)';
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(11, 20, 38, 0.98)';
+                header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.12)';
             } else {
-                header.style.background = 'rgba(13, 45, 44, 0.95)';
+                header.style.background = 'rgba(11, 20, 38, 0.95)';
+                header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)';
             }
         });
 
@@ -2068,32 +773,10 @@ ${mensagem}`;
         // WhatsApp contact function
         function openWhatsApp() {
             const phoneNumber = '5534999326520';
-            const message = 'Olá! Gostaria de saber mais sobre os serviços da Aplenty.';
+            const message = 'Olá! Gostaria de saber mais sobre o Aplenty Experience.';
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappURL, '_blank');
         }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Close dropdown on click outside
-        document.addEventListener('click', (e) => {
-            const produtosMenu = document.querySelector('.produtos-menu');
-            if (!produtosMenu.contains(e.target)) {
-                produtosMenu.blur();
-            }
-        });
     </script>
 </body>
 </html>
