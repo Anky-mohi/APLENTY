@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0B1426;
+            background-color: #0d2d2c;
             color: #FFFFFF;
             overflow-x: hidden;
             line-height: 1.5;
@@ -23,7 +23,7 @@
 
         /* Header Styles */
         .header {
-            background-color: rgba(11, 20, 38, 0.95);
+            background: rgba(13, 45, 44, 0.95);
             backdrop-filter: blur(20px);
             padding: 0;
             position: fixed;
@@ -106,7 +106,7 @@
             position: absolute;
             top: 100%;
             left: -20px;
-            background: rgba(11, 20, 38, 0.98);
+            background: #0d2d2c;
             backdrop-filter: blur(30px);
             list-style: none;
             padding: 20px 0;
@@ -261,8 +261,9 @@ ease;
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(11,20,38,0.95), rgba(26,58,90,0.9)), 
-                        url("/WhatsApp\ Image\ 2025-08-19\ at\ 7.09.31\ PM.jpeg") center/cover no-repeat;
+           background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
+            url("/WhatsApp\ Image\ 2025-08-19\ at\ 7.09.31\ PM.jpeg") center/cover no-repeat;
+
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -470,7 +471,7 @@ ease;
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background: rgba(11, 20, 38, 0.98);
+                        background: rgb(13 46 44);
                 backdrop-filter: blur(30px);
                 flex-direction: column;
                 padding: 32px 24px;
@@ -772,16 +773,7 @@ ease;
         });
 
         // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 50) {
-                header.style.background = 'rgba(11, 20, 38, 0.98)';
-                header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.12)';
-            } else {
-                header.style.background = 'rgba(11, 20, 38, 0.95)';
-                header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.08)';
-            }
-        });
+       
 
         // Smooth scrolling function
         function scrollToSection(sectionId) {
@@ -813,86 +805,85 @@ ease;
 
 
 
+<title>A Fundadora</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+  }
 
+  .founder-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* ✅ text anchored left */
+    background: url('/Fundadora.webp') no-repeat right center;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+  }
 
- 
-  <title>A Fundadora</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #fff;
-    }
+  /* ✅ same container logic as footer */
+  .founder-container {
+    width: 100%;
+    max-width: 1200px; /* keeps same width as footer */
+    margin: 0 auto;
+    padding: 60px 20px; /* consistent padding left/right */
+  }
 
+  .founder-content {
+    max-width: 600px;
+  }
+
+  .founder-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .founder-content p {
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .founder-content strong {
+    color: #ceae5c;
+  }
+
+  .founder-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #ceae5c;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .founder-btn:hover {
+    background: linear-gradient(90deg, #ceae5c,#ceae5c);
+  }
+
+  /* ✅ Mobile */
+  @media (max-width: 768px) {
     .founder-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: url('/Fundadora.webp') no-repeat right center;
-  background-size: cover;
-  background-position: 0% center; /* <-- add this */
-  color: white;
-  padding: 10px 10%;
-  min-height: 100vh;
-}
-
+      background-position: center;
+    }
 
     .founder-content {
-      max-width: 50%;
-      
-      padding: 20px 30px;
+      max-width: 100%;
+      background: rgba(0,0,0,0.6); /* optional readability */
+      padding: 20px;
       border-radius: 10px;
     }
+  }
+</style>
 
-    .founder-content h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .founder-content p {
-      line-height: 1.7;
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-    }
-
-    .founder-content strong {
-      color: #ceae5c; /* highlight like screenshot */
-    }
-
-    .founder-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      background: #ceae5c;
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .founder-btn:hover {
-      background: linear-gradient(90deg, #ceae5c,#ceae5c);
-    }
-
-    @media (max-width: 768px) {
-      .founder-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 50px 20px;
-        background-position: center;
-      }
-
-      .founder-content {
-        max-width: 100%;
-        background: rgba(0, 0, 0, 0.6);
-      }
-    }
-  </style>
-
-
-  <section class="founder-section">
+<section class="founder-section">
+  <div class="founder-container">
     <div class="founder-content">
       <h2>A fundadora</h2>
       <p>
@@ -906,9 +897,8 @@ ease;
       </p>
       <a href="#" class="founder-btn">Saiba Mais</a>
     </div>
-  </section>
-
-
+  </div>
+</section>
 
 
 
@@ -941,13 +931,13 @@ ease;
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0B1426;
+            background-color: #0d2d2c;
             color: #FFFFFF;
         }
 
         /* Footer Styles */
         .footer {
-            background-color: #0B1426;
+            background-color: #0d2d2c;
             padding: 60px 0 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -993,7 +983,7 @@ ease;
 
         .footer-brand {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 23px;
     font-weight: 500;
     color: #ceae5c;
     letter-spacing: 1px;
@@ -1007,8 +997,8 @@ ease;
         }
 
         .footer-column h3 {
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 400;
             color: #FFFFFF;
             margin-bottom: 24px;
             text-transform: uppercase;
@@ -1019,14 +1009,14 @@ ease;
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            
         }
 
         .footer-column ul li a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 400;
+            font-size: 16px;
+            font-weight: 300;
             transition: all 0.2s ease;
         }
 
@@ -1037,7 +1027,7 @@ ease;
         .footer-contact {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 10px;
         }
 
         .contact-item {
@@ -1078,8 +1068,8 @@ ease;
         }
 
         .footer-copyright {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
+                font-size: 15px;
+    font-weight: 600;
         }
 
         .footer-links {
@@ -1088,10 +1078,11 @@ ease;
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
+            color: white;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
             transition: all 0.2s ease;
+            font-weight: 600;
         }
 
         .footer-links a:hover {
