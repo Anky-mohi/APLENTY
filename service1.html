@@ -657,14 +657,21 @@ ease;
   width: 35px;
   height: 35px;
 }
+.home-link {
+    text-decoration: none; /* removes underline */
+    color: inherit; /* makes text inherit color instead of blue */
+    display: flex; /* keeps logo + text aligned */
+    align-items: center; 
+}
+
 </style>
 
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
             <div class="logo-container">
-                <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">
-                <div class="brand-text">APLENTY</div>
+               <a class="home-link" href="/"> <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">  </a> 
+                <a class="home-link" href="/"> <div class="brand-text">APLENTY</div>    </a>
             </div>
             
             <nav>
@@ -1651,7 +1658,7 @@ ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #FFFFFF;
+            color: red;
             text-decoration: none;
             transition: all 0.2s ease;
         }
