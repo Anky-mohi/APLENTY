@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplenty - Educação Comportamental</title>
+    <title>LV Fórmulas - Emagreça com Saúde</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
         * {
             margin: 0;
             padding: 0;
@@ -14,3217 +13,843 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d2d2c;
-            color: #FFFFFF;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
             overflow-x: hidden;
-            line-height: 1.5;
         }
 
-        /* Header Styles */
+        /* Header */
         .header {
-            background: rgba(13, 45, 44, 0.95);
-            backdrop-filter: blur(20px);
-            padding: 0;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            height: 90px;
+            padding: 0 2rem;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .site-logo {
-            height: 59px;
-            width: auto;
-        }
-
-        .brand-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 23px;
-    font-weight: 500;
-    color: #ceae5c;
-    
-    margin-left: -15px;
-    margin-top: 9px;
-}
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .nav-menu li a {
-            color: #FFFFFF;
-            text-decoration: none;
-            font-weight: 300;
-            font-size: 19px;
-            transition: all 0.2s ease;
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .nav-menu li a:hover {
-            color: #ceae5c;
-        }
-
-        .produtos-menu {
-            position: relative;
-        }
-
-        .produtos-menu > a::after {
-            content: '▼';
-            font-size: 8px;
-            margin-left: 6px;
-            color: #ceae5c;
-            transition: transform 0.2s ease;
-        }
-
-        .produtos-menu:hover > a::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: -20px;
-            background: #0d2d2c;
-            backdrop-filter: blur(30px);
-            list-style: none;
-            padding: 20px 0;
-            min-width: 280px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            margin-top: 8px;
-        }
-
-        .produtos-menu:hover .dropdown {
-            display: block;
-            animation: fadeInDown 0.2s ease;
-        }
-
-        .dropdown-category {
-            margin-bottom: 20px;
-            padding: 0 20px;
-        }
-
-        .category-title {
-            font-size: 10px;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .category-items {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .category-items a {
-            display: block;
-            padding: 8px 0;
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            font-weight: 400;
-        }
-
-        .category-items a:hover {
-            color: #ceae5c;
-            padding-left: 8px;
-        }
-
-        .sou-aluno {
-    /* background: linear-gradient(135deg, #ffffff, #ceae5c); */
-    color: #ccaa59 !important;
-    padding: 8px 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 13px;
-    transition: all 0.2s 
-ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-        .sou-aluno:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
-        }
-
-        .nav-separator {
-            color: rgba(255, 255, 255, 0.3);
-            font-weight: 300;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-        }
-
-        .sou-aluno-menu {
-            position: relative;
-        }
-
-        .sou-aluno-menu > a::after {
-            content: '▼';
-            font-size: 8px;
-            margin-left: 6px;
-            color: #ccaa59 ;
-            transition: transform 0.2s ease;
-        }
-
-        .sou-aluno-menu:hover > a::after {
-            transform: rotate(180deg);
-        }
-
-        .sou-aluno-dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: rgba(11, 20, 38, 0.98);
-            backdrop-filter: blur(30px);
-            list-style: none;
-            padding: 20px 0;
-            min-width: 200px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            margin-top: 8px;
-        }
-
-        .sou-aluno-menu:hover .sou-aluno-dropdown {
-            display: block;
-            animation: fadeInDown 0.2s ease;
-        }
-
-        .sou-aluno-dropdown li {
-            padding: 0 20px;
-            margin-bottom: 8px;
-        }
-
-        .sou-aluno-dropdown li:last-child {
-            margin-bottom: 0;
-        }
-
-        .sou-aluno-dropdown a {
-            display: block;
-            padding: 8px 0;
-            color: #ceae5c;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: none;
-            letter-spacing: 0;
-            background: none !important;
-            border-radius: 0 !important;
-        }
-
-        .sou-aluno-dropdown a:hover {
-            color: #FFFFFF;
-            padding-left: 8px;
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #FFFFFF;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-           background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
-            url("/WhatsApp\ Image\ 2025-08-19\ at\ 7.09.31\ PM.jpeg") center/cover no-repeat;
-
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 70px 40px 0;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.08), transparent 60%);
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            position: relative;
-            z-index: 2;
-            padding-top: 60px;
-        }
-
-        .prime-logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 500;
-            margin-bottom: 24px;
-            color: #FFFFFF;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 48px;
-            line-height: 1.5;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-highlight {
-            color: #D4AF37;
-            font-weight: 600;
-        }
-
-        .hero-info {
+        .nav-menu {
             display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-bottom: 48px;
-            flex-wrap: wrap;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: transparent;
-            padding: 0;
-            border-radius: 0;
-            backdrop-filter: none;
-            border: none;
-            transition: none;
-            min-width: auto;
-        }
-
-        .info-item:hover {
-            transform: none;
-            border-color: transparent;
-            background: transparent;
-        }
-
-        .info-icon {
-            width: 44px;
-            height: 44px;
-            
-    
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            flex-shrink: 0;
-            
-        }
-
-        .info-text {
-            text-align: left;
-            flex: 1;
-        }
-
-        .info-label {
-            font-size: 20px;
-            opacity: 1;
-            margin-bottom: 2px;
-            text-transform: none;
-            letter-spacing: 0;
-            font-weight: 400;
-            color: #FFFFFF;
-        }
-
-        .info-value {
-            font-size: 20px;
-            font-weight: 400;
-            color: #FFFFFF;
-        }
-
-        .info-separator {
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 18px;
-            font-weight: 300;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ceae5c, #ceae5c);
-            color: #0B1426;
-            padding: 18px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: 'Inter', sans-serif;
-            text-transform: none;
-            letter-spacing: 0;
-            min-width: 180px;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #FFFFFF;
-            padding: 18px 40px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            backdrop-filter: blur(10px);
-            font-family: 'Inter', sans-serif;
-            text-transform: none;
-            letter-spacing: 0;
-            min-width: 180px;
-        }
-
-        .btn-secondary:hover {
-            border-color: #D4AF37;
-            color: #D4AF37;
-            transform: translateY(-2px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .nav-container {
-                padding: 0 24px;
-            }
-            
-            .hero {
-                padding: 70px 24px 0;
-            }
-            
-            .hero-info {
-                gap: 24px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                        background: rgb(13 46 44);
-                backdrop-filter: blur(30px);
-                flex-direction: column;
-                padding: 32px 24px;
-                gap: 24px;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                height: calc(100vh - 70px);
-                overflow-y: auto;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-separator {
-                display: none;
-            }
-
-            .info-separator {
-                display: none;
-            }
-
-            .dropdown {
-                position: static;
-                display: block;
-                background: rgba(255, 255, 255, 0.05);
-                border: none;
-                border-radius: 8px;
-                margin: 8px 0 0 0;
-                box-shadow: none;
-            }
-
-            .sou-aluno-dropdown {
-                position: static;
-                display: block;
-                background: rgba(255, 255, 255, 0.05);
-                border: none;
-                border-radius: 8px;
-                margin: 8px 0 0 0;
-                box-shadow: none;
-            }
-
-            .sou-aluno-menu > a::after {
-                display: none;
-            }
-
-            .produtos-menu > a::after {
-                display: none;
-            }
-
-            .prime-logo {
-                font-size: 1.8rem;
-            }
-
-            .hero-title {
-                font-size: 2.4rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 32px;
-            }
-
-            .hero-info {
-                
-                gap: 16px;
-                margin-bottom: 32px;
-            }
-
-            .info-item {
-                min-width: auto;
-                padding: 12px 16px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                padding: 14px 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                padding: 0 16px;
-            }
-
-            .hero {
-                padding: 70px 16px 0;
-            }
-
-            .prime-logo {
-                font-size: 1.6rem;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-8px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-content > * {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .hero-title {
-            animation-delay: 0.1s;
-        }
-
-        .hero-subtitle {
-            animation-delay: 0.2s;
-        }
-
-        .hero-info {
-            animation-delay: 0.3s;
-        }
-
-        .hero-buttons {
-            animation-delay: 0.4s;
-        }
-    </style>
-</head>
-<body>
-    <!-- WhatsApp Floating Icon Button -->
-<a href="https://wa.me/+5534999326520?text=Hello!%20I%20am%20interested%20in%20your%20services." 
-   class="whatsapp-float" target="_blank">
-   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-</a>
-
-<style>
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
-
-.whatsapp-float:hover {
-  background-color: #20b955;
-}
-
-.whatsapp-float img {
-  width: 35px;
-  height: 35px;
-}
-</style>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="nav-container">
-            <div href="/" class="logo-container">
-                <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">
-                <div href="/" class="brand-text">APLENTY</div>
-            </div>
-            
-            <nav>
-                <ul class="nav-menu" id="navMenu">
-                    <li class="produtos-menu">
-                        <a href="#servicos">Produtos</a>
-                        <ul class="dropdown">
-                            <li class="dropdown-category">
-                                <span class="category-title">PARA EMPRESAS</span>
-                                <div class="category-items">
-                                    <a href="/service1.html">SSK para equipes</a>
-                                    <a href="#ll5-lideres">LL5 Líderes</a>
-                                    <a href="#consultoria">Consultoria</a>
-                                    <a href="#palestras">Palestras</a>
-                                    <a href="#contratacao">Contratação estratégica</a>
-                                    <a href="#pgr-nr01">PGR NR01</a>
-                                </div>
-                            </li>
-                            <li class="dropdown-category">
-                                <span class="category-title">PARA PESSOAS</span>
-                                <div class="category-items">
-                                    <a href="#desenvolvimento">Desenvolvimento pessoal sistêmico</a>
-                                    <a href="#destrave-se">Destrave se</a>
-                                    <a href="#chp">CHP</a>
-                                    <a href="#mda">MDA</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#sobre">Sobre nós</a></li>
-                    <li><a href="#cases">Cases</a></li>
-                    
-                    <li><a href="#atendimento">Atendimento</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                   
-                    
-                </ul>
-                <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <main class="hero">
-        <div class="hero-content">
-            <div class="prime-logo">APLENTY</div>
-            <h1 class="hero-title">EXPERIENCE</h1>
-            <p class="hero-subtitle">
-                Em 2 dias, descubra como <span class="hero-highlight">As 5 Inteligências em Vendas</span> podem<br>
-                <span class="hero-highlight">transformar os resultados do seu negócio</span>
-            </p>
-            
-            <div class="hero-info">
-                <div class="info-item">
-                    <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none"><path d="M10.2681 34.1221C6.49727 35.2533 4.16602 36.8158 4.16602 38.5419C4.16602 41.9939 13.4931 44.7919 24.9994 44.7919C36.5056 44.7919 45.8327 41.9939 45.8327 38.5419C45.8327 36.8158 43.5004 35.2533 39.7306 34.1221" stroke="white" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M24.9997 36.4584C24.9997 36.4584 38.5413 27.6084 38.5413 17.3772C38.5413 10.0813 32.4788 4.16675 24.9997 4.16675C17.5205 4.16675 11.458 10.0813 11.458 17.3772C11.458 27.6084 24.9997 36.4584 24.9997 36.4584Z" stroke="white" stroke-width="4.16667" stroke-linejoin="round"></path><path d="M24.9993 22.9168C26.3807 22.9168 27.7054 22.3681 28.6822 21.3913C29.6589 20.4146 30.2077 19.0898 30.2077 17.7085C30.2077 16.3271 29.6589 15.0024 28.6822 14.0256C27.7054 13.0489 26.3807 12.5001 24.9993 12.5001C23.618 12.5001 22.2933 13.0489 21.3165 14.0256C20.3397 15.0024 19.791 16.3271 19.791 17.7085C19.791 19.0898 20.3397 20.4146 21.3165 21.3913C22.2933 22.3681 23.618 22.9168 24.9993 22.9168Z" stroke="white" stroke-width="4.16667" stroke-linejoin="round"></path></svg></div>
-                    <div class="info-text">
-                        <div class="info-label">Local:</div>
-                        <div class="info-value">São Paulo/SP</div>
-                    </div>
-                </div>
-                
-                <div class="info-separator">|</div>
-                
-                <div class="info-item">
-                    <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none"><path d="M25.0006 21.9842C23.001 21.9842 21.0832 21.1898 19.6693 19.7758C18.2553 18.3619 17.4609 16.4441 17.4609 14.4445C17.4609 12.4448 18.2553 10.5271 19.6693 9.11311C21.0832 7.69914 23.001 6.90479 25.0006 6.90479C27.0003 6.90479 28.918 7.69914 30.332 9.11311C31.7459 10.5271 32.5403 12.4448 32.5403 14.4445C32.5403 16.4441 31.7459 18.3619 30.332 19.7758C28.918 21.1898 27.0003 21.9842 25.0006 21.9842ZM25.0006 9.92066C22.4974 9.92066 20.4768 11.9413 20.4768 14.4445C20.4768 16.9476 22.4974 18.9683 25.0006 18.9683C27.5038 18.9683 29.5244 16.9476 29.5244 14.4445C29.5244 11.9413 27.5038 9.92066 25.0006 9.92066Z" fill="white"></path><path d="M43.0951 34.0476C42.2507 34.0476 41.5872 33.3842 41.5872 32.5397C41.5872 31.6953 42.2507 31.0318 43.0951 31.0318C43.9396 31.0318 44.6031 30.3683 44.6031 29.5238C44.6031 27.5242 43.8087 25.6064 42.3948 24.1925C40.9808 22.7785 39.063 21.9842 37.0634 21.9842H34.0475C33.2031 21.9842 32.5396 21.3207 32.5396 20.4762C32.5396 19.6318 33.2031 18.9683 34.0475 18.9683C36.5507 18.9683 38.5713 16.9476 38.5713 14.4445C38.5713 11.9413 36.5507 9.92066 34.0475 9.92066C33.2031 9.92066 32.5396 9.25717 32.5396 8.41272C32.5396 7.56828 33.2031 6.90479 34.0475 6.90479C36.0472 6.90479 37.9649 7.69914 39.3789 9.11311C40.7929 10.5271 41.5872 12.4448 41.5872 14.4445C41.5872 16.3143 40.9237 18.0032 39.7777 19.3302C44.2713 20.5365 47.619 24.6381 47.619 29.5238C47.619 32.027 45.5983 34.0476 43.0951 34.0476ZM6.90467 34.0476C4.40149 34.0476 2.38086 32.027 2.38086 29.5238C2.38086 24.6381 5.69832 20.5365 10.2221 19.3302C9.10626 18.0032 8.41261 16.3143 8.41261 14.4445C8.41261 12.4448 9.20696 10.5271 10.6209 9.11311C12.0349 7.69914 13.9526 6.90479 15.9523 6.90479C16.7967 6.90479 17.4602 7.56828 17.4602 8.41272C17.4602 9.25717 16.7967 9.92066 15.9523 9.92066C13.4491 9.92066 11.4285 11.9413 11.4285 14.4445C11.4285 16.9476 13.4491 18.9683 15.9523 18.9683C16.7967 18.9683 17.4602 19.6318 17.4602 20.4762C17.4602 21.3207 16.7967 21.9842 15.9523 21.9842H12.9364C10.9368 21.9842 9.01902 22.7785 7.60505 24.1925C6.19109 25.6064 5.39673 27.5242 5.39673 29.5238C5.39673 30.3683 6.06022 31.0318 6.90467 31.0318C7.74911 31.0318 8.41261 31.6953 8.41261 32.5397C8.41261 33.3842 7.74911 34.0476 6.90467 34.0476ZM34.0475 43.0953H15.9523C13.4491 43.0953 11.4285 41.0746 11.4285 38.5715V35.5556C11.4285 29.7349 16.1634 25 21.984 25H28.0158C33.8364 25 38.5713 29.7349 38.5713 35.5556V38.5715C38.5713 41.0746 36.5507 43.0953 34.0475 43.0953ZM21.984 28.0159C19.9844 28.0159 18.0666 28.8103 16.6527 30.2242C15.2387 31.6382 14.4444 33.5559 14.4444 35.5556V38.5715C14.4444 39.4159 15.1078 40.0794 15.9523 40.0794H34.0475C34.892 40.0794 35.5555 39.4159 35.5555 38.5715V35.5556C35.5555 33.5559 34.7611 31.6382 33.3471 30.2242C31.9332 28.8103 30.0154 28.0159 28.0158 28.0159H21.984Z" fill="white"></path></svg></div>
-                    <div class="info-text">
-                        <div class="info-label">Modelo:</div>
-                        <div class="info-value">Presencial</div>
-                    </div>
-                </div>
-                
-                <div class="info-separator">|</div>
-                
-                <div class="info-item">
-                    <div class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none"><path d="M39.5833 10.4166H10.4167C8.11548 10.4166 6.25 12.2821 6.25 14.5833V41.6666C6.25 43.9678 8.11548 45.8333 10.4167 45.8333H39.5833C41.8845 45.8333 43.75 43.9678 43.75 41.6666V14.5833C43.75 12.2821 41.8845 10.4166 39.5833 10.4166Z" stroke="white" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5833 4.16663V10.4166M35.4167 4.16663V10.4166M6.25 20.8333H43.75" stroke="white" stroke-width="4.16667" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
-                    <div class="info-text">
-                        <div class="info-label">Próxima turma:</div>
-                        <div class="info-value">24/09 e 25/09</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="hero-buttons">
-                <button class="btn-primary" onclick="openWhatsApp()">Quero participar</button>
-                <button class="btn-secondary" onclick="openWhatsApp()">Quero saber mais</button>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileToggle.textContent = navMenu.classList.contains('active') ? '×' : '☰';
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileToggle.textContent = '☰';
-            });
-        });
-
-        // Header background on scroll
-       
-
-        // Smooth scrolling function
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-
-        // WhatsApp contact function
-        function openWhatsApp() {
-            const phoneNumber = '5534999326520';
-            const message = 'Olá! Gostaria de saber mais sobre o Aplenty Experience.';
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
-        }
-    </script>
-
-
-
-
-
-
-
-
-
-
-<title>A Fundadora</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #fff;
-  }
-
-  .founder-section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* ✅ text anchored left */
-    background: url('/Fundadora.webp') no-repeat right center;
-    background-size: cover;
-    color: white;
-    min-height: 100vh;
-  }
-
-  /* ✅ same container logic as footer */
-  .founder-container {
-    width: 100%;
-    max-width: 1200px; /* keeps same width as footer */
-    margin: 0 auto;
-    padding: 60px 20px; /* consistent padding left/right */
-  }
-
-  .founder-content {
-    max-width: 600px;
-  }
-
-  .founder-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-  }
-
-  .founder-content p {
-    line-height: 1.7;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-  }
-
-  .founder-content strong {
-    color: #ceae5c;
-  }
-
-  .founder-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    background: #ceae5c;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-
-  .founder-btn:hover {
-    background: linear-gradient(90deg, #ceae5c,#ceae5c);
-  }
-
-  /* ✅ Mobile */
-  @media (max-width: 768px) {
-    .founder-section {
-      background-position: center;
-    }
-
-    .founder-content {
-      max-width: 100%;
-      background: rgba(0,0,0,0.6); /* optional readability */
-      padding: 20px;
-      border-radius: 10px;
-    }
-  }
-</style>
-
-
-<section class="founder-section">
-  <div class="founder-container">
-    <div class="founder-content">
-      <h2>Sobre nós</h2>
-      <p>
-        Após se tornar <strong>campeã de vendas</strong> de uma das maiores empresas do mundo com menos da metade das propostas dos concorrentes, Dani Martins decidiu transformar seu método em um movimento: ensinar pessoas comuns a alcançarem resultados extraordinários, combinando <strong>ciência e propósito</strong>.
-      </p>
-      <p>
-        Ao longo de seus 20 anos de carreira, Dani conquistou 18 prêmios nacionais e internacionais, <strong>ultrapassou R$170 milhões em vendas</strong> e hoje é sócia de grandes nomes, como Flávio Augusto, Caio Carneiro e Joel Jota.
-      </p>
-      <p>
-        Para saber mais sobre a sua trajetória, clique no botão abaixo:
-      </p>
-     
-      
-      <p>
-        A <strong>APLENTY</strong> nasceu com um propósito ousado de elevar o desempenho humano pessoal e organizacional, desenvolvendo uma mentalidade de crescimento consistente.
-      </p>
-      <p>
-        Nossa missão é transformar <strong>pessoas e organizações</strong>, através da educação emocional, comportamental e corporativa, para contribuírem de forma abundante com o mundo.
-      </p>
-
-      <h3>Valores</h3>
-      <ul class="values-list">
-        <li><strong>1. Foco</strong> – Concentramos energia no que realmente gera impacto e elimina ruídos</li>
-        <li><strong>2. Servir</strong> – Servimos com dedicação e presença emocional</li>
-        <li><strong>3. Cliente</strong> – Compromisso real com a transformação de nossos clientes</li>
-        <li><strong>4. Excelência</strong> – Fazer sempre o melhor em tudo</li>
-        <li><strong>5. Educação</strong> – O conhecimento e a ação são a chave para evolução</li>
-        <li><strong>6. Confiança</strong> – Agir com transparência, ética, respeito e responsabilidade</li>
-        <li><strong>7. Espiritualidade</strong> – O sentido que une mentalidade e força</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-
-        /* Footer Styles */
-        .footer {
-            background-color: #0d2d2c;
-            padding: 60px 0 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 200px 1fr 1fr 1fr 1fr 300px;
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .footer-logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 0;
-        }
-
-        .footer-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: #ceae5c;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #0B1426;
-            font-size: 18px;
-        }
-
-        .footer-brand {
-    font-family: 'Inter', sans-serif;
-    font-size: 23px;
-    font-weight: 500;
-    color: #ceae5c;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    margin-left: -10px;
-}
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer-column h3 {
-            font-size: 16px;
-            font-weight: 400;
-            color: #FFFFFF;
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-column ul {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            
+            gap: 2rem;
         }
 
-        .footer-column ul li a {
-            color: rgba(255, 255, 255, 0.7);
+        .nav-menu a {
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 300;
-            transition: all 0.2s ease;
-        }
-
-        .footer-column ul li a:hover {
-            color: #ceae5c;
-        }
-
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .contact-icon {
-            width: 18px;
-            height: 18px;
-            color: #ceae5c;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        .contact-text {
-            flex: 1;
-        }
-
-        .contact-label {
-            font-weight: 600;
-            color: #FFFFFF;
-            margin-bottom: 2px;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-copyright {
-                font-size: 15px;
-    font-weight: 600;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            transition: all 0.2s ease;
-            font-weight: 600;
-        }
-
-        .footer-links a:hover {
-            color: #ceae5c;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-link {
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: red;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .social-link:hover {
-            background: #ceae5c;
-            color: #0B1426;
-            transform: translateY(-2px);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1200px) {
-            .footer-content {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 40px;
-            }
-            
-            .footer-contact {
-                grid-column: 1 / -1;
-                margin-top: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .footer-container {
-                padding: 0 20px;
-            }
-
-            .footer {
-                padding: 40px 0 30px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: left;
-            }
-
-            .footer-logo-section {
-                align-items: center;
-                text-align: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-        }
-
-
-        @media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr); /* two columns instead of full width */
-        gap: 20px;
-    }
-
-    .footer-column {
-        text-align: left;
-    }
-
-    .footer-logo-section {
-        grid-column: 1 / -1; /* logo takes full width */
-        margin-bottom: 20px;
-        align-items: center;
-    }
-
-    .footer-contact {
-        grid-column: 1 / -1; /* contact full width below */
-    }
-}
-
-    </style>
-
-
-<!-- PRIME Method Section -->
-<section class="prime-section">
-    <div class="prime-container">
-        <div class="prime-content">
-            <div class="prime-text">
-                <div class="prime-logo-text">
-                     <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo"><br>
-                    <span class="prime-highlight">APLENTY</span>
-                    <sup>®</sup>
-                </div>
-                <h2 class="prime-title">
-                    O único método do mundo que integra <br>
-                    <span class="highlight-text">técnicas de vendas baseadas em ciência,<br>
-                    comportamento humano e espiritualidade</span><br>
-                    para gerar <span class="highlight-text">crescimento exponencial e<br>
-                    consistente.</span>
-                </h2>
-            </div>
-            
-            <div class="prime-carousel-container">
-                <div class="prime-carousel" id="primeCarousel">
-                    <!-- Slide 1: Inteligência Estratégica -->
-                    <div class="prime-slide active">
-                        <div class="slide-image">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face" alt="Profissional estratégico">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
-                            <h3>Inteligência Estratégica:</h3>
-                            <p>Defina metas claras e coloque em prática um plano de ação estratégico que leve a sua empresa para o próximo nível.</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 2: Inteligência Emocional -->
-                    <div class="prime-slide">
-                        <div class="slide-image">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=face" alt="Profissional comunicando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
-                            <h3>Inteligência Emocional:</h3>
-                            <p>Desenvolva a capacidade de reconhecer, entender e gerenciar suas próprias emoções e as dos seus clientes para criar conexões genuínas.</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3: Inteligência Comunicacional -->
-                    <div class="prime-slide">
-                        <div class="slide-image">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=400&fit=crop&crop=face" alt="Profissional apresentando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
-                            <h3>Inteligência Comunicacional:</h3>
-                            <p>Aprenda técnicas avançadas de comunicação persuasiva que transformam objeções em oportunidades de fechamento.</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 4: Inteligência Comportamental -->
-                    <div class="prime-slide">
-                        <div class="slide-image">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop&crop=face" alt="Equipe trabalhando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
-                            <h3>Inteligência Comportamental:</h3>
-                            <p>Entenda os diferentes perfis comportamentais dos seus clientes e adapte sua abordagem para maximizar as conversões.</p>
-                        </div>
-                    </div>
-
-                    <!-- Slide 5: Inteligência Espiritual -->
-                    <div class="prime-slide">
-                        <div class="slide-image">
-                            <img src="https://images.unsplash.com/photo-1506629905057-f39b5f2d3400?w=600&h=400&fit=crop&crop=face" alt="Profissional meditando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
-                            </div>
-                            <h3>Inteligência Espiritual:</h3>
-                            <p>Conecte-se com seu propósito maior e desenvolva uma mentalidade de abundância que atrai prosperidade e sucesso sustentável.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation Arrows -->
-                <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <button class="carousel-btn next-btn" onclick="changeSlide(1)">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-
-                <!-- Slide Indicators -->
-                <div class="slide-indicators">
-                    <button class="indicator active" onclick="goToSlide(0)"></button>
-                    <button class="indicator" onclick="goToSlide(1)"></button>
-                    <button class="indicator" onclick="goToSlide(2)"></button>
-                    <button class="indicator" onclick="goToSlide(3)"></button>
-                    <button class="indicator" onclick="goToSlide(4)"></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-.prime-section {
-        background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
-    padding: 120px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.prime-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.3), transparent 50%);
-}
-
-.prime-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.prime-content {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-
-}
-
-.prime-text {
-    color: white;
-}
-
-.prime-logo-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    line-height: 1.1;
-}
-
-.prime-highlight {
-    font-weight: 700;
-    color: #d5bb68;
-    font-size: 3.2rem;
-}
-
-.prime-title {
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.95);
-    margin: 0;
-}
-
-.highlight-text {
-    color: #d5bb68;
-    font-weight: 600;
-}
-
-.prime-carousel-container {
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.prime-carousel {
-    position: relative;
-    width: 100%;
-    height: 350px;
-}
-
-.prime-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-    transform: translateX(100%);
-    display: flex;
-    align-items: center;
-}
-
-.prime-slide.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.prime-slide.prev {
-    transform: translateX(-100%);
-}
-
-.slide-image {
-    flex: 1;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.slide-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.slide-content {
-    flex: 1;
-    padding: 40px;
-       background: rgb(13 45 44);
-    backdrop-filter: blur(10px);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-.slide-icon {
-    width: 60px;
-    height: 60px;
-    background: #d5bb68;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-}
-
-.slide-icon svg {
-    width: 30px;
-    height: 30px;
-    color: #1e3a8a;
-}
-
-.slide-content h3 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 16px;
-    line-height: 1.3;
-}
-
-.slide-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.carousel-btn:hover {
-    background: white;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.prev-btn {
-    left: 20px;
-}
-
-.next-btn {
-    right: 20px;
-}
-
-.carousel-btn svg {
-    width: 24px;
-    height: 24px;
-    color: #1e3a8a;
-}
-
-.slide-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 10;
-}
-
-.indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.indicator.active {
-    background: #d5bb68;
-    transform: scale(1.2);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 1200px) {
-    .prime-container {
-        padding: 0 24px;
-    }
-    
-    .prime-content {
-        gap: 50px;
-    }
-}
-
-@media (max-width: 768px) {
-    .prime-section {
-        padding: 80px 0;
-    }
-    
-    .prime-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-    
-    .prime-logo-text {
-        font-size: 2rem;
-    }
-    
-    .prime-highlight {
-        font-size: 2.5rem;
-    }
-    
-    .prime-title {
-        font-size: 1.2rem;
-    }
-    
-    .prime-carousel {
-        height: 600px;
-    }
-    
-    .prime-slide {
-        flex-direction: column;
-    }
-    
-    .slide-image {
-        height: 250px;
-    }
-    
-    .slide-content {
-        flex: none;
-        height: auto;
-        padding: 30px 24px;
-    }
-    
-    .slide-content h3 {
-        font-size: 1.4rem;
-    }
-    
-    .slide-content p {
-        font-size: 1rem;
-    }
-    
-    .carousel-btn {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .carousel-btn svg {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .prime-container {
-        padding: 0 16px;
-    }
-    
-    .prime-logo-text {
-        font-size: 1.6rem;
-    }
-    
-    .prime-highlight {
-        font-size: 2rem;
-    }
-    
-    .prime-title {
-        font-size: 1.1rem;
-    }
-    
-    .slide-content {
-        padding: 24px 16px;
-    }
-}
-</style>
-
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll('.prime-slide');
-const indicators = document.querySelectorAll('.indicator');
-
-function updateSlide() {
-    // Remove active class from all slides and indicators
-    slides.forEach((slide, index) => {
-        slide.classList.remove('active', 'prev');
-        if (index === currentSlide) {
-            slide.classList.add('active');
-        } else if (index < currentSlide) {
-            slide.classList.add('prev');
-        }
-    });
-    
-    indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentSlide);
-    });
-}
-
-function changeSlide(direction) {
-    currentSlide += direction;
-    
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    } else if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-    
-    updateSlide();
-}
-
-function goToSlide(index) {
-    currentSlide = index;
-    updateSlide();
-}
-
-// Auto-advance slides every 6 seconds
-setInterval(() => {
-    changeSlide(1);
-}, 6000);
-
-// Initialize
-updateSlide();
-</script>
-
-
-<!-- Mentores Section -->
-<section class="mentores-section">
-    <div class="mentores-container">
-        <div class="mentores-header">
-            <div class="section-title">
-                <div class="title-accent"></div>
-                <h2>Mentores</h2>
-            </div>
-            <p class="section-subtitle">
-                Especialistas com <span class="highlight">histórias de sucesso e resultados comprovados.</span>
-            </p>
-        </div>
-
-        <div class="mentores-carousel-container">
-            <div class="mentores-carousel" id="mentoresCarousel">
-                
-                <!-- Mentor 1: Dani Martins -->
-                <div class="mentor-slide active">
-                    <div class="mentor-image">
-                        <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=600&fit=crop&crop=face" alt="Dani Martins">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Dani Martins</h3>
-                        <p class="mentor-title">Uma das maiores especialistas em vendas do Brasil</p>
-                        <ul class="mentor-achievements">
-                            <li>CEO e fundadora da Sales Prime;</li>
-                            <li>Criadora do Método PRIME®;</li>
-                            <li>Mais de 5.000 negociações;</li>
-                            <li>Sócia de Flávio Augusto, Caio Carneiro e Joel Jota;</li>
-                            <li>+18 prêmios nacionais e internacionais;</li>
-                            <li>Top 1% dos vendedores mais bem pagos do mundo pela associação MDRT;</li>
-                            <li>+R$ 170 MM em vendas;</li>
-                            <li>Campeã de vendas reconhecida internacionalmente no topo da Times Square;</li>
-                            <li>Graduada em técnica avançada de vendas pelo Instituto Harvard, com especialização em comportamento, gestão dos empresários e coaching executivo;</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Mentor 2: Exemplo adicional -->
-                <div class="mentor-slide">
-                    <div class="mentor-image">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=600&fit=crop&crop=face" alt="Roberto Silva">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Roberto Silva</h3>
-                        <p class="mentor-title">Especialista em Inteligência Emocional e Negociação</p>
-                        <ul class="mentor-achievements">
-                            <li>20+ anos de experiência em vendas B2B;</li>
-                            <li>Ex-diretor comercial de multinacionais;</li>
-                            <li>Mais de 10.000 profissionais treinados;</li>
-                            <li>Certificação internacional em PNL;</li>
-                            <li>Palestrante em eventos corporativos;</li>
-                            <li>MBA em Gestão Comercial pela FGV;</li>
-                            <li>Aumentou vendas em 300% em empresas clientes;</li>
-                            <li>Especialista em metodologias ágeis de vendas;</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Mentor 3: Exemplo adicional -->
-                <div class="mentor-slide">
-                    <div class="mentor-image">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=600&fit=crop&crop=face" alt="Ana Costa">
-                    </div>
-                    <div class="mentor-info">
-                        <h3>Ana Costa</h3>
-                        <p class="mentor-title">Expert em Comunicação Estratégica e Liderança</p>
-                        <ul class="mentor-achievements">
-                            <li>Fundadora de 3 empresas de tecnologia;</li>
-                            <li>Mentora de mais de 500 empreendedores;</li>
-                            <li>Palestrante TEDx com 2M+ visualizações;</li>
-                            <li>Formação em Stanford e Wharton;</li>
-                            <li>15+ prêmios de inovação empresarial;</li>
-                            <li>Consultora de Fortune 500 companies;</li>
-                            <li>Autora de 2 livros best-sellers;</li>
-                            <li>Especialista em transformação digital;</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Navigation Arrows -->
-            <button class="mentor-nav-btn prev-btn" onclick="changeMentorSlide(-1)">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <button class="mentor-nav-btn next-btn" onclick="changeMentorSlide(1)">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-</section>
-
-<style>
-.mentores-section {
-       background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2e2d 100%);
-    padding: 120px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.mentores-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.3), transparent 50%);
-}
-
-.mentores-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.mentores-header {
-    margin-bottom: 80px;
-}
-
-.section-title {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.title-accent {
-    width: 60px;
-    height: 4px;
-    background: #c7b05d;
-    border-radius: 2px;
-}
-
-.section-title h2 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: white;
-    margin: 0;
-    letter-spacing: -1px;
-}
-
-.section-subtitle {
-    font-size: 1.4rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-    line-height: 1.5;
-}
-
-.section-subtitle .highlight {
-    color: #c7b05d;
-    font-weight: 600;
-}
-
-.mentores-carousel-container {
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-radius: 24px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.mentores-carousel {
-    position: relative;
-    height: 600px;
-    width: 100%;
-}
-
-.mentor-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-    opacity: 0;
-    transform: translateX(100%);
-    transition: all 0.6s ease-in-out;
-}
-
-.mentor-slide.active {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.mentor-slide.prev {
-    transform: translateX(-100%);
-}
-
-.mentor-image {
-    flex: 0 0 45%;
-    position: relative;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.3), rgba(59, 130, 246, 0.3));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.mentor-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform 0.3s ease;
-}
-
-.mentor-image:hover img {
-    transform: scale(1.05);
-}
-
-.mentor-info {
-    flex: 1;
-    padding: 50px;
-        background: rgb(13 46 45);
-    backdrop-filter: blur(15px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.mentor-info h3 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
-}
-
-.mentor-title {
-    font-size: 1.2rem;
-    color: #c7b05d;
-    margin-bottom: 32px;
-    font-weight: 500;
-    line-height: 1.4;
-}
-
-.mentor-achievements {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mentor-achievements li {
-    position: relative;
-    padding-left: 24px;
-    margin-bottom: 12px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1rem;
-    line-height: 1.5;
-    font-weight: 400;
-}
-
-.mentor-achievements li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #c8aa58;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.mentor-achievements li:last-child {
-    margin-bottom: 0;
-}
-
-.mentor-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 10;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.mentor-nav-btn:hover {
-    background: white;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.prev-btn {
-   
-}
-
-.next-btn {
-    
-}
-
-.mentor-nav-btn svg {
-    width: 28px;
-    height: 28px;
-    color: #1e3a8a;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 1200px) {
-    .mentores-container {
-        padding: 0 24px;
-    }
-    
-    .prev-btn {
-        left: 10px;
-    }
-    
-    .next-btn {
-        right: 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .mentores-section {
-        padding: 80px 0;
-    }
-    
-    .mentores-container {
-        padding: 0 16px;
-    }
-    
-    .mentores-header {
-        margin-bottom: 50px;
-    }
-    
-    .section-title {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .section-title h2 {
-        font-size: 2.5rem;
-    }
-    
-    .section-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .mentores-carousel {
-        height: auto;
-        min-height: 700px;
-    }
-    
-    .mentor-slide {
-        flex-direction: column;
-    }
-    
-    .mentor-image {
-        flex: 0 0 300px;
-    }
-    
-    .mentor-info {
-        flex: 1;
-        padding: 30px 24px;
-    }
-    
-    .mentor-info h3 {
-        font-size: 1.8rem;
-    }
-    
-    .mentor-title {
-        font-size: 1.1rem;
-        margin-bottom: 24px;
-    }
-    
-    .mentor-achievements li {
-        font-size: 0.95rem;
-        margin-bottom: 10px;
-    }
-    
-    .mentor-nav-btn {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .mentor-nav-btn svg {
-        width: 24px;
-        height: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-title h2 {
-        font-size: 2rem;
-    }
-    
-    .section-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .mentor-image {
-        flex: 0 0 250px;
-    }
-    
-    .mentor-info {
-        padding: 24px 16px;
-    }
-    
-    .mentor-info h3 {
-        font-size: 1.5rem;
-    }
-    
-    .mentor-title {
-        font-size: 1rem;
-    }
-    
-    .mentor-achievements li {
-        font-size: 0.9rem;
-    }
-}
-</style>
-
-<script>
-let currentMentorSlide = 0;
-const mentorSlides = document.querySelectorAll('.mentor-slide');
-
-function updateMentorSlide() {
-    mentorSlides.forEach((slide, index) => {
-        slide.classList.remove('active', 'prev');
-        if (index === currentMentorSlide) {
-            slide.classList.add('active');
-        } else if (index < currentMentorSlide) {
-            slide.classList.add('prev');
-        }
-    });
-}
-
-function changeMentorSlide(direction) {
-    currentMentorSlide += direction;
-    
-    if (currentMentorSlide >= mentorSlides.length) {
-        currentMentorSlide = 0;
-    } else if (currentMentorSlide < 0) {
-        currentMentorSlide = mentorSlides.length - 1;
-    }
-    
-    updateMentorSlide();
-}
-
-// Auto-advance slides every 8 seconds
-setInterval(() => {
-    changeMentorSlide(1);
-}, 8000);
-
-// Initialize
-updateMentorSlide();
-</script>
-
-
-<!-- Testimonials Section -->
-<section class="testimonials-section">
-    <div class="testimonials-container">
-        <div class="testimonials-header">
-            <div class="title-accent"></div>
-            <h2>O que dizem nossos clientes</h2>
-        </div>
-
-        <div class="testimonials-grid" id="testimonialsGrid">
-            <!-- Row 1 -->
-            <div class="testimonial-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face" alt="Thiago Mancussi">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay">
-                        <div class="testimonial-text">
-                            <p>"De treze orçamentos, eu tive <strong>9 contratos fechados</strong>, por causa de um pilar que a Dani falou."</p>
-                            <span class="client-name">Thiago Mancussi (dedicare)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b332b309?w=400&h=300&fit=crop&crop=face" alt="Priscila Ayub">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay">
-                        <div class="testimonial-text">
-                            <p>"É muito <strong>mais</strong> do que só negócios, é realmente <strong>transformador</strong>."</p>
-                            <span class="client-name">Priscila Ayub (Instituto Eduardo Ayub)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="testimonial-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop&crop=face" alt="Gisele Fedoce">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay">
-                        <div class="testimonial-text">
-                            <p>"Nós aumentamos <strong>50% nosso faturamento</strong> utilizando uma das técnicas do treinamento da Dani"</p>
-                            <span class="client-name">Gisele Fedoce (Protege Segurança Solar)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face" alt="Dener Lippert">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay">
-                        <div class="testimonial-text">
-                            <p>"Com o <strong>método da Dani</strong>, a gente conseguiu o <strong>mesmo resultado que nós demoramos 11 anos pra fazer em 3 meses</strong>."</p>
-                            <span class="client-name">Dener Lippert (V4 Soluções)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Hidden testimonials for "Ver mais" functionality -->
-            <div class="testimonial-card hidden-testimonial">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=300&fit=crop&crop=face" alt="Carlos Santos">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay">
-                        <div class="testimonial-text">
-                            <p>"Triplicamos nossas vendas em apenas <strong>6 meses</strong> aplicando o método PRIME."</p>
-                            <span class="client-name">Carlos Santos (TechSolutions)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial-card hidden-testimonial">
-                <div class="video-thumbnail">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=300&fit=crop&crop=face" alt="Marina Costa">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <div class="video-overlay">
-                        <div class="testimonial-text">
-                            <p>"A metodologia transformou completamente nossa <strong>abordagem comercial</strong>."</p>
-                            <span class="client-name">Marina Costa (Inovare Consultoria)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="see-more-container">
-            <button class="see-more-btn" id="seeMoreBtn" onclick="toggleMoreVideos()">
-                <span class="btn-text">Ver mais vídeos</span>
-                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 13l3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-</section>
-
-<style>
-.testimonials-section {
-        background: linear-gradient(135deg, #0d2e32 0%, #0d2e2f 50%, #0d2e2f 100%);
-    padding: 120px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.testimonials-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.3), transparent 50%);
-}
-
-.testimonials-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-}
-
-.testimonials-header {
-    margin-bottom: 80px;
-}
-
-.title-accent {
-    width: 60px;
-    height: 4px;
-    background: #fbbf24;
-    border-radius: 2px;
-    margin-bottom: 20px;
-}
-
-.testimonials-header h2 {
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: white;
-    margin: 0;
-    letter-spacing: -1px;
-    line-height: 1.1;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.testimonial-card {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.testimonial-card.hidden-testimonial {
-    opacity: 0;
-    transform: translateY(20px);
-    height: 0;
-    margin: 0;
-    overflow: hidden;
-    transition: all 0.5s ease;
-}
-
-.testimonial-card.hidden-testimonial.show {
-    opacity: 1;
-    transform: translateY(0);
-    height: auto;
-    margin-bottom: 30px;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.video-thumbnail {
-    position: relative;
-    aspect-ratio: 16/10;
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.video-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.video-thumbnail:hover img {
-    transform: scale(1.05);
-}
-
-.play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 3;
-}
-
-.play-button:hover {
-    background: white;
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.play-button svg {
-    width: 32px;
-    height: 32px;
-    color: #1e3a8a;
-    margin-left: 4px;
-}
-
-.video-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    padding: 40px 30px 30px;
-    color: white;
-}
-
-.testimonial-text p {
-    font-size: 1.1rem;
-    line-height: 1.4;
-    margin-bottom: 12px;
-    font-weight: 400;
-}
-
-.testimonial-text strong {
-    color: #fbbf24;
-    font-weight: 600;
-}
-
-.client-name {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
-}
-
-.see-more-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.see-more-btn {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-        background: linear-gradient(135deg, #d1ba66, #caab5b);
-    color: #1e3a8a;
-    padding: 18px 40px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
-    text-transform: none;
-    letter-spacing: 0;
-    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
-}
-
-.see-more-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.4);
-    background: linear-gradient(135deg, #fbbf24, #f59e0b);
-}
-
-.btn-icon {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-}
-
-.see-more-btn.expanded .btn-icon {
-    transform: rotate(180deg);
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 1200px) {
-    .testimonials-container {
-        padding: 0 24px;
-    }
-}
-
-@media (max-width: 768px) {
-    .testimonials-section {
-        padding: 80px 0;
-    }
-    
-    .testimonials-container {
-        padding: 0 16px;
-    }
-    
-    .testimonials-header {
-        margin-bottom: 50px;
-    }
-    
-    .testimonials-header h2 {
-        font-size: 2.5rem;
-    }
-    
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin-bottom: 40px;
-    }
-    
-    .video-overlay {
-        padding: 30px 20px 20px;
-    }
-    
-    .testimonial-text p {
-        font-size: 1rem;
-    }
-    
-    .client-name {
-        font-size: 0.85rem;
-    }
-    
-    .play-button {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .play-button svg {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .see-more-btn {
-        padding: 16px 32px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .testimonials-header h2 {
-        font-size: 2rem;
-    }
-    
-    .video-overlay {
-        padding: 25px 16px 16px;
-    }
-    
-    .testimonial-text p {
-        font-size: 0.95rem;
-        line-height: 1.3;
-    }
-    
-    .client-name {
-        font-size: 0.8rem;
-    }
-    
-    .play-button {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .play-button svg {
-        width: 20px;
-        height: 20px;
-    }
-    
-    .see-more-btn {
-        padding: 14px 28px;
-        font-size: 0.95rem;
-    }
-}
-</style>
-
-<script>
-let videosExpanded = false;
-
-function toggleMoreVideos() {
-    const hiddenTestimonials = document.querySelectorAll('.hidden-testimonial');
-    const seeMoreBtn = document.getElementById('seeMoreBtn');
-    const btnText = seeMoreBtn.querySelector('.btn-text');
-    
-    if (!videosExpanded) {
-        // Show more videos
-        hiddenTestimonials.forEach((testimonial, index) => {
-            setTimeout(() => {
-                testimonial.classList.add('show');
-            }, index * 150); // Stagger the animations
-        });
-        
-        btnText.textContent = 'Ver menos vídeos';
-        seeMoreBtn.classList.add('expanded');
-        videosExpanded = true;
-    } else {
-        // Hide videos
-        hiddenTestimonials.forEach((testimonial) => {
-            testimonial.classList.remove('show');
-        });
-        
-        btnText.textContent = 'Ver mais vídeos';
-        seeMoreBtn.classList.remove('expanded');
-        videosExpanded = false;
-        
-        // Scroll back to the testimonials section
-        document.querySelector('.testimonials-section').scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-        });
-    }
-}
-
-// Add click functionality to video thumbnails (placeholder for actual video functionality)
-document.querySelectorAll('.video-thumbnail').forEach(thumbnail => {
-    thumbnail.addEventListener('click', function() {
-        const clientName = this.querySelector('.client-name').textContent;
-        alert(`Reproduzindo depoimento de ${clientName}`);
-        // Here you would implement actual video playback functionality
-    });
-});
-</script>
-
-<!-- Contact Section -->
-<section class="contact-section" id="atendimento">
-    <div class="contact-container">
-        <div class="contact-header">
-            <h2>Entre em contato</h2>
-            <p>Estamos aqui para ajudar você a transformar seus resultados. Escolha a melhor forma de falar conosco.</p>
-        </div>
-        
-        <div class="contact-grid">
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <div class="contact-card">
-                   
-                    <h3>WhatsApp</h3>
-                    <p>Atendimento rápido e direto</p>
-                    <a href="https://wa.me/5534999326520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Aplenty." class="contact-link">+55 (34) 99932-6520</a>
-                </div>
-                
-                <div class="contact-card">
-                   
-                    <h3>E-mail</h3>
-                    <p>Envie sua mensagem</p>
-                    <a href="mailto:aplentytreinamentos@gmail.com" class="contact-link">aplentytreinamentos@gmail.com</a>
-                </div>
-                
-                <div class="contact-card">
-                   
-                    <h3>Localização</h3>
-                    <p>Venha nos conhecer</p>
-                    <span class="contact-link">Brooklin, São Paulo - SP</span>
-                </div>
-            </div>
-            
-            <!-- Contact Form -->
-            <div class="contact-form-container">
-                <h3>Envie uma mensagem</h3>
-                <form class="contact-form" onsubmit="handleContactForm(event)">
-                    <div class="form-group">
-                        <label for="name">Nome completo</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefone</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="service">Interesse</label>
-                        <select id="service" name="service" required>
-                            <option value="">Selecione uma opção</option>
-                            <option value="aplenty-experience">Aplenty Experience</option>
-                            <option value="empresas">Serviços para Empresas</option>
-                            <option value="desenvolvimento-pessoal">Desenvolvimento Pessoal</option>
-                            <option value="consultoria">Consultoria</option>
-                            <option value="outros">Outros</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Mensagem</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Conte-nos como podemos ajudar você..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="contact-submit-btn">
-                        Enviar mensagem
-                       
-                    </button>
-                </form>
-            </div>
-        </div>
-        
-        <!-- Business Hours -->
-        <div class="business-hours">
-          
-            <div class="hours-content">
-                <h3>Horário de atendimento</h3>
-                <p>Segunda a quinta: 9h às 17h45 | Sexta: 9h às 17h</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-        /* Contact Section Styles */
-        .contact-section {
-            background: linear-gradient(135deg, #0d2d2c 0%, #1a4847 100%);
-            padding: 120px 0;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
             position: relative;
         }
-        
-        .contact-section::before {
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: #667eea;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.5rem;
+            color: #667eea;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23f8f9ff;stop-opacity:0.3" /><stop offset="100%" style="stop-color:%23667eea;stop-opacity:0.1" /></radialGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="3" fill="%23fff" opacity="0.6"><animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/></circle><circle cx="800" cy="200" r="2" fill="%23fff" opacity="0.4"><animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/></circle><circle cx="400" cy="600" r="4" fill="%23fff" opacity="0.5"><animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite"/></circle></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 0;
+            background: #f8f9ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
-        
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
-            z-index: 2;
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
-        
-        .contact-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        
-        .contact-header h2 {
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 3rem;
-            font-weight: 500;
-            color: #FFFFFF;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
+            color: white;
         }
-        
-        .contact-header p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
-            margin: 0 auto;
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .product-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
         }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            margin-bottom: 60px;
+
+        .price {
+            font-size: 1.8rem;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
         }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .contact-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 32px;
+
+        .add-to-cart {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
             transition: all 0.3s ease;
         }
-        
-        .contact-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(206, 174, 92, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+        .add-to-cart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
         }
-        
-      
-        
-        .contact-icon svg {
-            width: 24px;
-            height: 24px;
-            color: #0d2d2c;
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
         }
-        
-        .contact-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #FFFFFF;
-            margin-bottom: 8px;
-        }
-        
-        .contact-card p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-        }
-        
-        .contact-link {
-            color: #ceae5c;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            display: block;
-        }
-        
-        .contact-link:hover {
-            color: #d4b666;
-            text-decoration: underline;
-        }
-        
-        /* Contact Form */
-        .contact-form-container {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+
+        .cart-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 2rem;
             border-radius: 20px;
-            padding: 40px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
         }
-        
-        .contact-form-container h3 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: #FFFFFF;
-            margin-bottom: 32px;
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-total {
+            font-size: 1.5rem;
+            font-weight: bold;
             text-align: center;
+            margin: 1rem 0;
+            color: #667eea;
         }
-        
-        .form-group {
-            margin-bottom: 24px;
+
+        .checkout-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-        
-        .form-row {
+
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+
+        .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 3rem;
+            align-items: center;
         }
-        
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .value-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Affiliate Section */
+        .affiliate {
+            padding: 5rem 0;
+            background: #f8f9ff;
+        }
+
+        .affiliate-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .affiliate-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
         .form-group label {
             display: block;
-            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: #333;
             font-weight: 500;
-            color: #FFFFFF;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+
+        .form-group input {
             width: 100%;
-            padding: 16px 20px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            color: #FFFFFF;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s ease;
-        }
-        
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #ceae5c;
-            box-shadow: 0 0 0 3px rgba(206, 174, 92, 0.15);
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .form-group select {
-            cursor: pointer;
-        }
-        
-        .form-group select option {
-            background: #0d2d2c;
-            color: #FFFFFF;
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-        
-        .contact-submit-btn {
-            width: 100%;
-            background: linear-gradient(135deg, #ceae5c, #d4b666);
-            color: #0d2d2c;
-            padding: 18px 32px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 8px;
-        }
-        
-        .contact-submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(206, 174, 92, 0.3);
-        }
-        
-        .contact-submit-btn:active {
-            transform: translateY(0);
-        }
-        
-        .contact-submit-btn svg {
-            transition: transform 0.2s ease;
-        }
-        
-        .contact-submit-btn:hover svg {
-            transform: translateX(2px);
-        }
-        
-        /* Business Hours */
-        .business-hours {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 24px 32px;
-            text-align: center;
-        }
-        
-        .hours-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(206, 174, 92, 0.1);
+            padding: 1rem;
+            border: 2px solid #e1e5e9;
             border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
+            margin-bottom: 1.5rem;
         }
-        
-        .hours-icon svg {
-            width: 20px;
-            height: 20px;
-            color: #ceae5c;
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #ff6b6b;
         }
-        
-        .hours-content h3 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #FFFFFF;
-            margin-bottom: 4px;
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
         }
-        
-        .hours-content p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
-            margin: 0;
+
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            resize: vertical;
+            min-height: 120px;
         }
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 1024px) {
-            .contact-container {
-                padding: 0 24px;
+
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            
-            .contact-grid {
-                gap: 50px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .contact-section {
-                padding: 80px 0;
+            .nav-menu {
+                display: none;
             }
-            
-            .contact-container {
-                padding: 0 16px;
+
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            
-            .contact-header {
-                margin-bottom: 50px;
-            }
-            
-            .contact-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .contact-header p {
+
+            .hero p {
                 font-size: 1.1rem;
             }
-            
-            .contact-grid {
+
+            .about-content,
+            .affiliate-content,
+            .contact-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
             }
-            
-            .contact-info {
-                order: 2;
-            }
-            
-            .contact-form-container {
-                order: 1;
-                padding: 30px 24px;
-            }
-            
-            .form-row {
+
+            .values-grid {
                 grid-template-columns: 1fr;
-                gap: 0;
             }
-            
-            .business-hours {
-                flex-direction: column;
+
+            .footer-content {
+                grid-template-columns: 1fr;
                 text-align: center;
-                gap: 16px;
-                padding: 24px;
-            }
-            
-            .hours-content h3 {
-                font-size: 1rem;
-            }
-            
-            .hours-content p {
-                font-size: 0.9rem;
             }
         }
-        
-        @media (max-width: 480px) {
-            .contact-form-container {
-                padding: 24px 16px;
-            }
-            
-            .contact-card {
-                padding: 24px;
-            }
-            
-            .contact-header h2 {
-                font-size: 1.9rem;
-            }
-        }
-</style>
-
-<script>
-        // Contact form handler
-        function handleContactForm(event) {
-            event.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(event.target);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
-            const service = formData.get('service');
-            const message = formData.get('message');
-            
-            // Create WhatsApp message
-            let whatsappMessage = `Olá! Meu nome é ${name}.\n\n`;
-            whatsappMessage += `📧 E-mail: ${email}\n`;
-            whatsappMessage += `📱 Telefone: ${phone}\n`;
-            whatsappMessage += `🎯 Interesse: ${service}\n\n`;
-            if (message) {
-                whatsappMessage += `💬 Mensagem: ${message}`;
-            }
-            
-            // Open WhatsApp with the message
-            const phoneNumber = '5534999326520';
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-            window.open(whatsappURL, '_blank');
-            
-            // Reset form
-            event.target.reset();
-            
-            // Show success feedback
-            const submitBtn = event.target.querySelector('.contact-submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '✓ Mensagem enviada!';
-            submitBtn.style.background = '#4CAF50';
-            
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.style.background = '';
-            }, 3000);
-        }
-</script>
-
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <!-- Logo Section -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo">
-                        <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">
-                        <div class="footer-brand">APLENTY</div>
-                    </div>
-                </div>
-
-                <!-- Para Empresas -->
-                <div class="footer-column">
-                    <h3>Para Empresas</h3>
-                    <ul>
-                        <li><a href="#prosperus-club">Prosperus Club</a></li>
-                        <li><a href="#lumiere">Lumière</a></li>
-                        <li><a href="#prime-experience">PRIME Experience</a></li>
-                        <li><a href="#palestra">Palestra</a></li>
-                        <li><a href="#corporate">Corporate</a></li>
-                    </ul>
-                </div>
-
-                <!-- Para Vendedores -->
-                <div class="footer-column">
-                    <h3>Para Vendedores</h3>
-                    <ul>
-                        <li><a href="#mp-start">MP Start</a></li>
-                    </ul>
-                </div>
-
-                <!-- Para Todos -->
-                <div class="footer-column">
-                    <h3>Para Todos</h3>
-                    <ul>
-                        <li><a href="#potencialize">Potencialize</a></li>
-                    </ul>
-                </div>
-
-                <!-- Sou Aluno -->
-                <div class="footer-column">
-                    <h3>Sou Aluno</h3>
-                    <ul>
-                        <li><a href="#start">Start</a></li>
-                        <li><a href="#corporate-aluno">Corporate</a></li>
-                        <li><a href="#potencialize-aluno">Potencialize</a></li>
-                    </ul>
-                </div>
-
-                <!-- Atendimento -->
-                <div class="footer-column">
-                    <h3>Atendimento</h3>
-                    <div class="footer-contact">
-                        <div class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-width="2"/>
-                                <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <div class="contact-text">
-                                <div class="contact-label">Endereço:</div>
-                                <div>Brooklin, São Paulo - SP</div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <div class="contact-text">
-                                <div class="contact-label">E-mail:</div>
-                                <div>aplentytreinamentos@gmail.com 
-suporte@aplenty.com.br, financeiro@aplenty.com.br,
-joice@aplenty.com.br</div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <div class="contact-text">
-                                <div class="contact-label">Contato:</div>
-                                <div>+5534999326520</div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <div class="contact-text">
-                                <div class="contact-label">Horário de atendimento:</div>
-                                <div>Segunda a quinta, das 9h às<br>17h45<br>Sexta, das 9h às 17h</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    2025 APLENTY - Todos os Direitos Reservados
-                </div>
-                <div class="footer-links">
-                    <a href="#privacidade">Política de privacidade</a>
-                    <a href="#cookies">Políticas de cookies</a>
-                </div>
-                <div class="footer-social">
-                    <a href="#linkedin" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/aplenty.desenvolvimentohumano?igsh=MWV0dWxvb3VmN2Z2Yg%3D%3D&utm_source=qr" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </a>
-                    <a href="#youtube" class="social-link">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </a>
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">LV Fórmulas</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#afiliados">Afiliados</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
                 </div>
             </div>
         </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Emagreça com Saúde com LV Fórmulas</h1>
+            <p>Fórmulas personalizadas para auxiliar no seu emagrecimento</p>
+            <a href="#produtos" class="cta-button">Escolha Sua Fórmula</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Produtos</h2>
+                <p>Fórmulas desenvolvidas especialmente para o seu sucesso</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <i class="fas fa-capsules"></i>
+                    </div>
+                    <h3>Morosil®️ (500mg)</h3>
+                    <p>Auxilia na redução de gordura localizada, especialmente na região abdominal. Produto natural derivado de laranjas vermelhas.</p>
+                    <div class="price">R$ 89,90</div>
+                    <button class="add-to-cart" onclick="addToCart('Morosil®️ (500mg)', 89.90)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Cactin®️</h3>
+                    <p>Ajuda no controle do apetite e reduz a absorção de gorduras. Extrato natural de cacto do deserto.</p>
+                    <div class="price">R$ 79,90</div>
+                    <button class="add-to-cart" onclick="addToCart('Cactin®️', 79.90)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Combo Emagrecimento</h3>
+                    <p>Combinação perfeita dos nossos melhores produtos para acelerar seus resultados de forma segura.</p>
+                    <div class="price">R$ 149,90</div>
+                    <button class="add-to-cart" onclick="addToCart('Combo Emagrecimento', 149.90)">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2>Seu Carrinho</h2>
+                <span style="cursor: pointer; font-size: 1.5rem;" onclick="toggleCart()">&times;</span>
+            </div>
+            <div id="cartItems"></div>
+            <div class="cart-total" id="cartTotal">Total: R$ 0,00</div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre a LV Fórmulas</h2>
+                    <p>Há mais de 10 anos no mercado, a LV Fórmulas é referência em manipulação de medicamentos para emagrecimento. Nossa missão é proporcionar saúde e bem-estar através de fórmulas personalizadas e de alta qualidade.</p>
+                    <p>Trabalhamos com ingredientes selecionados e seguimos rigorosos padrões de qualidade, garantindo eficácia e segurança em todos os nossos produtos.</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-heart"></i>
+                        <h3>Qualidade</h3>
+                        <p>Ingredientes premium selecionados</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Segurança</h3>
+                        <p>Fórmulas testadas e aprovadas</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-star"></i>
+                        <h3>Personalização</h3>
+                        <p>Fórmulas adaptadas às suas necessidades</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Atendimento</h3>
+                        <p>Suporte especializado 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Affiliate Section -->
+    <section id="afiliados" class="affiliate">
+        <div class="container">
+            <div class="affiliate-content">
+                <div>
+                    <h2>Participe do Nosso Programa de Afiliados</h2>
+                    <p>Ganhe comissões promovendo nossos produtos de emagrecimento. Cadastre-se e receba seu link exclusivo para começar a lucrar hoje mesmo!</p>
+                    <ul style="margin-top: 2rem; line-height: 2;">
+                        <li>✓ Comissões de até 30% por venda</li>
+                        <li>✓ Material promocional exclusivo</li>
+                        <li>✓ Suporte dedicado para afiliados</li>
+                        <li>✓ Pagamentos mensais em dia</li>
+                    </ul>
+                </div>
+                <form class="affiliate-form">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="redes">Link das Redes Sociais</label>
+                        <input type="url" id="redes" name="redes" placeholder="https://instagram.com/seu_perfil">
+                    </div>
+                    <button type="submit" class="submit-btn">Quero Ser Afiliado</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Entre em Contato</h2>
+                    <p>Estamos aqui para ajudar você em sua jornada de emagrecimento!</p>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>E-mail</h3>
+                            <p>contato@lvformulas.com.br</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Endereço</h3>
+                            <p>São Paulo, SP - Brasil</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Nome</label>
+                        <input type="text" id="contact-name" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">E-mail</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" placeholder="Sua mensagem..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LV Fórmulas</h3>
+                    <p>Sua saúde é nossa prioridade. Fórmulas personalizadas para o seu bem-estar.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Suporte</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Redes Sociais</h3>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LV Fórmulas. Todos os direitos reservados.</p>
+            </div>
+        </div>
     </footer>
-</body>
-</html>
+
+</body></html>
