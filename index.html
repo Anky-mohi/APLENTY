@@ -1186,6 +1186,489 @@ ease;
 
     </style>
 
+<!-- Contact Section -->
+<section class="contact-section" id="atendimento">
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>Entre em contato</h2>
+            <p>Estamos aqui para ajudar você a transformar seus resultados. Escolha a melhor forma de falar conosco.</p>
+        </div>
+        
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="contact-card">
+                   
+                    <h3>WhatsApp</h3>
+                    <p>Atendimento rápido e direto</p>
+                    <a href="https://wa.me/5534999326520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Aplenty." class="contact-link">+55 (34) 99932-6520</a>
+                </div>
+                
+                <div class="contact-card">
+                   
+                    <h3>E-mail</h3>
+                    <p>Envie sua mensagem</p>
+                    <a href="mailto:aplentytreinamentos@gmail.com" class="contact-link">aplentytreinamentos@gmail.com</a>
+                </div>
+                
+                <div class="contact-card">
+                   
+                    <h3>Localização</h3>
+                    <p>Venha nos conhecer</p>
+                    <span class="contact-link">Brooklin, São Paulo - SP</span>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h3>Envie uma mensagem</h3>
+                <form class="contact-form" onsubmit="handleContactForm(event)">
+                    <div class="form-group">
+                        <label for="name">Nome completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Interesse</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="aplenty-experience">Aplenty Experience</option>
+                            <option value="empresas">Serviços para Empresas</option>
+                            <option value="desenvolvimento-pessoal">Desenvolvimento Pessoal</option>
+                            <option value="consultoria">Consultoria</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Conte-nos como podemos ajudar você..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="contact-submit-btn">
+                        Enviar mensagem
+                       
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Business Hours -->
+        <div class="business-hours">
+          
+            <div class="hours-content">
+                <h3>Horário de atendimento</h3>
+                <p>Segunda a quinta: 9h às 17h45 | Sexta: 9h às 17h</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+        /* Contact Section Styles */
+        .contact-section {
+            background: linear-gradient(135deg, #0d2d2c 0%, #1a4847 100%);
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .contact-header h2 {
+            font-size: 3rem;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .contact-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(206, 174, 92, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+      
+        
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            color: #0d2d2c;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+        
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        
+        .contact-link {
+            color: #ceae5c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: block;
+        }
+        
+        .contact-link:hover {
+            color: #d4b666;
+            text-decoration: underline;
+        }
+        
+        /* Contact Form */
+        .contact-form-container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+        }
+        
+        .contact-form-container h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            color: #FFFFFF;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ceae5c;
+            box-shadow: 0 0 0 3px rgba(206, 174, 92, 0.15);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-group select {
+            cursor: pointer;
+        }
+        
+        .form-group select option {
+            background: #0d2d2c;
+            color: #FFFFFF;
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .contact-submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            color: #0d2d2c;
+            padding: 18px 32px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        
+        .contact-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(206, 174, 92, 0.3);
+        }
+        
+        .contact-submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .contact-submit-btn svg {
+            transition: transform 0.2s ease;
+        }
+        
+        .contact-submit-btn:hover svg {
+            transform: translateX(2px);
+        }
+        
+        /* Business Hours */
+        .business-hours {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px 32px;
+            text-align: center;
+        }
+        
+        .hours-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(206, 174, 92, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .hours-icon svg {
+            width: 20px;
+            height: 20px;
+            color: #ceae5c;
+        }
+        
+        .hours-content h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #FFFFFF;
+            margin-bottom: 4px;
+        }
+        
+        .hours-content p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 1024px) {
+            .contact-container {
+                padding: 0 24px;
+            }
+            
+            .contact-grid {
+                gap: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-section {
+                padding: 80px 0;
+            }
+            
+            .contact-container {
+                padding: 0 16px;
+            }
+            
+            .contact-header {
+                margin-bottom: 50px;
+            }
+            
+            .contact-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-header p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-info {
+                order: 2;
+            }
+            
+            .contact-form-container {
+                order: 1;
+                padding: 30px 24px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            
+            .business-hours {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+                padding: 24px;
+            }
+            
+            .hours-content h3 {
+                font-size: 1rem;
+            }
+            
+            .hours-content p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-form-container {
+                padding: 24px 16px;
+            }
+            
+            .contact-card {
+                padding: 24px;
+            }
+            
+            .contact-header h2 {
+                font-size: 1.9rem;
+            }
+        }
+</style>
+
+<script>
+        // Contact form handler
+        function handleContactForm(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const service = formData.get('service');
+            const message = formData.get('message');
+            
+            // Create WhatsApp message
+            let whatsappMessage = `Olá! Meu nome é ${name}.\n\n`;
+            whatsappMessage += `📧 E-mail: ${email}\n`;
+            whatsappMessage += `📱 Telefone: ${phone}\n`;
+            whatsappMessage += `🎯 Interesse: ${service}\n\n`;
+            if (message) {
+                whatsappMessage += `💬 Mensagem: ${message}`;
+            }
+            
+            // Open WhatsApp with the message
+            const phoneNumber = '5534999326520';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            window.open(whatsappURL, '_blank');
+            
+            // Reset form
+            event.target.reset();
+            
+            // Show success feedback
+            const submitBtn = event.target.querySelector('.contact-submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '✓ Mensagem enviada!';
+            submitBtn.style.background = '#4CAF50';
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.style.background = '';
+            }, 3000);
+        }
+</script>
+
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
