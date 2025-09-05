@@ -2174,7 +2174,269 @@ setInterval(() => {
 // Initialize
 updateMentorSlide();
 </script>
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+  <div class="testimonials-container">
+    <div class="testimonials-header">
+      <div class="title-accent"></div>
+      <h2>O que dizem nossos clientes</h2>
+    </div>
 
+    <div class="testimonials-grid" id="testimonialsGrid">
+      <!-- Card 1 -->
+      <div class="testimonial-card">
+        <div class="video-thumbnail">
+          <video src="/client1.mp4"
+                 poster="/Screenshot (104).png"
+                 controls playsinline preload="metadata"></video>
+          <div class="video-overlay">
+            <div class="testimonial-text">
+              <p>"De treze orçamentos, eu tive <strong>9 contratos fechados</strong>, por causa de um pilar que a Dani falou."</p>
+              <span class="client-name">Thiago Mancussi (dedicare)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <div class="video-thumbnail">
+          <video src="/client2.mp4"
+                 poster="/Screenshot (106).png"
+                 controls playsinline preload="metadata"></video>
+          <div class="video-overlay">
+            <div class="testimonial-text">
+              <p>"É muito <strong>mais</strong> do que só negócios, é realmente <strong>transformador</strong>."</p>
+              <span class="client-name">Priscila Ayub (Instituto Eduardo Ayub)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Card 1 -->
+      <div class="testimonial-card">
+        <div class="video-thumbnail">
+          <video src="/client3.mp4"
+                 poster="/Screenshot (107).png"
+                 controls playsinline preload="metadata"></video>
+          <div class="video-overlay">
+            <div class="testimonial-text">
+              <p>"De treze orçamentos, eu tive <strong>9 contratos fechados</strong>, por causa de um pilar que a Dani falou."</p>
+              <span class="client-name">Thiago Mancussi (dedicare)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <div class="video-thumbnail">
+          <video src="/client4.mp4"
+                 poster="/Screenshot (108).png"
+                 controls playsinline preload="metadata"></video>
+          <div class="video-overlay">
+            <div class="testimonial-text">
+              <p>"É muito <strong>mais</strong> do que só negócios, é realmente <strong>transformador</strong>."</p>
+              <span class="client-name">Priscila Ayub (Instituto Eduardo Ayub)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- Card 1 -->
+      <div class="testimonial-card">
+        <div class="video-thumbnail">
+          <video src="/client5.mp4"
+                 poster="/Screenshot (109).png"
+                 controls playsinline preload="metadata"></video>
+          <div class="video-overlay">
+            <div class="testimonial-text">
+              <p>"De treze orçamentos, eu tive <strong>9 contratos fechados</strong>, por causa de um pilar que a Dani falou."</p>
+              <span class="client-name">Thiago Mancussi (dedicare)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <div class="video-thumbnail">
+          <video src="/client6.mp4"
+                 poster="/Screenshot (110).png"
+                 controls playsinline preload="metadata"></video>
+          <div class="video-overlay">
+            <div class="testimonial-text">
+              <p>"É muito <strong>mais</strong> do que só negócios, é realmente <strong>transformador</strong>."</p>
+              <span class="client-name">Priscila Ayub (Instituto Eduardo Ayub)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="video-thumbnail">
+          <video src="/client7.mp4"
+                 poster="/Screenshot (111).png"
+                 controls playsinline preload="metadata"></video>
+          <div class="video-overlay">
+            <div class="testimonial-text">
+              <p>"É muito <strong>mais</strong> do que só negócios, é realmente <strong>transformador</strong>."</p>
+              <span class="client-name">Priscila Ayub (Instituto Eduardo Ayub)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more testimonial-cards here -->
+    </div>
+
+    <div class="see-more-container">
+      <button class="see-more-btn" id="seeMoreBtn" onclick="toggleMoreVideos()">
+        <span class="btn-text">Ver mais vídeos</span>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 13l3 3 7-7" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+.testimonials-section {
+  background: linear-gradient(135deg, #0d2e32 0%, #0d2e2f 50%, #0d2e2f 100%);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(59,130,246,0.3), transparent 50%);
+}
+.testimonials-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+.testimonials-header { margin-bottom: 80px; }
+.title-accent {
+  width: 60px; height: 4px; background: #fbbf24;
+  border-radius: 2px; margin-bottom: 20px;
+}
+.testimonials-header h2 {
+  font-size: 3.5rem; font-weight: 300; color: white; margin: 0;
+  letter-spacing: -1px; line-height: 1.1;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.testimonial-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.video-thumbnail {
+  position: relative;
+  aspect-ratio: 16/9; /* default desktop */
+  overflow: hidden;
+  border-radius: 20px;
+}
+.video-thumbnail video {
+  width: 100%;
+  height: 140%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+.video-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 40px 30px 30px;
+  color: white;
+}
+.testimonial-text p {
+  font-size: 1.1rem; line-height: 1.4; margin-bottom: 12px; font-weight: 400;
+}
+.testimonial-text strong { color: #fbbf24; font-weight: 600; }
+.client-name {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+.see-more-container {
+  display: flex; justify-content: center; margin-top: 40px;
+}
+.see-more-btn {
+  display: flex; align-items: center; gap: 12px;
+  background: linear-gradient(135deg, #d1ba66, #caab5b);
+  color: #1e3a8a; padding: 18px 40px; border: none; border-radius: 50px;
+  font-size: 1.1rem; font-weight: 600; cursor: pointer;
+  transition: all 0.3s ease; font-family: 'Inter', sans-serif;
+  box-shadow: 0 8px 20px rgba(245,158,11,0.3);
+}
+.see-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(245,158,11,0.4);
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+.btn-icon { width: 20px; height: 20px; transition: transform 0.3s ease; }
+.see-more-btn.expanded .btn-icon { transform: rotate(180deg); }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  /* Instagram style portrait videos */
+  .video-thumbnail {
+    aspect-ratio: 9/16;
+  }
+  .video-overlay { padding: 30px 20px 20px; }
+  .testimonial-text p { font-size: 1rem; }
+  .client-name { font-size: 0.85rem; }
+}
+</style>
+
+<script>
+let videosExpanded = false;
+
+function toggleMoreVideos() {
+  const hiddenTestimonials = document.querySelectorAll('.hidden-testimonial');
+  const seeMoreBtn = document.getElementById('seeMoreBtn');
+  const btnText = seeMoreBtn.querySelector('.btn-text');
+
+  if (!videosExpanded) {
+    hiddenTestimonials.forEach((testimonial, index) => {
+      setTimeout(() => testimonial.classList.add('show'), index * 150);
+    });
+    btnText.textContent = 'Ver menos vídeos';
+    seeMoreBtn.classList.add('expanded');
+    videosExpanded = true;
+  } else {
+    hiddenTestimonials.forEach(testimonial => testimonial.classList.remove('show'));
+    btnText.textContent = 'Ver mais vídeos';
+    seeMoreBtn.classList.remove('expanded');
+    videosExpanded = false;
+    document.querySelector('.testimonials-section').scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+  }
+}
+</script>
 
 <!-- Contact Section -->
 <section class="contact-section" id="atendimento">
@@ -2658,198 +2920,7 @@ updateMentorSlide();
         }
 </script>
 
-<!-- Testimonials Section -->
-<section class="testimonials-section">
-  <div class="testimonials-container">
-    <div class="testimonials-header">
-      <div class="title-accent"></div>
-      <h2>O que dizem nossos clientes</h2>
-    </div>
 
-    <div class="testimonials-grid" id="testimonialsGrid">
-      <!-- Card 1 -->
-      <div class="testimonial-card">
-        <div class="video-thumbnail">
-          <video src="/client1.mp4"
-                 poster="/Screenshot (104).png"
-                 controls playsinline preload="metadata"></video>
-          <div class="video-overlay">
-            <div class="testimonial-text">
-              <p>"De treze orçamentos, eu tive <strong>9 contratos fechados</strong>, por causa de um pilar que a Dani falou."</p>
-              <span class="client-name">Thiago Mancussi (dedicare)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="testimonial-card">
-        <div class="video-thumbnail">
-          <video src="/client2.mp4"
-                 poster="/Screenshot (106).png"
-                 controls playsinline preload="metadata"></video>
-          <div class="video-overlay">
-            <div class="testimonial-text">
-              <p>"É muito <strong>mais</strong> do que só negócios, é realmente <strong>transformador</strong>."</p>
-              <span class="client-name">Priscila Ayub (Instituto Eduardo Ayub)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add more testimonial-cards here -->
-    </div>
-
-    <div class="see-more-container">
-      <button class="see-more-btn" id="seeMoreBtn" onclick="toggleMoreVideos()">
-        <span class="btn-text">Ver mais vídeos</span>
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none"
-             xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 13l3 3 7-7" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-</section>
-
-<style>
-.testimonials-section {
-  background: linear-gradient(135deg, #0d2e32 0%, #0d2e2f 50%, #0d2e2f 100%);
-  padding: 120px 0;
-  position: relative;
-  overflow: hidden;
-}
-.testimonials-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 30% 70%, rgba(59,130,246,0.3), transparent 50%);
-}
-.testimonials-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-  position: relative;
-  z-index: 2;
-}
-.testimonials-header { margin-bottom: 80px; }
-.title-accent {
-  width: 60px; height: 4px; background: #fbbf24;
-  border-radius: 2px; margin-bottom: 20px;
-}
-.testimonials-header h2 {
-  font-size: 3.5rem; font-weight: 300; color: white; margin: 0;
-  letter-spacing: -1px; line-height: 1.1;
-}
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-bottom: 60px;
-}
-.testimonial-card {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-.video-thumbnail {
-  position: relative;
-  aspect-ratio: 16/9; /* default desktop */
-  overflow: hidden;
-  border-radius: 20px;
-}
-.video-thumbnail video {
-  width: 90%;
-  height: 150%;
-  object-fit: cover;
-  display: block;
-  border-radius: 20px;
-}
-.video-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  padding: 40px 30px 30px;
-  color: white;
-}
-.testimonial-text p {
-  font-size: 1.1rem; line-height: 1.4; margin-bottom: 12px; font-weight: 400;
-}
-.testimonial-text strong { color: #fbbf24; font-weight: 600; }
-.client-name {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.8);
-  font-weight: 500;
-}
-.see-more-container {
-  display: flex; justify-content: center; margin-top: 40px;
-}
-.see-more-btn {
-  display: flex; align-items: center; gap: 12px;
-  background: linear-gradient(135deg, #d1ba66, #caab5b);
-  color: #1e3a8a; padding: 18px 40px; border: none; border-radius: 50px;
-  font-size: 1.1rem; font-weight: 600; cursor: pointer;
-  transition: all 0.3s ease; font-family: 'Inter', sans-serif;
-  box-shadow: 0 8px 20px rgba(245,158,11,0.3);
-}
-.see-more-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(245,158,11,0.4);
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-}
-.btn-icon { width: 20px; height: 20px; transition: transform 0.3s ease; }
-.see-more-btn.expanded .btn-icon { transform: rotate(180deg); }
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-  /* Instagram style portrait videos */
-  .video-thumbnail {
-    aspect-ratio: 9/16;
-  }
-  .video-overlay { padding: 30px 20px 20px; }
-  .testimonial-text p { font-size: 1rem; }
-  .client-name { font-size: 0.85rem; }
-}
-</style>
-
-<script>
-let videosExpanded = false;
-
-function toggleMoreVideos() {
-  const hiddenTestimonials = document.querySelectorAll('.hidden-testimonial');
-  const seeMoreBtn = document.getElementById('seeMoreBtn');
-  const btnText = seeMoreBtn.querySelector('.btn-text');
-
-  if (!videosExpanded) {
-    hiddenTestimonials.forEach((testimonial, index) => {
-      setTimeout(() => testimonial.classList.add('show'), index * 150);
-    });
-    btnText.textContent = 'Ver menos vídeos';
-    seeMoreBtn.classList.add('expanded');
-    videosExpanded = true;
-  } else {
-    hiddenTestimonials.forEach(testimonial => testimonial.classList.remove('show'));
-    btnText.textContent = 'Ver mais vídeos';
-    seeMoreBtn.classList.remove('expanded');
-    videosExpanded = false;
-    document.querySelector('.testimonials-section').scrollIntoView({
-      behavior: 'smooth',
-      block: 'center'
-    });
-  }
-}
-</script>
 
 
 
