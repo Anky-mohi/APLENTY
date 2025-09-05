@@ -805,6 +805,31 @@ ease;
     font-family: 'Arial', sans-serif;
     background-color: #fff;
   }
+  .founder-section {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ⬅️ centre horizontally */
+  text-align: center;       /* ⬅️ centre text */
+}
+
+.founder-content {
+  margin: 0 auto;
+}
+
+/* Mobile still keeps the dark overlay */
+@media (max-width: 768px) {
+  .founder-section {
+    padding: 40px 20px; /* breathing space */
+  }
+  .founder-content {
+    text-align: center;
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
+
 
   .founder-section {
     display: flex;
@@ -895,7 +920,10 @@ margin-bottom: 20px;
         Desenvolvemos uma mentalidade de crescimento consistente através da educação emocional, comportamental, para pessoas e organizações, com  ferramentas e técnicas inteligentes da neurociência.
       </p>
       
-     
+     <div class="hero-buttons">
+                <button class="btn-primary" onclick="openWhatsApp()">Transformar Minha Empresa</button>
+                <button class="btn-primary" onclick="openWhatsApp()">Desenvolvimento Pessoal</button>
+            </div>
       
       
     </div>
@@ -2070,6 +2098,45 @@ updateSlide();
         font-size: 0.9rem;
     }
 }
+/* Extra fine-tuning for phones */
+@media (max-width: 768px) {
+  .mentor-slide {
+    flex-direction: column;            /* image above, text below */
+    height: auto;
+  }
+
+  .mentor-image {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 250px;                     /* fixed height for image */
+  }
+
+  .mentor-image img {
+    height: 160%;
+    width: 100%;
+    object-fit: cover;
+    margin-top: 120px;
+  }
+
+  .mentor-info {
+    margin-top: 0;                     /* remove negative margin */
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mentor-info h3 {
+    font-size: 1.4rem;
+  }
+  .mentor-title {
+    font-size: 1rem;
+  }
+  .mentor-info {
+    padding: 16px;
+  }
+}
+
 </style>
 
 <script>
