@@ -795,140 +795,127 @@ ease;
 
 
 
+<!-- Nossa Especialidade Section -->
+<section class="especialidade-section">
+  <div class="especialidade-container">
+    <h2 class="especialidade-title">Nossa Especialidade</h2>
+    <p class="especialidade-subtitle">
+      Transformar pessoas para Transformar Resultados <span class="medal">🏅</span>
+    </p>
 
+    <div class="especialidade-grid">
+      <div class="especialidade-item">
+        <div class="icon-circle">
+          <img src="lideranca-icon.svg" alt="Ícone Liderança" />
+        </div>
+        <h3>Liderança Eficaz</h3>
+        <p>Desenvolvimento comportamental para alta performance de líderes</p>
+      </div>
 
-<title>A Fundadora</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #fff;
-  }
-  .founder-section {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* ⬅️ centre horizontally */
-  text-align: center;       /* ⬅️ centre text */
-}
+      <div class="especialidade-item middle">
+        <div class="icon-circle">
+          <img src="ferramentas-icon.svg" alt="Ícone Ferramentas" />
+        </div>
+        <h3>Ferramentas</h3>
+        <p>São recursos práticos que transformam conhecimento em ação, ajudando a tomar decisões mais conscientes, engajar equipes e gerar resultados consistentes.</p>
+      </div>
 
-.founder-content {
-  margin: 0 auto;
-}
-
-/* Mobile still keeps the dark overlay */
-@media (max-width: 768px) {
-  .founder-section {
-    padding: 40px 20px; /* breathing space */
-  }
-  .founder-content {
-    text-align: center;
-    max-width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
-  }
-}
-
-
-  .founder-section {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* ✅ text anchored left */
-    background: url('/1.jpeg') no-repeat right center;
+      <div class="especialidade-item">
+        <div class="icon-circle">
+          <img src="desenvolvimento-icon.svg" alt="Ícone Desenvolvimento" />
+        </div>
+        <h3>Desenvolvimento Humano</h3>
+        <p>Desenvolvimento comportamental para pessoas que desejam um crescimento consistente na carreira e na vida</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>.especialidade-section {
+   background: url('/1.jpeg') no-repeat right center;
     background-size: cover;
     color: white;
     min-height: 100vh;
      background: linear-gradient(135deg, rgb(13 45 44 / 85%), rgba(13, 45, 44, 0.85)), url(/1.jpeg) center / cover no-repeat;
-  }
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  
+}
 
-  /* ✅ same container logic as footer */
-  .founder-container {
-    width: 100%;
-    max-width: 1200px; /* keeps same width as footer */
-    margin: 0 auto;
-    padding: 60px 20px; /* consistent padding left/right */
-  }
+.especialidade-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  .founder-content {
-    max-width: 600px;
-  }
+.especialidade-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
 
-  .founder-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-  }
+.especialidade-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+}
 
-  .founder-content p {
-    line-height: 1.7;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-  }
+.especialidade-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  .founder-content strong {
-    color: #ceae5c;
-  }
+.especialidade-item {
+  flex: 1;
+  min-width: 280px;
+  padding: 30px;
+  
+  
+}
 
-  .founder-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    background: #ceae5c;
-    color: #fff;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: 0.3s;
-  }
+/* vertical separators */
+.especialidade-item.middle {
+  border-left: 1px solid white;
+  border-right: 1px solid ;
+}
 
-  .founder-btn:hover {
-    background: linear-gradient(90deg, #ceae5c,#ceae5c);
-  }
+/* icon circle */
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #002c2b; /* adjust color */
+  border-radius: 50%;
+}
 
-  /* ✅ Mobile */
-  @media (max-width: 768px) {
-    .founder-section {
-      background-position: center;
-    }
+.icon-circle img {
+  width: 40px;
+  height: 40px;
+}
 
-    .founder-content {
-      max-width: 100%;
-      background: rgba(0,0,0,0.6); /* optional readability */
-      padding: 20px;
-      border-radius: 10px;
-    }
+.especialidade-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.especialidade-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* mobile: remove separators and stack */
+@media (max-width: 768px) {
+  .especialidade-item.middle {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: 20px 0;
   }
-  .we{
-font-size: 20px;
-color: #ceae5c;
-margin-bottom: 20px;
-  }
+}
 </style>
-
-
-<section class="founder-section">
-  <div class="founder-container">
-    <div class="founder-content">
-      <h2><strong> Nossa Especialidade </strong> </h2>
-      <div class="we"> SOFT SKILLS </div>
-      
-      <p>
-        Transformamos Pessoas Para <strong>Transformar Resultados </strong> 
-      </p>
-      <p>
-        Desenvolvemos uma mentalidade de crescimento consistente através da educação emocional, comportamental, para pessoas e organizações, com  ferramentas e técnicas inteligentes da neurociência.
-      </p>
-      
-     <div class="hero-buttons">
-                <button class="btn-primary" onclick="openWhatsApp()">Transformar Minha Empresa</button>
-                <button class="btn-primary" onclick="openWhatsApp()">Desenvolvimento Pessoal</button>
-            </div>
-      
-      
-    </div>
-  </div>
-</section>
-
 
 
 
@@ -966,7 +953,7 @@ margin-bottom: 20px;
         }
 
         .footer-logo-section {
-     <       display: flex;
+           display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
@@ -1197,7 +1184,15 @@ margin-bottom: 20px;
 
     </style>
 
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplenty - Carousel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 <!-- PRIME Method Section -->
 <section class="prime-section">
     <div class="prime-container">
@@ -1217,116 +1212,117 @@ margin-bottom: 20px;
                 <div class="prime-carousel" id="primeCarousel">
                     <!-- Slide 1: Inteligência Estratégica -->
                     <div class="prime-slide active">
-                        <div class="slide-image">
+                        <div class="slide-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face" alt="Profissional estratégico">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
+                            <div class="slide-overlay">
+                                <div class="slide-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3>Análise de Perfil Comportamental 7 Camadas:</h3>
+                                <p>Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resultados.</p>
                             </div>
-                            <h3>Análise de Perfil Comportamental  7 Camadas:</h3>
-                            <p>
-Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resultados.</p>
                         </div>
                     </div>
 
                     <!-- Slide 2: Inteligência Emocional -->
                     <div class="prime-slide">
-                        <div class="slide-image">
+                        <div class="slide-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=face" alt="Profissional comunicando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
+                            <div class="slide-overlay">
+                                <div class="slide-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3>Consultoria organizacional estratégica:</h3>
+                                <p>Fortalecemos a cultura, o clima e o engajamento da sua equipe.</p>
                             </div>
-                            <h3>Consultoria organizacional estratégica:</h3>
-                            <p>Fortalecemos a cultura, o clima e o engajamento da sua equipe.</p>
                         </div>
                     </div>
 
                     <!-- Slide 3: Inteligência Comunicacional -->
                     <div class="prime-slide">
-                        <div class="slide-image">
+                        <div class="slide-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=400&fit=crop&crop=face" alt="Profissional apresentando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
+                            <div class="slide-overlay">
+                                <div class="slide-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3>Treinamentos de líderes e times:</h3>
+                                <p>Desenvolvemos competências que transformam gestores em inspiradores e equipes em protagonistas.</p>
                             </div>
-                            <h3>Treinamentos de líderes e times:</h3>
-                            <p>Desenvolvemos competências que transformam gestores em inspiradores e equipes em protagonistas.</p>
                         </div>
                     </div>
 
                     <!-- Slide 4: Inteligência Comportamental -->
                     <div class="prime-slide">
-                        <div class="slide-image">
+                        <div class="slide-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop&crop=face" alt="Equipe trabalhando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
+                            <div class="slide-overlay">
+                                <div class="slide-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3>Mentoria e coaching Business:</h3>
+                                <p>Desbloqueamos potencial individual e coletivo, unindo ciência e prática.</p>
                             </div>
-                            <h3>Mentoria e coaching Business:</h3>
-                            <p>Desbloqueamos potencial individual e coletivo, unindo ciência e prática.</p>
                         </div>
                     </div>
 
                     <!-- Slide 5: Inteligência Espiritual -->
                     <div class="prime-slide">
-                        <div class="slide-image">
+                        <div class="slide-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1506629905057-f39b5f2d3400?w=600&h=400&fit=crop&crop=face" alt="Profissional meditando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
+                            <div class="slide-overlay">
+                                <div class="slide-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3>Treinamentos de líderes e times:</h3>
+                                <p>Desenvolvemos competências que transformam gestores em inspiradores e equipes em protagonistas.</p>
                             </div>
-                            <h3>Treinamentos de líderes e times:</h3>
-                            <p>Desenvolvemos competências que transformam gestores em inspiradores e equipes em protagonistas.</p>
                         </div>
                     </div>
+
                     <div class="prime-slide">
-                        <div class="slide-image">
+                        <div class="slide-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1506629905057-f39b5f2d3400?w=600&h=400&fit=crop&crop=face" alt="Profissional meditando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
+                            <div class="slide-overlay">
+                                <div class="slide-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3>Programas de alta performance em vendas:</h3>
+                                <p>Unimos neurociência e técnicas modernas para aumentar conversão, consistência e resultados sustentáveis.</p>
                             </div>
-                            <h3>Programas de alta performance em vendas:</h3>
-                            <p>Unimos neurociência e técnicas modernas para aumentar conversão, consistência e resultados sustentáveis.</p>
                         </div>
                     </div>
+
                     <div class="prime-slide">
-                        <div class="slide-image">
+                        <div class="slide-image-wrapper">
                             <img src="https://images.unsplash.com/photo-1506629905057-f39b5f2d3400?w=600&h=400&fit=crop&crop=face" alt="Profissional meditando">
-                        </div>
-                        <div class="slide-content">
-                            <div class="slide-icon">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2" fill="none"/>
-                                </svg>
+                            <div class="slide-overlay">
+                                <div class="slide-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3>Coaching Life Aplenty:</h3>
+                                <p>O Coaching Life da Aplenty é um processo estruturado que integra inteligência emocional, comportamental e espiritual para ajudar você a construir uma vida com mais clareza, equilíbrio e propósito.</p>
                             </div>
-                            <h3>Coaching Life Aplenty:</h3>
-                            <p>O Coaching Life da Aplenty é um processo estruturado que integra inteligência emocional, comportamental e espiritual para ajudar você a construir uma vida com mais clareza, equilíbrio e propósito.</p>
                         </div>
                     </div>
                 </div>
@@ -1350,6 +1346,9 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
                     <button class="indicator" onclick="goToSlide(2)"></button>
                     <button class="indicator" onclick="goToSlide(3)"></button>
                     <button class="indicator" onclick="goToSlide(4)"></button>
+                    <button class="indicator" onclick="goToSlide(5)"></button>
+                    <button class="indicator" onclick="goToSlide(6)"></button>
+                    <button class="indicator" onclick="goToSlide(7)"></button>
                 </div>
             </div>
         </div>
@@ -1358,7 +1357,7 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
 
 <style>
 .prime-section {
-        background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+    background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
     padding: 120px 0;
     position: relative;
     overflow: hidden;
@@ -1386,7 +1385,6 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 80px;
-
 }
 
 .prime-text {
@@ -1433,7 +1431,7 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
 .prime-carousel {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 450px;
 }
 
 .prime-slide {
@@ -1445,8 +1443,6 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
     opacity: 0;
     transition: all 0.5s ease-in-out;
     transform: translateX(100%);
-    display: flex;
-    align-items: center;
 }
 
 .prime-slide.active {
@@ -1458,60 +1454,64 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
     transform: translateX(-100%);
 }
 
-.slide-image {
-    flex: 1;
-    height: 100%;
+.slide-image-wrapper {
     position: relative;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
-.slide-image img {
+.slide-image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.slide-content {
-    flex: 1;
+.slide-overlay {
+    position: absolute;
+           bottom: 40px;
+        left: 26px;
+        right: 26px;
+        padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(13, 45, 44, 0.95) 0%,
+        rgba(13, 45, 44, 0.85) 60%,
+        rgba(13, 45, 44, 0.4) 100%
+    );
     padding: 40px;
-       background: rgb(13 45 44);
-    backdrop-filter: blur(10px);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
+   border-radius: 9px;
 }
 
 .slide-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: #d5bb68;
-    border-radius: 12px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .slide-icon svg {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     color: #1e3a8a;
 }
 
-.slide-content h3 {
-    font-size: 1.8rem;
+.slide-overlay h3 {
+    font-size: 1.6rem;
     font-weight: 600;
     color: white;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     line-height: 1.3;
 }
 
-.slide-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+.slide-overlay p {
+    font-size: 1rem;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
 }
@@ -1554,17 +1554,17 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
 
 .slide-indicators {
     position: absolute;
-    bottom: 1px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 12px;
+    gap: 8px;
     z-index: 10;
 }
 
 .indicator {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: none;
     background: rgba(255, 255, 255, 0.4);
@@ -1574,7 +1574,7 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
 
 .indicator.active {
     background: #d5bb68;
-    transform: scale(1.2);
+    transform: scale(1.3);
 }
 
 /* Mobile Responsiveness */
@@ -1612,29 +1612,19 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
     }
     
     .prime-carousel {
-        height: 600px;
+        height: 500px;
     }
     
-    .prime-slide {
-        flex-direction: column;
-    }
-    
-    .slide-image {
-        height: 250px;
-    }
-    
-    .slide-content {
-        flex: none;
-        height: auto;
+    .slide-overlay {
         padding: 30px 24px;
     }
     
-    .slide-content h3 {
+    .slide-overlay h3 {
         font-size: 1.4rem;
     }
     
-    .slide-content p {
-        font-size: 1rem;
+    .slide-overlay p {
+        font-size: 0.95rem;
     }
     
     .carousel-btn {
@@ -1665,10 +1655,26 @@ Ferramenta reconhecida cientificamente para compreender pessoas e maximizar resu
         font-size: 1.1rem;
     }
     
-    .slide-content {
-        padding: 24px 16px;
+    .prime-carousel {
+        height: 400px;
+    }
+    
+    .slide-overlay {
+        bottom: 30px;
+        left: 16px;
+        right: 16px;
+        padding: 20px;
+    }
+    
+    .slide-overlay h3 {
+        font-size: 1.2rem;
+    }
+    
+    .slide-overlay p {
+        font-size: 0.9rem;
     }
 }
+
 .qa {
     font-size: 16px;
 }
@@ -1720,7 +1726,8 @@ setInterval(() => {
 // Initialize
 updateSlide();
 </script>
-
+</body>
+</html>
 
 <!-- Mentores Section -->
 <section class="mentores-section">
