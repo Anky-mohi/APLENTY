@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LL5 - Liderança de Alta Performance - Aplenty</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d2d2c;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
+                url("/banner.jpeg") center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 70px 40px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.08), transparent 60%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+        }
+
+        .prime-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 48px;
+            line-height: 1.6;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-highlight {
+            color: #d8ba69;
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            color: #0B1426;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 200px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Leadership Evolution Section */
+        .evolution-section {
+            background: #f9f9f9;
+            color: #000;
+            padding: 120px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+
+        .evolution-old {
+            background: rgba(200, 200, 200, 0.3);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid #ccc;
+        }
+
+        .evolution-new {
+            background: linear-gradient(135deg, rgba(206, 174, 92, 0.1), rgba(212, 185, 102, 0.05));
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 5px solid #ceae5c;
+        }
+
+        .evolution-old h3 {
+            color: #666;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .evolution-new h3 {
+            color: #0d2d2c;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .evolution-old p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .evolution-new p {
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Diagnosis Section */
+        .diagnosis-section {
+            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .diagnosis-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.3), transparent 50%);
+        }
+
+        .diagnosis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .diagnosis-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .diagnosis-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .diagnosis-card.weak {
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .diagnosis-card.strong {
+            border-left: 5px solid #ceae5c;
+        }
+
+        .diagnosis-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .diagnosis-card.weak .diagnosis-icon {
+            background: linear-gradient(135deg, #ff6b6b, #ff5252);
+        }
+
+        .diagnosis-card.strong .diagnosis-icon {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+        }
+
+        .diagnosis-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        .diagnosis-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* How It Works Section */
+        .how-works-section {
+            background: linear-gradient(135deg, #0d2d2c 0%, #1a4847 100%);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .how-works-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .how-works-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: #0d2d2c;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: #0d2d2c;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background: #0d2d2c;
+            color: #FFFFFF;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 200px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(13, 45, 44, 0.3);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 0;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 32px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .evolution-grid, .diagnosis-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .btn-primary {
+                width: 100%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20b955;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .hero-title {
+            animation-delay: 0.1s;
+        }
+
+        .hero-subtitle {
+            animation-delay: 0.2s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Icon Button -->
+    <a href="https://wa.me/+5534999326520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20programa%20LL5." 
+       class="whatsapp-float" target="_blank">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="prime-logo">Aplenty</div>
+            <h1 class="hero-title">LL5</h1>
+            <p class="hero-subtitle">
+                <span class="hero-highlight">Liderar vai além de gerenciar processos, metas</span>, é sobre engajar pessoas, 
+                delegar, inspirar confiança e desenvolver pessoas, promover clima adequado, ensinar cultura de valores, 
+                para criar negócios consistentes de alta performance.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary" onclick="openWhatsApp()">Saiba Mais</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Leadership Evolution Section -->
+    <section class="evolution-section">
+        <div class="container">
+            <h2 class="section-title">A Evolução da Liderança</h2>
+            <div class="evolution-grid">
+                <div class="evolution-old">
+                    <h3>Liderança Tradicional</h3>
+                    <p>A qualificação técnica e o conhecimento específico de uma área eram considerados pilares importantes para liderar...</p>
+                </div>
+                <div class="evolution-new">
+                    <h3>Liderança de Alta Performance</h3>
+                    <p>São <strong>habilidades comportamentais</strong> que fazem a diferença entre um profissional competente e um <strong>líder excepcional</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diagnosis Section -->
+    <section class="diagnosis-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #ceae5c;">Diagnóstico de Liderança</h2>
+            <div class="diagnosis-grid">
+                <div class="diagnosis-card weak">
+                    <div class="diagnosis-icon">⚠️</div>
+                    <h3>Liderança Frágil</h3>
+                    <p>Foco apenas em resultados técnicos, dificuldade em engajar equipes, alta rotatividade, clima organizacional tenso, comunicação deficiente.</p>
+                </div>
+                <div class="diagnosis-card strong">
+                    <div class="diagnosis-icon">🏆</div>
+                    <h3>Liderança Próspera, Forte e Consistente</h3>
+                    <p>Equipes engajadas, resultados sustentáveis, clima positivo, desenvolvimento contínuo, cultura de valores sólida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-works-section">
+        <div class="container">
+            <div class="how-works-content">
+                <h2 class="section-title">Como Funciona o LL5</h2>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px; color: rgba(255, 255, 255, 0.9);">
+                    LL5 são treinamentos práticos, presenciais, voltados para desenvolver habilidades de liderança de alta performance.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🛠️</div>
+                        <h3>Ferramentas Práticas</h3>
+                        <p>Utilizamos ferramentas e vivências que promovem o desenvolvimento de líderes.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <h3>Desenvolvimento de Líderes</h3>
+                        <p>Visa formar profissionais que inspirem e conduzam suas equipes ao sucesso.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>Personalizado</h3>
+                        <p>Desenvolvidos de acordo com a realidade e necessidade de cada empresa.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Experiência Transformadora</h3>
+                        <p>Personalizados para garantir uma experiência transformadora e aplicável.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 60px;">
+                    <p style="font-size: 1.3rem; color: #ceae5c; font-weight: 500; margin-bottom: 40px;">
+                        Aprenda a construir empresa como um excelente lugar para trabalhar
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Transforme sua Liderança</h2>
+                <p>Desenvolva habilidades comportamentais que fazem a diferença real nos resultados da sua empresa.</p>
+                <a href="#" class="btn-cta" onclick="openWhatsApp()">Quero Desenvolver Minha Liderança</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // WhatsApp contact function
+        function openWhatsApp() {
+            const phoneNumber = '5534999326520';
+            const message = 'Olá! Gostaria de saber mais sobre o programa LL5 - Liderança de Alta Performance.';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Smooth scroll for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.diagnosis-card, .feature-item, .evolution-old, .evolution-new').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
