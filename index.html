@@ -790,14 +790,15 @@ ease;
 
 
 
-
-
-<!-- Nossa Especialidade Section -->
+<!-- Nossa Especialidade Section --> 
 <section class="especialidade-section">
   <div class="especialidade-container">
     <h2 class="especialidade-title">Nossa Especialidade</h2>
     <p class="especialidade-subtitle">
-      Transformar pessoas para Transformar Resultados <span class="medal">🏅</span>
+      Transformar pessoas para Transformar Resultados 
+      <span class="medal">
+        <img src="/icon.jpeg" alt="Medal Icon" style="width:50px;height:50px;">
+      </span>
     </p>
 
     <div class="especialidade-grid">
@@ -828,13 +829,20 @@ ease;
   </div>
   <br>
   <br>
-   <div class="hero-buttons">
-                <button class="btn-primary" onclick="openWhatsApp()">Transformar Minha Empresa</button>
-                <button class="btn-primary" onclick="openWhatsApp()">Desenvolvimento Pessoal</button>
-            </div>
+  <div class="hero-buttons">
+    <button class="btn-primary" onclick="openWhatsApp()">Transformar Minha Empresa</button>
+    <button class="btn-primary" onclick="openWhatsApp()">Desenvolvimento Pessoal</button>
+  </div>
 </section>
 
 <style>
+    .medal img {
+  width: 20px;       /* size of the medal */
+  height: 20px;
+  vertical-align: middle; /* aligns with text baseline */
+ /* small gap from the text */
+}
+
 .especialidade-section {
   background: #f9f9f9; /* light background */
   color: #000; /* black text */
