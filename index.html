@@ -741,14 +741,30 @@ ease;
             </div>
             
             <div class="hero-buttons">
-                <button class="btn-primary" onclick="openWhatsApp()">Quero Contratar</button>
+                <button class="btn-primary" onclick="openWhatsAppquro()">Quero Contratar</button>
                 <button class="btn-secondary" onclick="openWhatsApp()">Quero saber mais</button>
             </div>
         </div>
     </main>
 <script>
-function openWhatsApp() {
+function openWhatsAppquro() {
     const message = encodeURIComponent("Olá! Gostaria de saber mais informações sobre o treinamento de vendas.");
+    const phoneNumber = "+5534999326520"; // Substitua pelo número do WhatsApp com DDI e DDD, sem "+" ou espaços
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, "_blank");
+}
+</script>
+<script>
+function openWhatsAppTransformar() {
+    const message = encodeURIComponent("Olá ! Gostaria de saber mais informações sobre como transformar a minha empresa");
+    const phoneNumber = "+5534999326520"; // Substitua pelo número do WhatsApp com DDI e DDD, sem "+" ou espaços
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, "_blank");
+}
+</script>
+<script>
+function openWhatsAppDesenvolvimento() {
+    const message = encodeURIComponent("Olá ! Gostaria de saber mais informações sobre desenvolvimento pessoal");
     const phoneNumber = "+5534999326520"; // Substitua pelo número do WhatsApp com DDI e DDD, sem "+" ou espaços
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(url, "_blank");
@@ -790,7 +806,7 @@ function openWhatsApp() {
         // WhatsApp contact function
         function openWhatsApp() {
             const phoneNumber = '5534999326520';
-            const message = 'Olá ! Gostaria de saber mais informações sobre o treinamento de vendas.';
+            const message = 'Olá';
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappURL, '_blank');
         }
@@ -838,8 +854,8 @@ function openWhatsApp() {
   <br>
   <br>
   <div class="hero-buttons">
-    <button class="btn-primary" onclick="openWhatsApp()">Transformar Minha Empresa</button>
-    <button class="btn-primary" onclick="openWhatsApp()">Desenvolvimento Pessoal</button>
+    <button class="btn-primary" onclick="openWhatsAppTransformar()">Transformar Minha Empresa</button>
+    <button class="btn-primary" onclick="openWhatsAppDesenvolvimento()">Desenvolvimento Pessoal</button>
   </div>
 </section>
 
