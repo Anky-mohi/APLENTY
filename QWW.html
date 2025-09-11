@@ -15,24 +15,32 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d2d2c;
+            background-color: #101c44;
             color: #FFFFFF;
             overflow-x: hidden;
             line-height: 1.5;
         }
 
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
-                url("/banner.jpeg") center/cover no-repeat;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 70px 40px 0;
-            overflow: hidden;
-        }
+       .hero {
+  /* Set the background image */
+  background: 
+    linear-gradient(
+      rgba(16, 28, 68, 0.8),   /* dark blue overlay with opacity */
+      rgba(16, 28, 68, 0.8)
+    ),
+    url('/1.jpeg'); /* your background image */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 70px 40px 0;
+  overflow: hidden;
+}
+
 
         .hero::before {
             content: '';
@@ -72,45 +80,46 @@
             color: #FFFFFF;
             line-height: 1.1;
             letter-spacing: -1px;
+            text-align: left;
         }
 
         .hero-subtitle {
+            text-align: left;
             font-size: 1.8rem;
             margin-bottom: 32px;
             line-height: 1.3;
             font-weight: 600;
             color: #ceae5c;
             max-width: 950px;
-            margin-left: auto;
-            margin-right: auto;
+            
         }
 
         .hero-description {
+            text-align: left;
             font-size: 1.3rem;
             margin-bottom: 48px;
             line-height: 1.6;
             font-weight: 400;
             color: rgba(255, 255, 255, 0.95);
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            
         }
 
-        .hero-result {
-            font-size: 1.2rem;
-            margin-bottom: 48px;
-            line-height: 1.5;
-            font-weight: 600;
-            color: #d4b666;
-            background: rgba(212, 175, 55, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            border-left: 5px solid #ceae5c;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
+       .hero-result {
+    text-align: left;
+    font-size: 1.2rem;
+    margin-bottom: 48px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #eeeff1;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #ceae5c;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
         .hero-buttons {
             display: flex;
             gap: 20px;
@@ -191,7 +200,7 @@
 
         /* Before After Section */
         .before-after-section {
-            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            background: #101c44;
             padding: 120px 0;
             position: relative;
         }
@@ -355,7 +364,7 @@
 
         /* Target Section */
         .target-section {
-            background: linear-gradient(135deg, #1a4847 0%, #0d2d2c 100%);
+            background: #101c44;
             padding: 100px 0;
             position: relative;
         }
@@ -616,6 +625,17 @@
         .hero-buttons {
             animation-delay: 0.5s;
         }
+        .prime-logo {
+  /* size of the container */
+  width: 150px;      /* adjust as needed */
+  height: auto;      /* keep aspect ratio */
+}
+
+.prime-logo img {
+  width: 100%;       /* make image fill container */
+  height: auto;      /* maintain aspect ratio */
+  display: block;    /* removes extra space under image */
+}
     </style>
 </head>
 <body>
@@ -628,7 +648,10 @@
     <!-- Hero Section -->
     <main class="hero">
         <div class="hero-content">
-            <div class="prime-logo">Aplenty</div>
+           <div class="prime-logo">
+  <img class="logo" src="/Screenshot (128).png" alt="Logo">
+</div>
+
             <h1 class="hero-title">Treinamento de Alta Performance em Vendas</h1>
             <p class="hero-subtitle">Aumente sua receita <strong>vendendo de forma assertiva e estruturada</strong></p>
             <p class="hero-description">
