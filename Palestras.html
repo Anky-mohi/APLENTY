@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestras - Temas Importantes - Aplenty</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d2d2c;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
+                url("/banner.jpeg") center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 70px 40px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.08), transparent 60%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+        }
+
+        .prime-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #ceae5c;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 48px;
+            line-height: 1.6;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            color: #0B1426;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 200px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Palestras Section */
+        .palestras-section {
+            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .palestras-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: -0.5px;
+            color: #ceae5c;
+            position: relative;
+            z-index: 2;
+        }
+
+        .palestras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .palestra-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-left: 5px solid #ceae5c;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .palestra-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(206, 174, 92, 0.05), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .palestra-card:hover::before {
+            opacity: 1;
+        }
+
+        .palestra-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #d4b666;
+        }
+
+        .palestra-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .palestra-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+            color: #ceae5c;
+            position: relative;
+            z-index: 2;
+        }
+
+        .palestra-objetivo {
+            font-size: 0.9rem;
+            color: #d4b666;
+            font-weight: 500;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .palestra-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .palestra-card strong {
+            color: #ceae5c;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(13, 45, 44, 0.1), transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            color: #0d2d2c;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            color: #0d2d2c;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            background: #0d2d2c;
+            color: #FFFFFF;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 250px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(13, 45, 44, 0.4);
+            background: #1a4847;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 0;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 32px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .palestras-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .btn-primary {
+                width: 100%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-content p {
+                font-size: 1.1rem;
+            }
+
+            .palestra-card {
+                padding: 30px;
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20b955;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .hero-title {
+            animation-delay: 0.1s;
+        }
+
+        .hero-subtitle {
+            animation-delay: 0.2s;
+        }
+
+        .hero-description {
+            animation-delay: 0.3s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Icon Button -->
+    <a href="https://wa.me/+5534999326520?text=Olá!%20Gostaria%20de%20contratar%20uma%20palestra." 
+       class="whatsapp-float" target="_blank">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="prime-logo">Aplenty</div>
+            <h1 class="hero-title">Palestras</h1>
+            <p class="hero-subtitle">Temas Importantes</p>
+            <p class="hero-description">
+                Palestras que sensibilizam e transformam. Desenvolvidas para inspirar mudanças reais e 
+                gerar consciência sobre temas essenciais para o crescimento pessoal e profissional.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#palestras" class="btn-primary">Conheça Nossos Temas</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Palestras Section -->
+    <section id="palestras" class="palestras-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Temas de Palestras</h2>
+            
+            <div class="palestras-grid">
+                <div class="palestra-card">
+                    <div class="palestra-icon">🎯</div>
+                    <h3>Auto responsabilidade</h3>
+                    <p class="palestra-objetivo">Objetivo:</p>
+                    <p>Essa palestra contribui com a conscientização da auto gestão no trabalho e na vida</p>
+                </div>
+
+                <div class="palestra-card">
+                    <div class="palestra-icon">⏰</div>
+                    <h3>Gestão tempo, o que é de fato essencial?</h3>
+                    <p class="palestra-objetivo">Objetivo:</p>
+                    <p>Gerar consciência de como ter uma agenda produtiva, e fazer o que realmente é essencial.</p>
+                </div>
+
+                <div class="palestra-card">
+                    <div class="palestra-icon">💎</div>
+                    <h3>Gestão emocional</h3>
+                    <p class="palestra-objetivo">Objetivo:</p>
+                    <p>Entender as crenças que impede de viver em abundância em todas as áreas da vida</p>
+                </div>
+
+                <div class="palestra-card">
+                    <div class="palestra-icon">🎵</div>
+                    <h3>Metáfora do músico</h3>
+                    <p class="palestra-objetivo">Objetivo:</p>
+                    <p>Ampliar a consciência de líderes sobre sua missão de desenvolver e inspirar seus liderados</p>
+                </div>
+
+                <div class="palestra-card">
+                    <div class="palestra-icon">⭐</div>
+                    <h3>Cliente no Centro: Como Encantar em Segundos e Construir Relações que Duram</h3>
+                    <p class="palestra-objetivo">Objetivo:</p>
+                    <p>Inspirar e capacitar profissionais a entenderem que o cliente não busca apenas produto, mas <strong>experiência, emoção e valor real</strong>. A palestra mostra como <strong>usar os primeiros segundos de contato para gerar confiança</strong>, criar conexões autênticas e transformar o atendimento em uma jornada memorável que fideliza e diferencia a empresa no mercado.</p>
+                </div>
+
+                <div class="palestra-card">
+                    <div class="palestra-icon">💬</div>
+                    <h3>Decifre pessoas e se comunique melhor</h3>
+                    <p class="palestra-objetivo">Objetivo:</p>
+                    <p>Ampliar a consciência do respeito e assertividade ao falar com qualquer pessoa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Contratar Palestra</h2>
+                <p>Transforme sua equipe com palestras que inspiram, engajam e geram resultados reais. Entre em contato e descubra como podemos personalizar uma palestra para sua empresa.</p>
+                <a href="#" class="btn-cta" onclick="openWhatsApp()">Quero Contratar uma Palestra</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // WhatsApp contact function
+        function openWhatsApp() {
+            const phoneNumber = '5534999326520';
+            const message = 'Olá! Gostaria de contratar uma palestra. Podem me enviar mais informações sobre os temas disponíveis e valores?';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Smooth scroll for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.palestra-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

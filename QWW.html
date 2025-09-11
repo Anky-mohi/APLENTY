@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento de Alta Performance em Vendas - Aplenty</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d2d2c;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
+                url("/banner.jpeg") center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 70px 40px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.08), transparent 60%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1100px;
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+        }
+
+        .prime-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 4.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 32px;
+            line-height: 1.3;
+            font-weight: 600;
+            color: #ceae5c;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 48px;
+            line-height: 1.6;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-result {
+            font-size: 1.2rem;
+            margin-bottom: 48px;
+            line-height: 1.5;
+            font-weight: 600;
+            color: #d4b666;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #ceae5c;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            color: #0B1426;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 280px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: #1a0f0f;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .problem-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.08), transparent 60%);
+        }
+
+        .problem-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .problem-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .problem-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Before After Section */
+        .before-after-section {
+            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .before-after-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(206, 174, 92, 0.06), transparent 50%);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: -0.5px;
+            color: #ceae5c;
+            position: relative;
+            z-index: 2;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 50px 40px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-card.before {
+            border-left: 6px solid #ff6b6b;
+        }
+
+        .comparison-card.after {
+            border-left: 6px solid #ceae5c;
+        }
+
+        .comparison-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .comparison-card.before::before {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), transparent 50%);
+        }
+
+        .comparison-card.after::before {
+            background: linear-gradient(135deg, rgba(206, 174, 92, 0.05), transparent 50%);
+        }
+
+        .comparison-card:hover::before {
+            opacity: 1;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .comparison-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .comparison-card.before .comparison-icon {
+            background: linear-gradient(135deg, #ff6b6b, #ff5252);
+        }
+
+        .comparison-card.after .comparison-icon {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+        }
+
+        .comparison-card h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+
+        .comparison-card.before h3 {
+            color: #ff6b6b;
+        }
+
+        .comparison-card.after h3 {
+            color: #ceae5c;
+        }
+
+        .comparison-list {
+            list-style: none;
+            text-align: left;
+            position: relative;
+            z-index: 2;
+        }
+
+        .comparison-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-card.before .comparison-list li {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .comparison-card.after .comparison-list li {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .list-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .comparison-card.before .list-icon {
+            color: #ff6b6b;
+        }
+
+        .comparison-card.after .list-icon {
+            color: #ceae5c;
+        }
+
+        /* Target Section */
+        .target-section {
+            background: linear-gradient(135deg, #1a4847 0%, #0d2d2c 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .target-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.1), transparent 60%);
+        }
+
+        .target-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .target-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ceae5c;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .target-description {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 50px;
+            line-height: 1.6;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .target-highlight {
+            background: rgba(206, 174, 92, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(206, 174, 92, 0.3);
+            margin: 50px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .target-highlight h3 {
+            font-size: 1.8rem;
+            color: #d4b666;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .target-highlight p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .target-highlight strong {
+            color: #ceae5c;
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(13, 45, 44, 0.1), transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 3.2rem;
+            color: #0d2d2c;
+            margin-bottom: 30px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .cta-content p {
+            font-size: 1.4rem;
+            color: #0d2d2c;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .btn-cta {
+            background: #0d2d2c;
+            color: #FFFFFF;
+            padding: 25px 60px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 350px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(13, 45, 44, 0.4);
+            background: #1a4847;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 0;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 32px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .problem-title {
+                font-size: 2.4rem;
+            }
+
+            .target-title {
+                font-size: 2.2rem;
+            }
+
+            .btn-primary, .btn-cta {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-content h2 {
+                font-size: 2.4rem;
+            }
+
+            .cta-content p {
+                font-size: 1.2rem;
+            }
+
+            .comparison-card {
+                padding: 35px 25px;
+            }
+
+            .target-highlight {
+                padding: 30px 20px;
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20b955;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-title {
+            animation-delay: 0.1s;
+        }
+
+        .hero-subtitle {
+            animation-delay: 0.2s;
+        }
+
+        .hero-description {
+            animation-delay: 0.3s;
+        }
+
+        .hero-result {
+            animation-delay: 0.4s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Icon Button -->
+    <a href="https://wa.me/+5534999326520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Treinamento%20de%20Alta%20Performance%20em%20Vendas." 
+       class="whatsapp-float" target="_blank">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="prime-logo">Aplenty</div>
+            <h1 class="hero-title">Treinamento de Alta Performance em Vendas</h1>
+            <p class="hero-subtitle">Aumente sua receita <strong>vendendo de forma assertiva e estruturada</strong></p>
+            <p class="hero-description">
+                Com o <strong>Treinamento de Alta Performance em Vendas</strong>, você e sua equipe vão aprender a aplicar 
+                técnicas modernas de vendas, inteligência emocional e comportamental, além de estratégias de neurociência 
+                aplicadas ao processo comercial.
+            </p>
+            <div class="hero-result">
+                <strong>O resultado?</strong> Mais previsibilidade, aumento de conversão e uma mentalidade inabalável para atingir e superar objetivos.
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#detalhes" class="btn-primary">Quero Transformar Minhas Vendas</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-content">
+                <h2 class="problem-title">Pare de vender apenas para quem quer comprar e perder vendas por falta de entendimento</h2>
+                <p class="problem-subtitle">
+                    Se você realmente quer vender mais, aumentar competitividade e se manter no mercado, é hora de uma mudança radical na sua abordagem.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before After Section -->
+    <section id="detalhes" class="before-after-section">
+        <div class="container">
+            <h2 class="section-title">Substitua o Método Antigo pelo Método Validado</h2>
+            
+            <div class="comparison-grid">
+                <div class="comparison-card before">
+                    <div class="comparison-icon">❌</div>
+                    <h3>Método Antigo</h3>
+                    <ul class="comparison-list">
+                        <li><span class="list-icon">🔴</span>Vender apenas para quem quer comprar</li>
+                        <li><span class="list-icon">🔴</span>Perder vendas por falta de entendimento</li>
+                        <li><span class="list-icon">🔴</span>Resultados inconsistentes</li>
+                        <li><span class="list-icon">🔴</span>Dependência da sorte</li>
+                        <li><span class="list-icon">🔴</span>Falta de previsibilidade</li>
+                        <li><span class="list-icon">🔴</span>Baixa conversão</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card after">
+                    <div class="comparison-icon">✅</div>
+                    <h3>Método Validado</h3>
+                    <ul class="comparison-list">
+                        <li><span class="list-icon">🟢</span>Técnicas modernas de vendas</li>
+                        <li><span class="list-icon">🟢</span>Inteligência emocional aplicada</li>
+                        <li><span class="list-icon">🟢</span>Neurociência no processo comercial</li>
+                        <li><span class="list-icon">🟢</span>Resultados previsíveis</li>
+                        <li><span class="list-icon">🟢</span>Alta conversão</li>
+                        <li><span class="list-icon">🟢</span>Performance consistente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Section -->
+    <section class="target-section">
+        <div class="container">
+            <div class="target-content">
+                <h2 class="target-title">Para Quem é Este Treinamento?</h2>
+                <p class="target-description">
+                    Esse treinamento é para empresas e vendedores que querem sair do ciclo da estagnação e entrar no jogo da alta performance.
+                </p>
+                
+                <div class="target-highlight">
+                    <h3>Se você busca crescimento real, técnicas práticas e resultados consistentes</h3>
+                    <p>
+                        Se você quer deixar de ser mais um vendedor comum e se tornar um <strong>vendedor de alta performance</strong>, 
+                        com <strong>resultados consistentes</strong> e uma <strong>renda previsível acima de R$15 mil</strong>, 
+                        o próximo passo é simples: <strong>troque definitivamente a sorte por um método validado</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Transforme Seu Potencial em Resultado</h2>
+                <p>
+                    Contrate agora mesmo o Treinamento de Alta Performance em Vendas e saia do ciclo da estagnação. 
+                    Desenvolva uma mentalidade inabalável e técnicas modernas que geram resultados consistentes.
+                </p>
+                <a href="#" class="btn-cta" onclick="openWhatsApp()">Quero Contratar o Treinamento</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // WhatsApp contact function
+        function openWhatsApp() {
+            const phoneNumber = '5534999326520';
+            const message = 'Olá! Gostaria de contratar o Treinamento de Alta Performance em Vendas. Podem me enviar mais informações sobre o programa, metodologia e investimento?';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Smooth scroll for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.comparison-card, .target-highlight').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
