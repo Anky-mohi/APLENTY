@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvimento Pessoal - Transforme sua vida em todas as áreas - Aplenty</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d2d2c;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
+                url("/banner.jpeg") center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 70px 40px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.12), transparent 60%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1100px;
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+        }
+
+        .prime-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 4.2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            margin-bottom: 32px;
+            line-height: 1.3;
+            font-weight: 600;
+            color: #ceae5c;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 48px;
+            line-height: 1.6;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            color: #0B1426;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 280px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* How It Works Section */
+        .how-works-section {
+            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .how-works-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: -0.5px;
+            color: #ceae5c;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-left: 5px solid #ceae5c;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .process-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(206, 174, 92, 0.05), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .process-card:hover::before {
+            opacity: 1;
+        }
+
+        .process-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .process-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-card h3 {
+            font-size: 1.4rem;
+            color: #ceae5c;
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .process-card strong {
+            color: #d4b666;
+            font-weight: 600;
+        }
+
+        /* Life Areas Section */
+        .life-areas-section {
+            background: linear-gradient(135deg, #1a4847 0%, #0d2d2c 100%);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .life-areas-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(212, 175, 55, 0.06), transparent 50%);
+        }
+
+        .life-areas-intro {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .life-areas-intro p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .area-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(206, 174, 92, 0.3);
+        }
+
+        .area-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0d2d2c;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .area-content h4 {
+            font-size: 1.3rem;
+            color: #ceae5c;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .area-content p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(206, 174, 92, 0.08), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(206, 174, 92, 0.4);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            color: #ceae5c;
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Target Audience Section */
+        .target-section {
+            background: linear-gradient(135deg, #1a4847 0%, #0d2d2c 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .target-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08), transparent 60%);
+        }
+
+        .target-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .target-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .target-item {
+            background: rgba(206, 174, 92, 0.1);
+            border: 2px solid rgba(206, 174, 92, 0.3);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .target-item:hover {
+            transform: translateY(-5px);
+            background: rgba(206, 174, 92, 0.15);
+            border-color: rgba(206, 174, 92, 0.5);
+        }
+
+        .target-item h4 {
+            font-size: 1.3rem;
+            color: #ceae5c;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .target-item p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(13, 45, 44, 0.1), transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 3.2rem;
+            color: #0d2d2c;
+            margin-bottom: 30px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .cta-content p {
+            font-size: 1.4rem;
+            color: #0d2d2c;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .btn-cta {
+            background: #0d2d2c;
+            color: #FFFFFF;
+            padding: 25px 60px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 300px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(13, 45, 44, 0.4);
+            background: #1a4847;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 0;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+                margin-bottom: 32px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .process-grid, .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .target-list {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-primary, .btn-cta {
+                width: 100%;
+                min-width: auto;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-content h2 {
+                font-size: 2.4rem;
+            }
+
+            .cta-content p {
+                font-size: 1.2rem;
+            }
+
+            .area-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20b955;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-title {
+            animation-delay: 0.1s;
+        }
+
+        .hero-subtitle {
+            animation-delay: 0.2s;
+        }
+
+        .hero-description {
+            animation-delay: 0.3s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Icon Button -->
+    <a href="https://wa.me/+5534999326520?text=Olá!%20Gostaria%20de%20iniciar%20meu%20processo%20de%20Desenvolvimento%20Pessoal." 
+       class="whatsapp-float" target="_blank">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="prime-logo">Aplenty</div>
+            <h1 class="hero-title">Desenvolvimento Pessoal</h1>
+            <p class="hero-subtitle">Transforme sua vida em todas as áreas</p>
+            <p class="hero-description">
+                O <strong>Desenvolvimento Pessoal é</strong> um processo profundo de autoconhecimento e crescimento que possibilita 
+                transformar a forma como você enxerga e conduz a própria vida. Através de atendimentos individuais, você terá 
+                clareza, equilíbrio e estratégias para avançar em cada área da sua vida de maneira consistente e sustentável.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#como-funciona" class="btn-primary">Quero Transformar Minha Vida</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- How It Works Section -->
+    <section id="como-funciona" class="how-works-section">
+        <div class="container">
+            <h2 class="section-title">Como Funciona</h2>
+            
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-icon">📋</div>
+                    <h3>10 Sessões Individuais</h3>
+                    <p>Atendimentos <strong>presencial ou online</strong> com aproximadamente <strong>2h cada</strong>, focados no seu desenvolvimento pessoal.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-icon">🔍</div>
+                    <h3>Diagnóstico Inicial</h3>
+                    <p><strong>Diagnóstico inicial</strong> das <strong>11 áreas da vida</strong> para identificar pontos de melhoria e potenciais.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-icon">🎯</div>
+                    <h3>Planos de Ação</h3>
+                    <p>Construção de <strong>planos de ação práticos e personalizados</strong> para cada área da sua vida.</p>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-icon">📈</div>
+                    <h3>Acompanhamento</h3>
+                    <p><strong>Acompanhamento do progresso</strong> e desenvolvimento ao longo de todo o processo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Life Areas Section -->
+    <section class="life-areas-section">
+        <div class="container">
+            <h2 class="section-title">As 11 Áreas da Vida Trabalhadas</h2>
+            
+            <div class="life-areas-intro">
+                <p>Dentro da abordagem sistêmica, avaliamos cada dimensão que influencia diretamente seus resultados:</p>
+            </div>
+
+            <div class="areas-grid">
+                <div class="area-card">
+                    <div class="area-number">1</div>
+                    <div class="area-content">
+                        <h4>Emocional</h4>
+                        <p>Como você lida com sentimentos e emoções.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">2</div>
+                    <div class="area-content">
+                        <h4>Espiritual</h4>
+                        <p>Conexão com propósito e sentido de vida.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">3</div>
+                    <div class="area-content">
+                        <h4>Financeira</h4>
+                        <p>Relação com dinheiro e prosperidade.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">4</div>
+                    <div class="area-content">
+                        <h4>Profissional</h4>
+                        <p>Desempenho, carreira e realizações.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">5</div>
+                    <div class="area-content">
+                        <h4>Intelectual</h4>
+                        <p>Aprendizado contínuo e expansão de conhecimento.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">6</div>
+                    <div class="area-content">
+                        <h4>Conjugal</h4>
+                        <p>Relacionamento amoroso e parceria de vida.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">7</div>
+                    <div class="area-content">
+                        <h4>Filhos</h4>
+                        <p>Qualidade da relação e papel de referência.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">8</div>
+                    <div class="area-content">
+                        <h4>Parentes</h4>
+                        <p>Vínculos e relações familiares.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">9</div>
+                    <div class="area-content">
+                        <h4>Social</h4>
+                        <p>Amizades e conexões interpessoais.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">10</div>
+                    <div class="area-content">
+                        <h4>Saúde</h4>
+                        <p>Cuidado físico, mental e bem-estar.</p>
+                    </div>
+                </div>
+
+                <div class="area-card">
+                    <div class="area-number">11</div>
+                    <div class="area-content">
+                        <h4>Servir</h4>
+                        <p>Contribuição para os outros e impacto no mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">O que você vai conquistar</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Clareza para Decisões</h3>
+                    <p>Clareza para tomar decisões em todas as áreas da vida com segurança e confiança.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚖️</div>
+                    <h3>Equilíbrio Emocional</h3>
+                    <p>Equilíbrio emocional e mais controle da rotina para uma vida mais harmoniosa.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧭</div>
+                    <h3>Alinhamento de Propósito</h3>
+                    <p>Alinhamento entre propósito, carreira e vida pessoal para uma existência mais significativa.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Estratégias de Crescimento</h3>
+                    <p>Estratégias para destravar seu potencial e atingir objetivos de forma consistente.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🗺️</div>
+                    <h3>Visão Clara do Futuro</h3>
+                    <p>Uma visão prática de onde você está e para onde quer ir em cada área da vida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="target-section">
+        <div class="container">
+            <div class="target-content">
+                <h2 class="section-title">Para Quem É</h2>
+                
+                <div class="target-list">
+                    <div class="target-item">
+                        <h4>Mudança de Padrões</h4>
+                        <p>Pessoas que desejam mudar padrões e viver de forma mais consciente</p>
+                    </div>
+
+                    <div class="target-item">
+                        <h4>Profissionais em Transição</h4>
+                        <p>Profissionais em transição ou que buscam evolução pessoal e profissional</p>
+                    </div>
+
+                    <div class="target-item">
+                        <h4>
