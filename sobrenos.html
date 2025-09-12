@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplenty - Educação Comportamental</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d2d2c;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(13, 45, 44, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 90px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .site-logo {
+            height: 59px;
+            width: auto;
+        }
+
+        .brand-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: #ceae5c;
+    
+    margin-left: -15px;
+    margin-top: 9px;
+}
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-menu li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 19px;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-menu li a:hover {
+            color: #ceae5c;
+        }
+
+        .produtos-menu {
+            position: relative;
+        }
+
+        .produtos-menu > a::after {
+            content: '▼';
+            font-size: 8px;
+            margin-left: 6px;
+            color: #ceae5c;
+            transition: transform 0.2s ease;
+        }
+
+        .produtos-menu:hover > a::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            background: #0d2d2c;
+            backdrop-filter: blur(30px);
+            list-style: none;
+            padding: 20px 0;
+            min-width: 280px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-top: 8px;
+        }
+
+        .produtos-menu:hover .dropdown {
+            display: block;
+            animation: fadeInDown 0.2s ease;
+        }
+
+        .dropdown-category {
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        .category-title {
+            font-size: 10px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .category-items {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .category-items a {
+            display: block;
+            padding: 8px 0;
+            color: #FFFFFF;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .category-items a:hover {
+            color: #ceae5c;
+            padding-left: 8px;
+        }
+
+        .sou-aluno {
+    /* background: linear-gradient(135deg, #ffffff, #ceae5c); */
+    color: #ccaa59 !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.2s 
+ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+        .sou-aluno:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .nav-separator {
+            color: rgba(255, 255, 255, 0.3);
+            font-weight: 300;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sou-aluno-menu {
+            position: relative;
+        }
+
+        .sou-aluno-menu > a::after {
+            content: '▼';
+            font-size: 8px;
+            margin-left: 6px;
+            color: #ccaa59 ;
+            transition: transform 0.2s ease;
+        }
+
+        .sou-aluno-menu:hover > a::after {
+            transform: rotate(180deg);
+        }
+
+        .sou-aluno-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(11, 20, 38, 0.98);
+            backdrop-filter: blur(30px);
+            list-style: none;
+            padding: 20px 0;
+            min-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            margin-top: 8px;
+        }
+
+        .sou-aluno-menu:hover .sou-aluno-dropdown {
+            display: block;
+            animation: fadeInDown 0.2s ease;
+        }
+
+        .sou-aluno-dropdown li {
+            padding: 0 20px;
+            margin-bottom: 8px;
+        }
+
+        .sou-aluno-dropdown li:last-child {
+            margin-bottom: 0;
+        }
+
+        .sou-aluno-dropdown a {
+            display: block;
+            padding: 8px 0;
+            color: #ceae5c;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0;
+            background: none !important;
+            border-radius: 0 !important;
+        }
+
+        .sou-aluno-dropdown a:hover {
+            color: #FFFFFF;
+            padding-left: 8px;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+               background: linear-gradient(rgb(14 45 46 / 85%), /* dark blue overlay with opacity */ rgb(14 46 45 / 82%)), url(/1.jpeg);
+
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 70px 40px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.08), transparent 60%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+        }
+
+        .prime-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.2rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 48px;
+            line-height: 1.5;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-highlight {
+            color: #d8ba69;
+            font-weight: 600;
+        }
+
+        .hero-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            backdrop-filter: none;
+            border: none;
+            transition: none;
+            min-width: auto;
+        }
+
+        .info-item:hover {
+            transform: none;
+            border-color: transparent;
+            background: transparent;
+        }
+
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            
+    
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            
+        }
+
+        .info-text {
+            text-align: left;
+            flex: 1;
+        }
+
+        .info-label {
+            font-size: 20px;
+            opacity: 1;
+            margin-bottom: 2px;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+
+        .info-value {
+            font-size: 20px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+
+        .info-separator {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 18px;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            color: #0B1426;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 180px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #FFFFFF;
+            padding: 18px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 180px;
+        }
+
+        .btn-secondary:hover {
+            border-color: #D4AF37;
+            color: #D4AF37;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 0 24px;
+            }
+            
+            .hero {
+                padding: 70px 24px 0;
+            }
+            
+            .hero-info {
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                        background: rgb(13 46 44);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 24px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                height: calc(100vh - 70px);
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-separator {
+                display: none;
+            }
+
+            .info-separator {
+                display: none;
+            }
+
+            .dropdown {
+                position: static;
+                display: block;
+                background: rgba(255, 255, 255, 0.05);
+                border: none;
+                border-radius: 8px;
+                margin: 8px 0 0 0;
+                box-shadow: none;
+            }
+
+            .sou-aluno-dropdown {
+                position: static;
+                display: block;
+                background: rgba(255, 255, 255, 0.05);
+                border: none;
+                border-radius: 8px;
+                margin: 8px 0 0 0;
+                box-shadow: none;
+            }
+
+            .sou-aluno-menu > a::after {
+                display: none;
+            }
+
+            .produtos-menu > a::after {
+                display: none;
+            }
+
+            .prime-logo {
+                font-size: 1.8rem;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 32px;
+            }
+
+            .hero-info {
+                
+                gap: 16px;
+                margin-bottom: 32px;
+            }
+
+            .info-item {
+                min-width: auto;
+                padding: 12px 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 14px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding: 70px 16px 0;
+            }
+
+            .prime-logo {
+                font-size: 1.6rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .hero-title {
+            animation-delay: 0.1s;
+        }
+
+        .hero-subtitle {
+            animation-delay: 0.2s;
+        }
+
+        .hero-info {
+            animation-delay: 0.3s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Icon Button -->
+<a href="https://wa.me/+5534999326520?text=Hello!%20I%20am%20interested%20in%20your%20services." 
+   class="whatsapp-float" target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+<style>
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+  background-color: #20b955;
+}
+
+.whatsapp-float img {
+  width: 35px;
+  height: 35px;
+}
+.home-link {
+    text-decoration: none; /* removes underline */
+    color: inherit; /* makes text inherit color instead of blue */
+    display: flex; /* keeps logo + text aligned */
+    align-items: center; 
+}
+</style>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div href="/" class="logo-container">
+                <a class="home-link" href="/"> <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">  </a> 
+                <a class="home-link" href="/"> <div class="brand-text">APLENTY</div>    </a>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="produtos-menu">
+                        <a href="#servicos">Produtos</a>
+                        <ul class="dropdown">
+                            <li class="dropdown-category">
+                                <span class="category-title">PARA EMPRESAS</span>
+                                <div class="category-items">
+                                    <a href="/ssk.html">SSK para equipes</a>
+                                    <a href="/ll5.html">LL5 Líderes</a>
+                                    <a href="/consult.html">Consultoria</a>
+                                    <a href="/Palestras.html">Palestras</a>
+                                    <a href="/consult.html">Contratação estratégica</a>
+                                   
+                                </div>
+                            </li>
+                            <li class="dropdown-category">
+                                <span class="category-title">PARA PESSOAS</span>
+                                <div class="category-items">
+                                    <a href="/Desenvolvimento.html">Desenvolvimento pessoal</a>
+                                    <a href="/desc.html">Destrave se</a>
+                                  
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">Sobre nós</a></li>
+                  
+                    
+                    <li><a href="#atendimento">Atendimento</a></li>
+                    
+                   
+                    
+                </ul>
+                <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+<style>
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0d2d2c;
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr 1fr 1fr 300px;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo-section {
+           display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #ceae5c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #0B1426;
+            font-size: 18px;
+        }
+
+        .footer-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: #ceae5c;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 300;
+            transition: all 0.2s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ceae5c;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            color: #ceae5c;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 2px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+                font-size: 15px;
+    font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            color: #ceae5c;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: red;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: #ceae5c;
+            color: #0B1426;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 40px;
+            }
+            
+            .footer-contact {
+                grid-column: 1 / -1;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                padding: 0 20px;
+            }
+
+            .footer {
+                padding: 40px 0 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: left;
+            }
+
+            .footer-logo-section {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr); /* two columns instead of full width */
+        gap: 20px;
+    }
+
+    .footer-column {
+        text-align: left;
+    }
+
+    .footer-logo-section {
+        grid-column: 1 / -1; /* logo takes full width */
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .footer-contact {
+        grid-column: 1 / -1; /* contact full width below */
+    }
+}
+
+    </style>
+<script>
+function openWhatsAppDesenvolvimento() {
+    const message = encodeURIComponent("Olá ! Gostaria de saber mais informações sobre desenvolvimento pessoal");
+    const phoneNumber = "+5534999326520"; // Substitua pelo número do WhatsApp com DDI e DDD, sem "+" ou espaços
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, "_blank");
+}
+</script>
+
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.textContent = navMenu.classList.contains('active') ? '×' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.textContent = '☰';
+            });
+        });
+
+        // Header background on scroll
+       
+
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // WhatsApp contact function
+        function openWhatsApp() {
+            const phoneNumber = '5534999326520';
+            const message = 'Olá';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Aplenty</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d2d2c;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
+                url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ceae5c' fill-opacity='0.08'%3E%3Cpath d='M40 0c22.091 0 40 17.909 40 40S62.091 80 40 80 0 62.091 0 40 17.909 0 40 0zm0 8c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32S57.673 8 40 8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 70px 40px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.12), transparent 60%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+        }
+
+        .prime-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            color: #0B1426;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 200px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .mission-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .mission-intro {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .mission-intro strong {
+            color: #ceae5c;
+            font-weight: 600;
+        }
+
+        .mission-highlight {
+            background: rgba(206, 174, 92, 0.1);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border-left: 5px solid #ceae5c;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(206, 174, 92, 0.2);
+        }
+
+        .mission-highlight h3 {
+            font-size: 2rem;
+            color: #ceae5c;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .mission-highlight p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #FFFFFF;
+        }
+
+        /* Values Section */
+        .values-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .values-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            text-align: center;
+            letter-spacing: -0.5px;
+            color: #ceae5c;
+            position: relative;
+            z-index: 2;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(206, 174, 92, 0.05), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(206, 174, 92, 0.3);
+        }
+
+        .value-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0d2d2c;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #ceae5c;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .founder-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .founder-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .founder-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            text-align: center;
+            letter-spacing: -0.5px;
+            color: #ceae5c;
+        }
+
+        .founder-bio {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 60px 50px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-left: 5px solid #ceae5c;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .founder-bio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(206, 174, 92, 0.05), transparent 50%);
+        }
+
+        .founder-bio p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 2;
+        }
+
+        .founder-bio strong {
+            color: #ceae5c;
+            font-weight: 600;
+        }
+
+        .founder-highlight {
+            background: rgba(206, 174, 92, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid rgba(206, 174, 92, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .founder-highlight p {
+            font-size: 1.1rem;
+            text-align: center;
+            color: #FFFFFF;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(13, 45, 44, 0.1), transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            color: #0d2d2c;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            color: #0d2d2c;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            background: #0d2d2c;
+            color: #FFFFFF;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 250px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(13, 45, 44, 0.4);
+            background: #1a4847;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 0;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .section-title, .founder-title {
+                font-size: 2.2rem;
+            }
+
+            .btn-primary {
+                width: 100%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-content p {
+                font-size: 1.1rem;
+            }
+
+            .value-card {
+                padding: 30px 25px;
+            }
+
+            .founder-bio {
+                padding: 40px 30px;
+            }
+
+            .mission-highlight {
+                padding: 40px 25px;
+            }
+
+            .mission-intro, .founder-bio p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20b955;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .hero-title {
+            animation-delay: 0.1s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Icon Button -->
+    <a href="https://wa.me/+5534999326520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20APLENTY." 
+       class="whatsapp-float" target="_blank">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="prime-logo">Aplenty</div>
+            <h1 class="hero-title">Sobre Nós</h1>
+            
+            <div class="hero-buttons">
+                <a href="#missao" class="btn-primary">Nossa História</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mission Section -->
+    <section id="missao" class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <p class="mission-intro">
+                    A APLENTY nasceu com um propósito ousado de <strong>elevar o desempenho humano pessoal e organizacional</strong>, desenvolvendo uma mentalidade de crescimento consistente.
+                </p>
+                
+                <div class="mission-highlight">
+                    <h3>Nossa Missão</h3>
+                    <p>
+                        Transformar PESSOAS, e organizações, através da educação emocional comportamental e corporativa, para contribuírem de forma abundante com o mundo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Valores</h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-number">1</div>
+                    <h3>Foco</h3>
+                    <p>Concentramos energia no que realmente gera impacto e elimina ruídos</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">2</div>
+                    <h3>Servir</h3>
+                    <p>Servimos com dedicação e presença emocional</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">3</div>
+                    <h3>Cliente</h3>
+                    <p>Compromisso real com a transformação de nossos clientes</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">4</div>
+                    <h3>Excelência</h3>
+                    <p>Fazer sempre o melhor em tudo</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">5</div>
+                    <h3>Educação</h3>
+                    <p>O conhecimento e ação é a chave para evolução</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">6</div>
+                    <h3>Confiança</h3>
+                    <p>Agir com transparência, ética, respeito e responsabilidade</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">7</div>
+                    <h3>Espiritualidade</h3>
+                    <p>O sentido que une mentalidade e força</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">8</div>
+                    <h3>Abundância</h3>
+                    <p>Mentalidade de crescimento e prosperidade em todas as dimensões</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <div class="founder-content">
+                <h2 class="founder-title">A Fundadora</h2>
+                
+                <div class="founder-bio">
+                    <p>
+                        Formada em Ciências Contábeis, com mais de 18 anos de experiência na área tributária em empresas de pequeno a grande porte, e vivência prática como empreendedora do varejo, <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>.
+                    </p>
+                    
+                    <div class="founder-highlight">
+                        <p>
+                            É formada em desenvolvimento humano pela <strong>Febracis, a maior escola de negócios da América Latina</strong>, e certificada em <strong>Assessment baseado em 4 teorias científicas</strong>, metodologia utilizada em diversos países.
+                        </p>
+                    </div>
+                    
+                    <p>
+                        Hoje, dedica sua trajetória a <strong>impulsionar pessoas e organizações a crescerem de forma consistente, produtiva e sustentável</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Vamos Crescer Juntos?</h2>
+                <p>Descubra como a APLENTY pode transformar sua jornada pessoal ou organizacional. Entre em contato e conheça nossos serviços.</p>
+                <a href="#" class="btn-cta" onclick="openWhatsApp()">Fale Conosco</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // WhatsApp contact function
+        function openWhatsApp() {
+            const phoneNumber = '5534999326520';
+            const message = 'Olá! Gostaria de conhecer mais sobre a APLENTY e seus serviços. Podem me enviar mais informações?';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Smooth scroll for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.value-card, .mission-highlight, .founder-bio').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <!-- Logo Section -->
+      <div class="footer-logo-section">
+        <div class="footer-logo">
+          <img src="/logo (2).png" alt="Logo Aplenty" class="site-logo">
+          <div class="footer-brand">APLENTY</div>
+        </div>
+      </div>
+
+      <!-- Para Empresas -->
+      <div class="footer-column">
+        <h3>Para Empresas</h3>
+        <ul>
+          <li><a href="/consult.html">Consultoria</a></li>
+          <li class="inline-item"><a href="/consult.html">Contratação Estratégica</a></li>
+          <li><a href="/Palestras.html">Palestras</a></li>
+          <li><a href="/ll5.html">LL5 Líderes</a></li>
+          <li><a href="/ssk.html">SSK equipes</a></li>
+        </ul>
+      </div>
+
+      <!-- Para Vendedores -->
+      <div class="footer-column">
+        <h3></h3>
+        <ul>
+          <li><a href="#mp-start"></a></li>
+        </ul>
+      </div>
+
+      <!-- Para Todos -->
+      <div class="footer-column">
+        <h3>Para Todos</h3>
+        <ul>
+          <li class="inline-item"><a href="/Desenvolvimento.html">Desenvolvimento Pessoal</a></li>
+          <li><a href="/desc.html">Destrave-se</a></li>
+        </ul>
+      </div>
+
+      <!-- Sou Aluno -->
+      <div class="footer-column">
+        <h3></h3>
+        <ul>
+          <li><a href="#start"></a></li>
+          <li><a href="#corporate-aluno"></a></li>
+          <li><a href="#potencialize-aluno"></a></li>
+        </ul>
+      </div>
+
+      <!-- Atendimento -->
+      <div class="footer-column">
+        <h3>Atendimento</h3>
+        <div class="footer-contact">
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-width="2"/>
+              <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <div class="contact-text">
+              <div class="contact-label">Endereço:</div>
+              <div>Karaiba, Uberlândia - MG</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+              <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <div class="contact-text">
+              <div class="contact-label">E-mail:</div>
+              <div>suporte@aplenty.com.br</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <div class="contact-text">
+              <div class="contact-label">Contato:</div>
+              <div>+55 (34) 99932-6520</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        2025 APLENTY - Todos os Direitos Reservados
+      </div>
+      <div class="footer-links">
+        <a href="#privacidade">Política de privacidade</a>
+        <a href="#cookies">Políticas de cookies</a>
+      </div>
+     <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/aplenty-treinamentos/" class="social-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/aplenty.desenvolvimentohumano?igsh=MWV0dWxvb3VmN2Z2Yg%3D%3D&utm_source=qr" class="social-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#youtube" class="social-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+.inline-item {
+  display: inline-block;
+  margin-right: 15px;
+  white-space: nowrap;
+}
+</style>
+
+</body>
+</html>
