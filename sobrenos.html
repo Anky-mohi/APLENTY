@@ -1317,12 +1317,15 @@ function openWhatsAppDesenvolvimento() {
         }
 
         .founder-image img {
-            width: 400px;
-            border-radius: 2000px;
-            object-fit: cover;
-            background-color: #A5937e;
-            padding: 6px;
-        }
+  width: 400px;          /* set width */
+  height: 400px;         /* set same height */
+  border-radius: 50%;    /* circle shape */
+  object-fit: cover;     /* crop/scale image nicely */
+  background-color: #A5937e; /* optional background frame color */
+  padding: 6px;          /* optional inner padding */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* optional shadow */
+}
+
 
         .founder-content {
             flex: 1;
