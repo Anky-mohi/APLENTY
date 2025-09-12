@@ -1304,71 +1304,48 @@ function openWhatsAppDesenvolvimento() {
 
         /* Founder Section */
         .founder-section {
-            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            background-color: #002d655c;
             padding: 100px 0;
             position: relative;
         }
 
-        .founder-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+        .founder-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .founder-image img {
+            width: 400px;
+           
+            object-fit: cover;
+           
+            padding: 6px;
         }
 
         .founder-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
+            flex: 1;
         }
 
         .founder-title {
             font-size: 3rem;
             font-weight: 600;
             margin-bottom: 50px;
-            
             letter-spacing: -0.5px;
             color: white;
             text-align: left;
         }
 
-        .founder-bio {
-            text-align: left;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 60px 50px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-left: 5px solid #ceae5c;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .founder-bio::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(206, 174, 92, 0.05), transparent 50%);
-        }
-
-        .founder-bio p {
+        .founder-content p {
             font-size: 1.2rem;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.9);
-            position: relative;
-            z-index: 2;
+            margin-bottom: 20px;
         }
 
-        .founder-bio strong {
-            
+        .founder-content strong {
+            color: white;
             font-weight: 600;
         }
 
@@ -1378,13 +1355,10 @@ function openWhatsAppDesenvolvimento() {
             border-radius: 15px;
             margin: 30px 0;
             border: 1px solid rgba(206, 174, 92, 0.2);
-            position: relative;
-            z-index: 2;
         }
 
         .founder-highlight p {
             font-size: 1.1rem;
-            
             color: #FFFFFF;
             margin: 0;
         }
@@ -1426,8 +1400,7 @@ function openWhatsAppDesenvolvimento() {
             margin-bottom: 40px;
             opacity: 0.9;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+           
         }
 
         .btn-cta {
@@ -1495,15 +1468,16 @@ function openWhatsAppDesenvolvimento() {
                 padding: 30px 25px;
             }
 
-            .founder-bio {
-                padding: 40px 30px;
+            .founder-wrapper {
+                flex-direction: column;
+                text-align: center;
             }
 
             .mission-highlight {
                 padding: 40px 25px;
             }
 
-            .mission-intro, .founder-bio p {
+            .mission-intro, .founder-content p {
                 font-size: 1.1rem;
             }
         }
@@ -1558,6 +1532,7 @@ function openWhatsAppDesenvolvimento() {
         .hero-buttons {
             animation-delay: 0.2s;
         }
+
     </style>
 </head>
 <body>
@@ -1592,8 +1567,6 @@ function openWhatsAppDesenvolvimento() {
     </section>
         </div>
     </main>
-
-  
 
     <!-- Values Section -->
     <section class="values-section">
@@ -1652,76 +1625,41 @@ function openWhatsAppDesenvolvimento() {
         </div>
     </section>
 
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <h2 class="founder-title">A Fundadora</h2>
+            <div class="founder-wrapper">
+                
+                <!-- Founder Image -->
+                <div class="founder-image">
+                    <img src="/88.png" alt="Fundadora Joice Mendes">
+                </div>
 
-<!-- Founder Section -->
-<section class="founder-section">
-  <div class="container">
-    <h2 class="founder-title">A Fundadora</h2>
-    <div class="founder-wrapper">
-      
-      <!-- Founder Image -->
-      <div class="founder-image">
-        <img src="/55.jpeg" alt="Fundadora Joice Mendes">
-      </div>
+                <!-- Founder Text -->
+                <div class="founder-content">
+                    <p>
+                        Formada em Ciências Contábeis, com mais de 18 anos de experiência na área tributária em empresas de pequeno a grande porte, e vivência prática como empreendedora do varejo, 
+                        <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>.
+                    </p>
 
-      <!-- Founder Text -->
-      <div class="founder-content">
-        
+                    <div class="founder-highlight">
+                        <p>
+                            É formada em desenvolvimento humano pela 
+                            <strong>Febracis, a maior escola de negócios da América Latina</strong>, 
+                            e certificada em <strong>Assessment baseado em 4 teorias científicas</strong>, 
+                            metodologia utilizada em diversos países.
+                        </p>
+                    </div>
 
-        <div class="founder-bio">
-          <p>
-            Formada em Ciências Contábeis, com mais de 18 anos de experiência na área tributária em empresas de pequeno a grande porte, e vivência prática como empreendedora do varejo, 
-            <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>.
-          </p>
-
-          <div class="founder-highlight">
-            <p>
-              É formada em desenvolvimento humano pela 
-              <strong>Febracis, a maior escola de negócios da América Latina</strong>, 
-              e certificada em <strong>Assessment baseado em 4 teorias científicas</strong>, 
-              metodologia utilizada em diversos países.
-            </p>
-          </div>
-
-          <p>
-            Hoje, dedica sua trajetória a 
-            <strong>impulsionar pessoas e organizações a crescerem de forma consistente, produtiva e sustentável</strong>.
-          </p>
+                    <p>
+                        Hoje, dedica sua trajetória a 
+                        <strong>impulsionar pessoas e organizações a crescerem de forma consistente, produtiva e sustentável</strong>.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-.founder-section {
-
-  color: #fff;
-  padding: 60px 20px;
-}
-
-.founder-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.founder-image img {
-  width: 300px; /* adjust size */
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.founder-content {
-  flex: 1;
-}
-
-</style>
-
-
-
-
+    </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -1773,10 +1711,713 @@ function openWhatsAppDesenvolvimento() {
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.value-card, .mission-highlight, .founder-bio').forEach(el => {
+        document.querySelectorAll('.value-card, .mission-highlight').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-o<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Aplenty</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d2d2c;
+            color: #FFFFFF;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
+                url("/1.jpeg") center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 70px 40px 0;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.12), transparent 60%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            position: relative;
+            z-index: 2;
+            padding-top: 60px;
+        }
+
+        .prime-logo {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: left;
+}
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+            color: #FFFFFF;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            text-align: left;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ceae5c, #ceae5c);
+            color: #0B1426;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            min-width: 200px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .mission-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .mission-intro {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 900px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .mission-intro strong {
+            color: white;
+            font-weight: 600;
+        }
+
+        .mission-highlight {
+            background: rgba(206, 174, 92, 0.1);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border-left: 5px solid #ceae5c;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(206, 174, 92, 0.2);
+            text-align: left;
+        }
+
+        .mission-highlight h3 {
+            text-align: left;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .mission-highlight p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #FFFFFF;
+        }
+
+        /* Values Section */
+        .values-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .values-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(206, 174, 92, 0.08), transparent 50%);
+        }
+
+        .section-title {
+            text-align: left;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 60px;
+            
+            letter-spacing: -0.5px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(206, 174, 92, 0.05), transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(206, 174, 92, 0.3);
+        }
+
+        .value-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0d2d2c;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #ceae5c;
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
+
+        .value-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background-color: #002D65;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .founder-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .founder-image img {
+            width: 400px;
+            border-radius: 12px;
+            object-fit: cover;
+            background-color: #fff;
+            padding: 6px;
+        }
+
+        .founder-content {
+            flex: 1;
+        }
+
+        .founder-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            letter-spacing: -0.5px;
+            color: white;
+            text-align: left;
+        }
+
+        .founder-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .founder-content strong {
+            color: white;
+            font-weight: 600;
+        }
+
+        .founder-highlight {
+            background: rgba(206, 174, 92, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid rgba(206, 174, 92, 0.2);
+        }
+
+        .founder-highlight p {
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            padding: 80px 0;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(13, 45, 44, 0.1), transparent 70%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            color: #0d2d2c;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            color: #0d2d2c;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+           
+        }
+
+        .btn-cta {
+            background: #0d2d2c;
+            color: #FFFFFF;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 250px;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(13, 45, 44, 0.4);
+            background: #1a4847;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 16px 0;
+            }
+
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .section-title, .founder-title {
+                font-size: 2.2rem;
+            }
+
+            .btn-primary {
+                width: 100%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-content p {
+                font-size: 1.1rem;
+            }
+
+            .value-card {
+                padding: 30px 25px;
+            }
+
+            .founder-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .mission-highlight {
+                padding: 40px 25px;
+            }
+
+            .mission-intro, .founder-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            z-index: 1000;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20b955;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .hero-title {
+            animation-delay: 0.1s;
+        }
+
+        .hero-buttons {
+            animation-delay: 0.2s;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Floating Icon Button -->
+    <a href="https://wa.me/+5534999326520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20APLENTY." 
+       class="whatsapp-float" target="_blank">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="hero-content">
+            <div class="prime-logo">Aplenty</div>
+            <h1 class="hero-title">Sobre Nós</h1>
+            
+              <!-- Mission Section -->
+    <section id="missao" class="mission-section">
+        <div class="container">
+            <div class="mission-content">
+                <p class="mission-intro">
+                    A APLENTY nasceu com um propósito ousado de <strong>elevar o desempenho humano pessoal e organizacional</strong>, desenvolvendo uma mentalidade de crescimento consistente.
+                </p>
+                
+                <div class="mission-highlight">
+                    <h3>Nossa Missão</h3>
+                    <p>
+                        Transformar PESSOAS e organizações, através da educação emocional comportamental e corporativa, para contribuírem de forma abundante com o mundo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+        </div>
+    </main>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Valores</h2>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-number">1</div>
+                    <h3>Foco</h3>
+                    <p>Concentramos energia no que realmente gera impacto e elimina ruídos</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">2</div>
+                    <h3>Servir</h3>
+                    <p>Servimos com dedicação e presença emocional</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">3</div>
+                    <h3>Cliente</h3>
+                    <p>Compromisso real com a transformação de nossos clientes</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">4</div>
+                    <h3>Excelência</h3>
+                    <p>Fazer sempre o melhor em tudo</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">5</div>
+                    <h3>Educação</h3>
+                    <p>O conhecimento e ação é a chave para evolução</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">6</div>
+                    <h3>Confiança</h3>
+                    <p>Agir com transparência, ética, respeito e responsabilidade</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">7</div>
+                    <h3>Espiritualidade</h3>
+                    <p>O sentido que une mentalidade e força</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-number">8</div>
+                    <h3>Abundância</h3>
+                    <p>Mentalidade de crescimento e prosperidade em todas as dimensões</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="container">
+            <h2 class="founder-title">A Fundadora</h2>
+            <div class="founder-wrapper">
+                
+                <!-- Founder Image -->
+                <div class="founder-image">
+                    <img src="/88.jpeg" alt="Fundadora Joice Mendes">
+                </div>
+
+                <!-- Founder Text -->
+                <div class="founder-content">
+                    <p>
+                        Formada em Ciências Contábeis, com mais de 18 anos de experiência na área tributária em empresas de pequeno a grande porte, e vivência prática como empreendedora do varejo, 
+                        <strong>Joice Mendes sempre uniu técnica e humanidade para transformar resultados</strong>.
+                    </p>
+
+                    <div class="founder-highlight">
+                        <p>
+                            É formada em desenvolvimento humano pela 
+                            <strong>Febracis, a maior escola de negócios da América Latina</strong>, 
+                            e certificada em <strong>Assessment baseado em 4 teorias científicas</strong>, 
+                            metodologia utilizada em diversos países.
+                        </p>
+                    </div>
+
+                    <p>
+                        Hoje, dedica sua trajetória a 
+                        <strong>impulsionar pessoas e organizações a crescerem de forma consistente, produtiva e sustentável</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Vamos Crescer Juntos?</h2>
+                <p>Descubra como a APLENTY pode transformar sua jornada pessoal ou organizacional. Entre em contato e conheça nossos serviços.</p>
+                <a href="#" class="btn-cta" onclick="openWhatsApp()">Fale Conosco</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // WhatsApp contact function
+        function openWhatsApp() {
+            const phoneNumber = '5534999326520';
+            const message = 'Olá! Gostaria de conhecer mais sobre a APLENTY e seus serviços. Podem me enviar mais informações?';
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Smooth scroll for any internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.value-card, .mission-highlight').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>ut';
             observer.observe(el);
         });
     </script>
