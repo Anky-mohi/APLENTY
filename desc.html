@@ -1810,18 +1810,73 @@ function openWhatsAppDesenvolvimento() {
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Destrave-se e libere seu potencial máximo e alcance resultados extraordinários.</h2>
-                <p>
-                    Pare de tentar descobrir sozinho como funciona. Use a ciência para entender seus padrões, liberar suas forças naturais e criar a vida que você realmente quer.
-Bem-vindo à jornada mais poderosa de autoconhecimento.
-                </p>
-                <a href="#" class="btn-cta" onclick="openWhatsApp()">Quero Fazer Minha Análise</a>
-            </div>
-        </div>
-    </section>
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Destrave-se e libere seu potencial máximo e alcance resultados extraordinários.</h2>
+      
+      <p>Pare de tentar descobrir sozinho como funciona. Use a ciência para entender seus padrões, 
+      liberar suas forças naturais e crie a vida que você realmente quer.</p>
+
+      <p class="highlight">Bem-vindo à jornada mais poderosa de autoconhecimento.</p>
+
+      <a href="#" class="btn-cta" onclick="openWhatsApp()">Quero Fazer Minha Análise</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.cta-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fff; /* adjust if needed */
+}
+
+.cta-content h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #004d66; /* same color as screenshot */
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 1rem;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 15px;
+  line-height: 1.6;
+}
+
+/* Add small arrow before highlighted text */
+.cta-content .highlight::before {
+  content: "▸ "; /* small arrow */
+  color: #004d66; /* same as highlight color */
+  font-weight: bold;
+}
+
+.cta-content .highlight {
+  font-weight: bold;
+  color: #004d66; /* highlight color */
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #004d66;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #006680;
+}
+</style>
+
+
 
     <script>
         // WhatsApp contact function
