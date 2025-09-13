@@ -636,7 +636,7 @@ ease;
 <style>
 .whatsapp-float {
   position: fixed;
-  bottom: 20px;
+  bottom: 80px;
   right: 20px;
   width: 60px;
   height: 60px;
@@ -658,6 +658,264 @@ ease;
   height: 35px;
 }
 </style>
+<!-- ====== Right-side Cart (isolated, no theme conflicts) ====== -->
+<style>
+  /* everything prefixed rc- so it won't collide */
+  .rc-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 28px;
+    z-index: 9999;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  .rc-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #111;
+    color: #fff;
+    border-radius: 999px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .rc-badge {
+    min-width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 999px;
+    background: #ff3b30;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 0 6px;
+  }
+  .rc-drawer {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 380px;
+    max-width: calc(100% - 32px);
+    height: 100vh;
+    background: #fff;
+    box-shadow: -12px 0 40px rgba(0,0,0,0.15);
+    z-index: 9998;
+    transition: right 0.32s cubic-bezier(.2,.9,.2,1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .rc-drawer.open { right: 0; }
+
+  .rc-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+    font-weight:700;
+  }
+  .rc-body {
+    padding: 14px;
+    overflow-y: auto;
+    flex: 1 1 auto;
+  }
+  .rc-footer {
+    padding: 14px;
+    border-top: 1px solid #eee;
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  .rc-item {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    padding:10px 0;
+    border-bottom: 1px dashed #f0f0f0;
+  }
+  .rc-item img {
+    width:64px;
+    height:64px;
+    object-fit:cover;
+    border-radius:8px;
+    background:#fafafa;
+  }
+  .rc-item .rc-meta {
+    flex:1;
+    font-size:14px;
+  }
+  .rc-item .rc-title { font-weight:600; }
+  .rc-item .rc-price { color:#666; margin-top:6px; }
+  .rc-qty {
+    display:flex;
+    align-items:center;
+    gap:6px;
+    margin-top:8px;
+  }
+  .rc-qty button {
+    border:1px solid #ddd;
+    background:#fff;
+    padding:4px 8px;
+    cursor:pointer;
+    border-radius:6px;
+  }
+  .rc-btn {
+    background:#111;
+    color:#fff;
+    border:none;
+    padding:10px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+    flex: 1;
+  }
+  .rc-btn-outline {
+    background:transparent;
+    border:1px solid #ddd;
+    padding:10px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    flex: 1;
+  }
+  @media (max-width: 640px) {
+    .rc-drawer {
+      width:100%;
+      right: -100%;
+    }
+    .rc-drawer.open { right: 0; }
+    .rc-fab { right: 16px; bottom: 18px; }
+  }
+</style>
+
+<div class="rc-fab">
+  <button class="rc-button" id="rc-toggle" aria-expanded="false" aria-controls="rc-drawer">
+    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M3 3h2l.4 2M7 13h10l3-8H6.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="10" cy="20" r="1" fill="currentColor"></circle>
+      <circle cx="18" cy="20" r="1" fill="currentColor"></circle>
+    </svg>
+    <span>Cart</span>
+    <span class="rc-badge" id="rc-count">0</span>
+  </button>
+</div>
+
+<aside id="rc-drawer" class="rc-drawer" role="dialog" aria-labelledby="rc-title" aria-modal="false">
+  <div class="rc-header">
+    <div id="rc-title">Your Cart</div>
+    <div>
+      <button id="rc-clear" class="rc-btn-outline" title="Clear cart">Clear</button>
+      <button id="rc-close" aria-label="Close cart" class="rc-btn-outline" style="margin-left:8px">Close</button>
+    </div>
+  </div>
+  <div class="rc-body" id="rc-items">
+    <div id="rc-empty" style="padding:18px; color:#666">Your cart is empty.</div>
+  </div>
+  <div class="rc-footer">
+    <div style="flex:1">
+      <div style="font-size:13px; color:#666">Subtotal</div>
+      <div id="rc-subtotal" style="font-weight:700; margin-top:6px">₹0.00</div>
+    </div>
+    <div style="display:flex; gap:10px; width:50%;">
+      <button id="rc-checkout" class="rc-btn">Checkout</button>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function(){
+  const STORAGE_KEY = 'rc_cart_v1';
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const toggleBtn = $('#rc-toggle');
+  const fab = toggleBtn.closest('.rc-fab');
+  const drawer = $('#rc-drawer');
+  const closeBtn = $('#rc-close');
+  const clearBtn = $('#rc-clear');
+  const countEl = $('#rc-count');
+  const itemsEl = $('#rc-items');
+  const emptyEl = $('#rc-empty');
+  const subtotalEl = $('#rc-subtotal');
+  const checkoutBtn = $('#rc-checkout');
+
+  let cart = loadCart();
+
+  function loadCart(){
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {items:[]};}
+    catch(e){ return {items:[]};}
+  }
+  function saveCart(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); renderCart(); }
+  function formatMoney(n){ return new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:2}).format(n);}
+  function calcTotals(){ return {subtotal:cart.items.reduce((s,it)=>s+it.price*it.qty,0), count:cart.items.reduce((s,it)=>s+it.qty,0)}; }
+
+  window.addToCart = function(product){
+    const existing=cart.items.find(i=>i.id===product.id);
+    if(existing) existing.qty += (product.qty||1);
+    else cart.items.push({id:product.id,title:product.title,price:+product.price,image:product.image||'',qty:product.qty||1});
+    saveCart();
+    openCart();
+  };
+
+  function renderCart(){
+    const {subtotal,count}=calcTotals();
+    countEl.textContent=count;
+    subtotalEl.textContent=formatMoney(subtotal);
+    itemsEl.innerHTML='';
+    if(cart.items.length===0){ itemsEl.appendChild(emptyEl); return; }
+    cart.items.forEach(item=>{
+      const wrap=document.createElement('div');
+      wrap.className='rc-item';
+      wrap.innerHTML=`
+        <img src="${item.image||'https://via.placeholder.com/160x160?text=Product'}" alt="">
+        <div class="rc-meta">
+          <div class="rc-title">${item.title}</div>
+          <div class="rc-price">${formatMoney(item.price)} × <strong>${item.qty}</strong></div>
+          <div class="rc-qty" data-id="${item.id}">
+            <button class="decr">−</button>
+            <span>${item.qty}</span>
+            <button class="incr">+</button>
+            <button class="remove" style="margin-left:8px;border:0;background:transparent;color:#d00;cursor:pointer">Remove</button>
+          </div>
+        </div>`;
+      itemsEl.appendChild(wrap);
+    });
+    itemsEl.querySelectorAll('.rc-qty').forEach(ctrl=>{
+      const id=ctrl.getAttribute('data-id');
+      ctrl.querySelector('.incr').onclick=()=>changeQty(id,1);
+      ctrl.querySelector('.decr').onclick=()=>changeQty(id,-1);
+      ctrl.querySelector('.remove').onclick=()=>removeItem(id);
+    });
+  }
+
+  function changeQty(id,delta){ const it=cart.items.find(i=>i.id===id); if(!it) return; it.qty=Math.max(1,it.qty+delta); saveCart(); }
+  function removeItem(id){ cart.items=cart.items.filter(i=>i.id!==id); saveCart(); }
+  function clearCart(){ cart.items=[]; saveCart(); }
+
+  function openCart(){
+    drawer.classList.add('open');
+    fab.style.display='none';  // hide button
+    toggleBtn.setAttribute('aria-expanded','true');
+    drawer.focus();
+  }
+  function closeCart(){
+    drawer.classList.remove('open');
+    fab.style.display=''; // show button
+    toggleBtn.setAttribute('aria-expanded','false');
+    toggleBtn.focus();
+  }
+
+  toggleBtn.addEventListener('click',()=>drawer.classList.contains('open')?closeCart():openCart());
+  closeBtn.addEventListener('click',closeCart);
+  clearBtn.addEventListener('click',()=>{ if(confirm('Clear all items?')) clearCart(); });
+  checkoutBtn.addEventListener('click',()=>{ window.location.href='/checkout'; });
+
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&drawer.classList.contains('open')) closeCart(); });
+  renderCart();
+})();
+</script>
+<!-- ====== End right-side cart ====== -->
 
     <!-- Header -->
     <header class="header">
