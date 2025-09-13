@@ -1031,6 +1031,8 @@ function openWhatsAppDesenvolvimento() {
             position: relative;
             padding: 70px 40px 0;
             overflow: hidden;
+            background-image: url(/banner\ \(2\).jpeg);
+            background-color: #1b1d27;
         }
 
         .hero::before {
@@ -1082,7 +1084,7 @@ function openWhatsAppDesenvolvimento() {
     position: absolute;
     width: 1000px;
     height: 200px;
-    background: url(/dec.png) center / contain no-repeat;
+    background: url(/banner\ \(2\).jpeg) center / contain no-repeat;
     margin-left: 50px;
 }
 
@@ -1627,13 +1629,20 @@ function openWhatsAppDesenvolvimento() {
     <main class="hero">
         <div class="hero-content">
             <div class="logo-containerr">
-                <div class="logor"></div>
-                <div class="brand-text">
+                
                     
                 </div>
             </div>
 
-            <h1 class="hero-title">Você Já Se Sentiu Travado Como Se Desse O Seu Melhor, Mas Ainda Não Conseguiu Avançar?</h1>
+          
+        </div>
+    </main>
+
+    <!-- What Is Section -->
+    <section id="what-is" class="section what-is-section">
+        <div class="container">
+            <h2 class="section-title">O QUE É?</h2>
+              <h1 class="hero-title">Você Já Se Sentiu Travado Como Se Desse O Seu Melhor, Mas Ainda Não Conseguiu Avançar?</h1>
             
             <p class="hero-description">
                 Na maioria das vezes não é falta de esforço. É não compreender como você mesmo funciona: seus padrões de comportamento, suas reações emocionais e a forma como se relaciona.
@@ -1642,13 +1651,6 @@ function openWhatsAppDesenvolvimento() {
             <div class="hero-buttons">
                 <a href="#what-is" class="btn-primary">Quero Destravar Meu Potencial</a>
             </div>
-        </div>
-    </main>
-
-    <!-- What Is Section -->
-    <section id="what-is" class="section what-is-section">
-        <div class="container">
-            <h2 class="section-title">O QUE É?</h2>
             <div class="section-content">
                 <p>Um mapeamento completo do seu perfil comportamental que revela:</p>
                 <ul class="benefits-list">
@@ -1663,6 +1665,67 @@ function openWhatsAppDesenvolvimento() {
             </div>
         </div>
     </section>
+<!-- === Destrave-se Premium Product Section === -->
+<section style="background-color:#1b1d27; padding:60px 20px;">
+  <div style="
+    max-width:1100px;
+    margin:0 auto;
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  ">
+
+    <!-- Product Image -->
+    <div style="flex:1 1 350px; text-align:center; padding:20px;">
+      <img src="/product.jpeg"
+           alt="Destrave-se"
+           style="width:100%; max-width:380px; border-radius:12px;">
+    </div>
+
+    <!-- Product Info -->
+    <div style="flex:1 1 350px; text-align:left; padding:20px;">
+      <h2 style="font-size:2.2rem; margin:0 0 10px; color:#1b1d27;">Destrave-se</h2>
+      <p style="font-size:1.1rem; color:#555; margin-bottom:10px;">
+        Potencialize seu futuro com este treinamento exclusivo.
+      </p>
+      <p style="font-size:1.8rem; color:#c59b2c; font-weight:bold; margin-bottom:25px;">
+        R$ XXX,XX
+      </p>
+      <a href="https://pay.hotmart.com/T101325344L?off=rxxvc66b&hotfeature=51&_hi=eyJzaWQiOiJlNDE0ZDdjNzBiM2M0ZjRkODViM2UxNTQ0OWVhZWJkMiIsImNpZCI6IjE3NTc3NjQwMzc2MDYxNTkxNjk1NjI5ODA5Nzg1MDAiLCJiaWQiOiIxNzU3NzY0MDM3NjA2MTU5MTY5NTYyOTgwOTc4NTAwIn0=.1757764047400&bid=1757764049521"
+         target="_blank"
+         style="
+           display:inline-block;
+           background-color:#1b1d27;
+           color:#ffffff;
+           padding:16px 40px;
+           font-size:1.2rem;
+           border-radius:10px;
+           text-decoration:none;
+           font-weight:bold;
+           transition:all .3s ease;">
+        Comprar Agora
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Responsive tweaks -->
+<style>
+@media (max-width:768px){
+  section div h2{font-size:1.8rem!important;}
+  section div p{font-size:1rem!important;}
+  section div a{display:block;text-align:center;}
+}
+a[href*="hotmart"]:hover{
+  background-color:#333333!important;
+}
+</style>
 
     <!-- Target Audience Section -->
     <section class="section target-section">
