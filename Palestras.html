@@ -1040,8 +1040,7 @@ function openWhatsAppDesenvolvimento() {
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(13,45,44,0.95), rgba(13,45,44,0.85)), 
-                url("/banner.jpeg") center/cover no-repeat;
+               background: linear-gradient(54deg, rgb(13 45 44 / 1%), rgb(13 45 44 / 0%)), url(/palstreebanner.jpeg) center / cover no-repeat;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -1062,11 +1061,11 @@ function openWhatsAppDesenvolvimento() {
         }
 
         .hero-content {
-            text-align: center;
+            padding-right: 400px;
             max-width: 1000px;
             position: relative;
             z-index: 2;
-            padding-top: 60px;
+           
         }
 
         .prime-logo {
@@ -1083,8 +1082,8 @@ function openWhatsAppDesenvolvimento() {
 
         .hero-title {
             font-family: 'Inter', sans-serif;
-            font-size: 4.5rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+        text-align: left;
             margin-bottom: 24px;
             color: #FFFFFF;
             line-height: 1.1;
@@ -1095,11 +1094,10 @@ function openWhatsAppDesenvolvimento() {
             font-size: 1.6rem;
             margin-bottom: 24px;
             line-height: 1.4;
-            font-weight: 600;
-            color: #ceae5c;
+            text-align: left;
+            color: white;
             max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            
         }
 
         .hero-description {
@@ -1271,7 +1269,7 @@ function openWhatsAppDesenvolvimento() {
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            background: linear-gradient(135deg, #0D2D2C, );
             padding: 80px 0;
             text-align: center;
             position: relative;
@@ -1294,15 +1292,15 @@ function openWhatsAppDesenvolvimento() {
         }
 
         .cta-content h2 {
-            font-size: 2.8rem;
-            color: #0d2d2c;
+            font-size: 2.1rem;
+            color: white;
             margin-bottom: 20px;
             font-weight: 700;
         }
 
         .cta-content p {
-            font-size: 1.3rem;
-            color: #0d2d2c;
+            font-size: 1.1rem;
+            color: white;
             margin-bottom: 40px;
             opacity: 0.9;
             max-width: 700px;
@@ -1311,8 +1309,8 @@ function openWhatsAppDesenvolvimento() {
         }
 
         .btn-cta {
-            background: #0d2d2c;
-            color: #FFFFFF;
+            background: #caaf5c;
+            color: black;
             padding: 20px 50px;
             border: none;
             border-radius: 50px;
@@ -1367,7 +1365,12 @@ function openWhatsAppDesenvolvimento() {
             .btn-primary {
                 width: 100%;
             }
-
+.hero-content {
+    padding-right: 10px;
+    /* max-width: 1000px; */
+    /* position: relative; */
+    z-index: 2;
+}
             .hero-buttons {
                 flex-direction: column;
             }
@@ -1455,72 +1458,297 @@ function openWhatsAppDesenvolvimento() {
     <!-- Hero Section -->
     <main class="hero">
         <div class="hero-content">
-            <div class="prime-logo">Aplenty</div>
+           
             <h1 class="hero-title">Palestras</h1>
-            <p class="hero-subtitle">Temas Importantes</p>
-            <p class="hero-description">
-                Palestras que sensibilizam e transformam. Desenvolvidas para inspirar mudanças reais e 
-                gerar consciência sobre temas essenciais para o crescimento pessoal e profissional.
-            </p>
+            <p class="hero-subtitle">Temas Importantes que sensibilizam</p>
+          
             
-            <div class="hero-buttons">
-                <a href="#palestras" class="btn-primary">Conheça Nossos Temas</a>
-            </div>
+          
         </div>
     </main>
 
-    <!-- Palestras Section -->
-    <section id="palestras" class="palestras-section">
-        <div class="container">
-            <h2 class="section-title">Nossos Temas de Palestras</h2>
-            
-            <div class="palestras-grid">
-                <div class="palestra-card">
-                    <div class="palestra-icon">🎯</div>
-                    <h3>Auto responsabilidade</h3>
-                    <p class="palestra-objetivo">Objetivo:</p>
-                    <p>Essa palestra contribui com a conscientização da auto gestão no trabalho e na vida</p>
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temas Premium</title>
+    <style>
+        .temas-premium-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.4;
+            padding: 40px 0;
+        }
+
+        .temas-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .temas-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .temas-header h1 {
+            font-size: 2.2em;
+            font-weight: 300;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .temas-subtitle {
+            font-size: 1em;
+            color: #666;
+            position: relative;
+            display: inline-block;
+        }
+
+        .temas-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #4ecdc4, #44a08d);
+            border-radius: 2px;
+        }
+
+        .temas-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .tema-item {
+            display: flex;
+            align-items: flex-start;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .tema-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+            border-left-color: #4ecdc4;
+        }
+
+        .tema-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: white;
+            font-size: 20px;
+        }
+
+        .tema-content {
+            flex: 1;
+        }
+
+        .tema-content h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .tema-objetivo {
+            font-size: 0.85em;
+            font-weight: 600;
+            color: #4ecdc4;
+            margin-bottom: 4px;
+        }
+
+        .tema-content p {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+    </style>
+
+    <section class="temas-premium-section">
+        <div class="temas-container">
+            <div class="temas-header">
+                <h1>Temas Premium</h1>
+                <div class="temas-subtitle">Palestras que sensibilizam</div>
+            </div>
+
+            <div class="temas-list">
+                <div class="tema-item">
+                    <div class="tema-icon">👥</div>
+                    <div class="tema-content">
+                        <h3>Liderança Disruptiva</h3>
+                        <div class="tema-objetivo">Objetivo:</div>
+                        <p>Ampliar a consciência das pessoas sobre os impactos da liderança disruptiva</p>
+                    </div>
                 </div>
 
-                <div class="palestra-card">
-                    <div class="palestra-icon">⏰</div>
-                    <h3>Gestão tempo, o que é de fato essencial?</h3>
-                    <p class="palestra-objetivo">Objetivo:</p>
-                    <p>Gerar consciência de como ter uma agenda produtiva, e fazer o que realmente é essencial.</p>
+                <div class="tema-item">
+                    <div class="tema-icon">☺</div>
+                    <div class="tema-content">
+                        <h3>Felicidade no Trabalho: Sonho distante ou Realidade?</h3>
+                        <div class="tema-objetivo">Objetivo:</div>
+                        <p>Ampliar a consciência das pessoas sobre a vivência de felicidade no trabalho</p>
+                    </div>
                 </div>
 
-                <div class="palestra-card">
-                    <div class="palestra-icon">💎</div>
-                    <h3>Gestão emocional</h3>
-                    <p class="palestra-objetivo">Objetivo:</p>
-                    <p>Entender as crenças que impede de viver em abundância em todas as áreas da vida</p>
+                <div class="tema-item">
+                    <div class="tema-icon">📊</div>
+                    <div class="tema-content">
+                        <h3>Engajamento: Alta Performance Profissional</h3>
+                        <div class="tema-objetivo">Objetivo:</div>
+                        <p>Ampliar a consciência das pessoas sobre os fatores críticos do engajamento e sua relação com a alta performance</p>
+                    </div>
                 </div>
 
-                <div class="palestra-card">
-                    <div class="palestra-icon">🎵</div>
-                    <h3>Metáfora do músico</h3>
-                    <p class="palestra-objetivo">Objetivo:</p>
-                    <p>Ampliar a consciência de líderes sobre sua missão de desenvolver e inspirar seus liderados</p>
-                </div>
-
-                <div class="palestra-card">
-                    <div class="palestra-icon">⭐</div>
-                    <h3>Cliente no Centro: Como Encantar em Segundos e Construir Relações que Duram</h3>
-                    <p class="palestra-objetivo">Objetivo:</p>
-                    <p>Inspirar e capacitar profissionais a entenderem que o cliente não busca apenas produto, mas <strong>experiência, emoção e valor real</strong>. A palestra mostra como <strong>usar os primeiros segundos de contato para gerar confiança</strong>, criar conexões autênticas e transformar o atendimento em uma jornada memorável que fideliza e diferencia a empresa no mercado.</p>
-                </div>
-
-                <div class="palestra-card">
-                    <div class="palestra-icon">💬</div>
-                    <h3>Decifre pessoas e se comunique melhor</h3>
-                    <p class="palestra-objetivo">Objetivo:</p>
-                    <p>Ampliar a consciência do respeito e assertividade ao falar com qualquer pessoa</p>
+                <div class="tema-item">
+                    <div class="tema-icon">+</div>
+                    <div class="tema-content">
+                        <h3>Mindset Organizacional e a Liderança Disruptiva</h3>
+                        <div class="tema-objetivo">Objetivo:</div>
+                        <p>Gerar a compreensão de como a mentalidade organizacional poder influenciar nos resultados e como a liderança disruptiva pode transformar essa realidade</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+   
+    <style>
+        .palestras-vertical-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.5;
+            padding: 40px 0;
+        }
+
+        .palestras-vertical-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .palestra-vertical-item {
+            text-align: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .palestra-vertical-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .palestra-vertical-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .palestra-vertical-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .palestra-vertical-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .palestra-vertical-objetivo {
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.6;
+            text-align: center;
+            margin: 0;
+        }
+
+        .palestra-vertical-objetivo strong {
+            font-weight: 600;
+        }
+    </style>
+
+    <section class="palestras-vertical-section">
+        <div class="palestras-vertical-container">
+            
+            <div class="palestra-vertical-item">
+                <div class="palestra-vertical-icon">
+                    <img src="/1111.jpeg" alt="Auto responsabilidade">
+                </div>
+                <h3 class="palestra-vertical-title">Auto responsabilidade</h3>
+                <p class="palestra-vertical-objetivo">Objetivo: Essa palestra contribui com a conscientização da <strong>auto gestão</strong> no trabalho e na vida</p>
+            </div>
+
+            <div class="palestra-vertical-item">
+                <div class="palestra-vertical-icon">
+                    <img src="/2222.jpeg" alt="Gestão tempo">
+                </div>
+                <h3 class="palestra-vertical-title">Gestão tempo, o que é de fato essencial?</h3>
+                <p class="palestra-vertical-objetivo">Objetivo: Gerar consciência de como ter uma agenda produtiva, e fazer o que realmente é essencial</p>
+            </div>
+
+            <div class="palestra-vertical-item">
+                <div class="palestra-vertical-icon">
+                    <img src="/3333.jpeg" alt="Gestão emocional">
+                </div>
+                <h3 class="palestra-vertical-title">Gestão emocional</h3>
+                <p class="palestra-vertical-objetivo">Objetivo: Entender as crenças que impede de viver em abundância em todas as áreas da vida</p>
+            </div>
+
+            <div class="palestra-vertical-item">
+                <div class="palestra-vertical-icon">
+                    <img src="/4444.jpeg" alt="Metáfora do músico">
+                </div>
+                <h3 class="palestra-vertical-title">Metáfora do músico</h3>
+                <p class="palestra-vertical-objetivo">Objetivo: Ampliar a consciência de líderes sobre sua missão de desenvolver e inspirar seus liderados</p>
+            </div>
+
+            <div class="palestra-vertical-item">
+                <div class="palestra-vertical-icon">
+                    <img src="/5555.jpeg" alt="Cliente no Centro">
+                </div>
+                <h3 class="palestra-vertical-title">Cliente no Centro: Como Encantar em Segundos e Construir Relações que Duram</h3>
+                <p class="palestra-vertical-objetivo">Objetivo: Inspirar e capacitar profissionais a entenderem que o cliente não busca apenas produto, mas <strong>experiência, emoção e valor real</strong>. A palestra mostra como <strong>usar os primeiros segundos de contato para gerar confiança</strong>, criar conexões autênticas e transformar o atendimento em uma jornada memorável que fideliza e diferencia a empresa no mercado.</p>
+            </div>
+
+            <div class="palestra-vertical-item">
+                <div class="palestra-vertical-icon">
+                    <img src="/6666.jpeg" alt="Decifre pessoas">
+                </div>
+                <h3 class="palestra-vertical-title">Decifre pessoas e se comunique melhor</h3>
+                <p class="palestra-vertical-objetivo">Objetivo: Ampliar a consciência do respeito e assertividade ao falar com qualquer pessoa</p>
+            </div>
+
+        </div>
+    </section>
+
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
