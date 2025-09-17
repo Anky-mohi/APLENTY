@@ -1599,7 +1599,30 @@ function openWhatsAppDesenvolvimento() {
             .hero-title {
                 font-size: 2.8rem;
             }
-
+.hero-title {
+    font-family: 'Inter', sans-serif;
+    
+    /* font-weight: 800; */
+    margin-bottom: 20px;
+    color: #ceae5c;
+    line-height: 1.1;
+    letter-spacing: -3px;
+    text-align: left;
+    margin-left: 50px;
+}
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+    .hero-subtitle {
+        font-size: 2rem;
+        margin-bottom: 32px;
+        line-height: 1.3;
+        color: #ceae5c;
+        /* max-width: 800px; */
+        /* letter-spacing: -3px; */
+        margin-left: 50px;
+        /* text-align: left; */
+    }
             .hero-description {
                 font-size: 1.1rem;
                 margin-bottom: 32px;
@@ -1718,14 +1741,125 @@ function openWhatsAppDesenvolvimento() {
     </a>
 
     <!-- Hero Section -->
-    <main class="hero">
-        <div class="hero-content">
-          
-            <h1 class="hero-title">Desenvolvimento </h1>
-            <p class="hero-subtitle">pessoal sistêmico</p>
-            
-        </div>
-    </main>
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplenty - Educação Comportamental</title>
+
+
+</head>
+<style>/* Hero Section Container */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 5%;
+  background-image: url('/decbanner.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hero Content Wrapper */
+.hero-content {
+  max-width: 600px;
+  z-index: 2;
+}
+
+/* Main Title Styling */
+.hero-title {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #d4af8c;
+  margin: 0;
+  margin-bottom: -0.2em;
+  letter-spacing: -0.02em;
+}
+
+/* Subtitle Styling */
+.hero-subtitle {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #d4af8c;
+  margin: 0;
+  opacity: 0.9;
+  letter-spacing: -0.01em;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-section {
+    background-image: url('/decbannerphone.jpeg');
+    padding: 0 8%;
+    text-align: left;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    font-size: clamp(2rem, 12vw, 3.5rem);
+    margin-bottom: -0.1em;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.4rem, 8vw, 2.2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 0 6%;
+  }
+  
+  .hero-title {
+    font-size: clamp(1.8rem, 14vw, 3rem);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1.2rem, 10vw, 1.8rem);
+  }
+}
+
+/* Alternative Google Fonts Import (add to your HTML head or CSS) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap');
+
+/* If you prefer a different font, try these alternatives: */
+/*
+.hero-title, .hero-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  or
+  font-family: 'Crimson Text', serif;
+  or  
+  font-family: 'Lora', serif;
+}
+*/
+</style>
+<body>
+    <section class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Desenvolvimento</h1>
+    <p class="hero-subtitle">pessoal sistêmico</p>
+  </div>
+</section>
+
+
+    
+                   
+
+
+
+</body>
+</html>
 
     <!-- How It Works Section -->
     <section id="como-funciona" class="how-works-section">
