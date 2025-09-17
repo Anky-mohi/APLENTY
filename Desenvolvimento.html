@@ -1487,7 +1487,7 @@ function openWhatsAppDesenvolvimento() {
             background: linear-gradient(135deg, #554f63, #554f63);
             padding: 100px 0;
             text-align: center;
-            position: relative;
+           
             overflow: hidden;
         }
 
@@ -2207,7 +2207,14 @@ function openWhatsAppDesenvolvimento() {
 
 
 
-    
+    <script>
+function openWhatsAppDesenvolvimento() {
+    const message = encodeURIComponent("Olá ! Gostaria de saber mais informações sobre desenvolvimento pessoal");
+    const phoneNumber = "+5534999326520"; // Substitua pelo número do WhatsApp com DDI e DDD, sem "+" ou espaços
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, "_blank");
+}
+</script>
    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -2529,7 +2536,11 @@ function openWhatsAppDesenvolvimento() {
             <!-- Call to Action -->
             <div class="cta-section">
                 <h3 class="cta-title">Quero iniciar minha transformação</h3>
-                <a href="#contact" class="cta-button">Começar Agora</a>
+                <a href="https://wa.me/5534999326520?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20servi%C3%A7o"
+   target="_blank" class="cta-button">
+  Começar Agora
+</a>
+
             </div>
         </div>
     </section>
