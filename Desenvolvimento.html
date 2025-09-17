@@ -1484,7 +1484,7 @@ function openWhatsAppDesenvolvimento() {
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, #ceae5c, #d4b666);
+            background: linear-gradient(135deg, #554f63, #554f63);
             padding: 100px 0;
             text-align: center;
             position: relative;
@@ -2199,6 +2199,13 @@ function openWhatsAppDesenvolvimento() {
         </div>
     </section>
 
+   <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Quem É Section</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -2276,25 +2283,21 @@ function openWhatsAppDesenvolvimento() {
         .benefit-item {
             counter-increment: benefit-counter;
             margin-bottom: 25px;
-            display: flex;
-            align-items: flex-start;
+            display: block;
             font-size: clamp(1.1rem, 2.2vw, 1.3rem);
             line-height: 1.5;
             color: #ffffff;
             font-weight: 300;
-        }
-
-        .benefit-item:last-child {
-            margin-bottom: 0;
+            text-align: left;
+            word-wrap: break-word;
+            hyphens: none;
         }
 
         .benefit-item::before {
-            content: counter(benefit-counter) ".";
+            content: counter(benefit-counter) ". ";
             color: #d4af8c;
             font-weight: 500;
-            margin-right: 15px;
-            min-width: 25px;
-            font-size: 1.1em;
+            display: inline;
         }
 
         .benefit-highlight {
@@ -2334,7 +2337,17 @@ function openWhatsAppDesenvolvimento() {
         }
 
         /* Responsive Design */
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
+            .para-quem-section {
+                padding: 120px 60px;
+            }
+            
+            .benefits-container {
+                padding: 60px 80px;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
             .para-quem-section {
                 padding: 100px 40px;
             }
@@ -2342,38 +2355,133 @@ function openWhatsAppDesenvolvimento() {
             .benefits-container {
                 padding: 50px 60px;
             }
+            
+            .section-title {
+                margin-bottom: 45px;
+            }
+            
+            .benefits-title {
+                margin-bottom: 45px;
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
+            .para-quem-section {
+                padding: 60px 20px;
+                min-height: auto;
+            }
+            
+            .target-audience {
+                margin-bottom: 50px;
+            }
+            
             .target-audience p {
-                margin-bottom: 15px;
+                font-size: clamp(1.1rem, 4vw, 1.3rem);
+                margin-bottom: 20px;
+                line-height: 1.6;
+                text-align: left;
             }
             
             .benefits-container {
-                padding: 30px 25px;
+                padding: 30px 20px;
+                margin-bottom: 50px;
             }
             
-            .benefit-item::before {
-                margin-right: 10px;
-                min-width: 20px;
+            .benefit-item {
+                margin-bottom: 30px;
+                font-size: clamp(1rem, 4vw, 1.2rem);
+                line-height: 1.6;
+                text-align: left;
+            }
+            
+            .section-title {
+                font-size: clamp(2rem, 8vw, 3rem);
+                margin-bottom: 40px;
+            }
+            
+            .benefits-title {
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
+                margin-bottom: 35px;
             }
         }
 
         @media (max-width: 480px) {
             .para-quem-section {
-                padding: 60px 15px;
+                padding: 50px 15px;
             }
             
             .benefits-container {
-                padding: 25px 20px;
+                padding: 25px 15px;
+                border-radius: 8px;
+            }
+            
+            .benefit-item {
+                margin-bottom: 25px;
+                font-size: clamp(0.95rem, 4.2vw, 1.1rem);
+                line-height: 1.55;
+            }
+            
+            .target-audience {
+                text-align: left;
+            }
+            
+            .target-audience p {
+                margin-bottom: 18px;
+                line-height: 1.6;
+                font-size: clamp(1rem, 4.2vw, 1.2rem);
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: clamp(1rem, 4vw, 1.1rem);
+            }
+            
+            .cta-title {
+                font-size: clamp(1.4rem, 6vw, 2rem);
+                margin-bottom: 25px;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .para-quem-section {
+                padding: 40px 12px;
+            }
+            
+            .benefits-container {
+                padding: 20px 12px;
+            }
+            
+            .benefit-item {
+                margin-bottom: 22px;
+                line-height: 1.6;
+                font-size: clamp(0.9rem, 4.5vw, 1rem);
+            }
+            
+            .target-audience p {
+                margin-bottom: 16px;
+                line-height: 1.65;
+                font-size: clamp(0.95rem, 4.5vw, 1.1rem);
+            }
+        }
+
+        @media (max-width: 320px) {
+            .para-quem-section {
+                padding: 35px 10px;
+            }
+            
+            .benefits-container {
+                padding: 18px 10px;
             }
             
             .benefit-item {
                 margin-bottom: 20px;
+                font-size: clamp(0.85rem, 5vw, 0.95rem);
             }
         }
     </style>
-
+</head>
+<body>
     <section class="para-quem-section">
         <div class="section-container">
             <!-- Para quem é Section -->
@@ -2408,11 +2516,16 @@ function openWhatsAppDesenvolvimento() {
                     </li>
                 </ol>
             </div>
-<h3 style="text-align: center;" class="cta-title">Quero iniciar minha transformação</h3>
+
             <!-- Call to Action -->
-           
+            <div class="cta-section">
+                <h3 class="cta-title">Quero iniciar minha transformação</h3>
+                <a href="#contact" class="cta-button">Começar Agora</a>
+            </div>
         </div>
     </section>
+</body>
+</html>
 
 
     <!-- Footer -->
