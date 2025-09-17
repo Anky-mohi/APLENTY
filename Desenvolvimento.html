@@ -2199,6 +2199,200 @@ function openWhatsAppDesenvolvimento() {
         </div>
     </section>
 
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que você vai conquistar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+        
+        .conquista-section {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        .conquista-section * {
+            box-sizing: border-box;
+        }
+        
+        .conquista-container {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .conquista-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 60px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .conquista-benefits-box {
+            background: rgba(40, 40, 40, 0.9);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 50px 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .conquista-benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .conquista-benefit-item:nth-child(1) { animation-delay: 0.1s; }
+        .conquista-benefit-item:nth-child(2) { animation-delay: 0.2s; }
+        .conquista-benefit-item:nth-child(3) { animation-delay: 0.3s; }
+        .conquista-benefit-item:nth-child(4) { animation-delay: 0.4s; }
+        .conquista-benefit-item:nth-child(5) { animation-delay: 0.5s; }
+        
+        .conquista-benefit-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .conquista-benefit-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #d4af37;
+            margin-right: 25px;
+            min-width: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .conquista-benefit-text {
+            font-size: 1.25rem;
+            color: #e8e8e8;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+        
+        .conquista-highlight {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Hover effects */
+        .conquista-benefit-item {
+            transition: all 0.3s ease;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .conquista-benefit-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateX(10px);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .conquista-main-title {
+                font-size: 2.5rem;
+                margin-bottom: 40px;
+            }
+            
+            .conquista-benefits-box {
+                padding: 30px 25px;
+            }
+            
+            .conquista-benefit-text {
+                font-size: 1.1rem;
+            }
+            
+            .conquista-benefit-number {
+                font-size: 1.5rem;
+                margin-right: 20px;
+                min-width: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .conquista-main-title {
+                font-size: 2rem;
+            }
+            
+            .conquista-benefit-text {
+                font-size: 1rem;
+            }
+            
+            .conquista-benefits-box {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="conquista-section">
+        <div class="conquista-container">
+            <h1 class="conquista-main-title">O que você vai conquistar?</h1>
+            
+            <div class="conquista-benefits-box">
+                <div class="conquista-benefit-item">
+                    <div class="conquista-benefit-number">1.</div>
+                    <div class="conquista-benefit-text">Clareza para tomar decisões em todas as áreas da vida com <span class="conquista-highlight">segurança e confiança</span>.</div>
+                </div>
+                
+                <div class="conquista-benefit-item">
+                    <div class="conquista-benefit-number">2.</div>
+                    <div class="conquista-benefit-text">Equilíbrio emocional e mais controle da rotina para uma <span class="conquista-highlight">vida mais harmoniosa</span>.</div>
+                </div>
+                
+                <div class="conquista-benefit-item">
+                    <div class="conquista-benefit-number">3.</div>
+                    <div class="conquista-benefit-text">Alinhamento entre propósito, carreira e vida pessoal para uma existência mais significativa.</div>
+                </div>
+                
+                <div class="conquista-benefit-item">
+                    <div class="conquista-benefit-number">4.</div>
+                    <div class="conquista-benefit-text">Estratégias para destravar seu potencial e <span class="conquista-highlight">atingir objetivos</span> de forma consistente.</div>
+                </div>
+                
+                <div class="conquista-benefit-item">
+                    <div class="conquista-benefit-number">5.</div>
+                    <div class="conquista-benefit-text">Uma visão prática de onde você está e para <span class="conquista-highlight">onde quer ir</span> em cada área da vida.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+    
    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
