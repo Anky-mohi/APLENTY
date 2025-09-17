@@ -1858,184 +1858,561 @@ function openWhatsAppDesenvolvimento() {
 
 
 
-</body>
-</html>
 
-    <!-- How It Works Section -->
-    <section id="como-funciona" class="how-works-section">
-        <div class="container">
-            <h2 class="section-title">Como Funciona</h2>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Main Section */
+        .areas-vida-section {
+            background-color: #f9f9f9;
+            padding: 80px 20px;
+            min-height: 100vh;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        /* Introduction Text */
+        .intro-text {
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+            line-height: 1.6;
+            color: #1a1a1a;
+            font-weight: 300;
+            margin-bottom: 50px;
+        }
+
+        /* Areas List Container */
+        .areas-list {
+            list-style: none;
+            counter-reset: area-counter;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .area-item {
+            counter-increment: area-counter;
+            display: flex;
+            align-items: flex-start;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.5;
+            color: #1a1a1a;
+            font-weight: 400;
+            padding: 15px 0;
+        }
+
+        .area-item::before {
+            content: counter(area-counter) ".";
+            color: #1a1a1a;
+            font-weight: 500;
+            margin-right: 15px;
+            min-width: 25px;
+            font-size: 1.1em;
+        }
+
+        .area-name {
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .area-description {
+            font-weight: 300;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .areas-vida-section {
+                padding: 100px 40px;
+            }
             
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-icon">📋</div>
-                    <h3>10 Sessões Individuais</h3>
-                    <p>Atendimentos <strong>presencial ou online</strong> com aproximadamente <strong>2h cada</strong>, focados no seu desenvolvimento pessoal.</p>
-                </div>
+            .areas-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
 
-                <div class="process-card">
-                    <div class="process-icon">🔍</div>
-                    <h3>Diagnóstico Inicial</h3>
-                    <p><strong>Diagnóstico inicial</strong> das <strong>11 áreas da vida</strong> para identificar pontos de melhoria e potenciais.</p>
-                </div>
+        @media (min-width: 1024px) {
+            .areas-list {
+                gap: 35px;
+            }
+            
+            .area-item {
+                padding: 20px 0;
+            }
+        }
 
-                <div class="process-card">
-                    <div class="process-icon">🎯</div>
-                    <h3>Planos de Ação</h3>
-                    <p>Construção de <strong>planos de ação práticos e personalizados</strong> para cada área da sua vida.</p>
-                </div>
+        @media (max-width: 768px) {
+            .areas-list {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .area-item::before {
+                margin-right: 10px;
+                min-width: 20px;
+            }
+        }
 
-                <div class="process-card">
-                    <div class="process-icon">📈</div>
-                    <h3>Acompanhamento</h3>
-                    <p><strong>Acompanhamento do progresso</strong> e desenvolvimento ao longo de todo o processo.</p>
-                </div>
+        @media (max-width: 480px) {
+            .areas-vida-section {
+                padding: 60px 15px;
+            }
+            
+            .area-item {
+                padding: 12px 0;
+            }
+        }
+    </style>
+
+    <section class="areas-vida-section">
+        <div class="section-container">
+            <h2 class="section-title">As 11 áreas da vida trabalhadas</h2>
+            
+            <p class="intro-text">
+                Dentro da abordagem sistêmica, avaliamos cada dimensão que influencia diretamente seus resultados:
+            </p>
+            
+            <ol class="areas-list">
+                <li class="area-item">
+                    <span class="area-name">Emocional</span>
+                    <span class="area-description">– como você lida com sentimentos e emoções.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Espiritual</span>
+                    <span class="area-description">– conexão com propósito e sentido de vida.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Financeira</span>
+                    <span class="area-description">– relação com dinheiro e prosperidade.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Profissional</span>
+                    <span class="area-description">– desempenho, carreira e realizações.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Intelectual</span>
+                    <span class="area-description">– aprendizado contínuo e expansão de conhecimento.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Conjugal</span>
+                    <span class="area-description">– relacionamento amoroso e parceria de vida.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Filhos</span>
+                    <span class="area-description">– qualidade da relação e papel de referência.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Parentes</span>
+                    <span class="area-description">– vínculos e relações familiares.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Social</span>
+                    <span class="area-description">– amizades e conexões interpessoais.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Saúde</span>
+                    <span class="area-description">– cuidado físico, mental e bem-estar.</span>
+                </li>
+                
+                <li class="area-item">
+                    <span class="area-name">Servir</span>
+                    <span class="area-description">– contribuição para os outros e impacto no mundo.</span>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Como Funciona Section */
+        .como-funciona-section {
+            background: linear-gradient(135deg, #4a4458 0%, #5a5468 100%);
+            padding: 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 500;
+            color: #d4af8c;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: #d4af8c;
+        }
+
+        /* Cards Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* Individual Cards */
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #d4af8c;
+            border-radius: 50px;
+            padding: 25px 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(212, 175, 140, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Responsive Layout */
+        @media (min-width: 768px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .feature-card:nth-child(1) {
+                grid-column: 1 / -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .feature-card:nth-child(4) {
+                grid-column: 1 / -1;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .como-funciona-section {
+                padding: 100px 40px;
+            }
+            
+            .feature-card {
+                padding: 30px 50px;
+            }
+            
+            .section-title {
+                margin-bottom: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .como-funciona-section {
+                padding: 60px 15px;
+            }
+            
+            .feature-card {
+                padding: 20px 30px;
+                border-radius: 40px;
+            }
+            
+            .section-title {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+
+    <section class="como-funciona-section">
+        <h2 class="section-title">Como funciona?</h2>
+        
+        <div class="cards-container">
+            <div class="feature-card">
+                <h3>10 sessões individuais <strong>presencial ou online</strong> 2h</h3>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Diagnóstico estado atual</h3>
+            </div>
+            
+            <div class="feature-card">
+                <h3><strong>Construção</strong> de planos de ação práticos e personalizados</h3>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Acompanhamento do progresso e desenvolvimento ao longo do processo</h3>
             </div>
         </div>
     </section>
 
-    <!-- Life Areas Section -->
-    <section class="life-areas-section">
-        <div class="container">
-            <h2 class="section-title">As 11 Áreas da Vida Trabalhadas</h2>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Main Section */
+        .para-quem-section {
+            background: linear-gradient(135deg, #4a4458 0%, #5a5468 100%);
+            padding: 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* First Section Title */
+        .section-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 500;
+            color: #d4af8c;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Target Audience Text */
+        .target-audience {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .target-audience p {
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            line-height: 1.6;
+            color: #ffffff;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        /* Second Section Title */
+        .benefits-title {
+            font-size: clamp(2.2rem, 5.5vw, 4rem);
+            font-weight: 500;
+            color: #d4af8c;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Benefits Container */
+        .benefits-container {
+            border: 1px solid #d4af8c;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 60px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+        }
+
+        .benefits-list {
+            list-style: none;
+            counter-reset: benefit-counter;
+        }
+
+        .benefit-item {
+            counter-increment: benefit-counter;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+            line-height: 1.5;
+            color: #ffffff;
+            font-weight: 300;
+        }
+
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefit-item::before {
+            content: counter(benefit-counter) ".";
+            color: #d4af8c;
+            font-weight: 500;
+            margin-right: 15px;
+            min-width: 25px;
+            font-size: 1.1em;
+        }
+
+        .benefit-highlight {
+            color: #d4af8c;
+            font-weight: 500;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af8c 0%, #c49976 100%);
+            color: #2a2735;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(212, 175, 140, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 140, 0.4);
+            background: linear-gradient(135deg, #e0bb97 0%, #d4af8c 100%);
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .para-quem-section {
+                padding: 100px 40px;
+            }
             
-            <div class="life-areas-intro">
-                <p>Dentro da abordagem sistêmica, avaliamos cada dimensão que influencia diretamente seus resultados:</p>
+            .benefits-container {
+                padding: 50px 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .target-audience p {
+                margin-bottom: 15px;
+            }
+            
+            .benefits-container {
+                padding: 30px 25px;
+            }
+            
+            .benefit-item::before {
+                margin-right: 10px;
+                min-width: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .para-quem-section {
+                padding: 60px 15px;
+            }
+            
+            .benefits-container {
+                padding: 25px 20px;
+            }
+            
+            .benefit-item {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+
+    <section class="para-quem-section">
+        <div class="section-container">
+            <!-- Para quem é Section -->
+            <h2 class="section-title">Para quem é?</h2>
+            
+            <div class="target-audience">
+                <p>Pessoas que desejam mudar padrões e viver de forma mais consciente;</p>
+                <p>Profissionais em transição ou que buscam evolução pessoal e profissional;</p>
+                <p>Quem sente que está estagnado e quer destravar o próximo nível;</p>
+                <p>Líderes, empreendedores e colaboradores que precisam de clareza e equilíbrio.</p>
             </div>
 
-            <div class="areas-grid">
-                <div class="area-card">
-                    <div class="area-number">1</div>
-                    <div class="area-content">
-                        <h4>Emocional</h4>
-                        <p>Como você lida com sentimentos e emoções.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">2</div>
-                    <div class="area-content">
-                        <h4>Espiritual</h4>
-                        <p>Conexão com propósito e sentido de vida.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">3</div>
-                    <div class="area-content">
-                        <h4>Financeira</h4>
-                        <p>Relação com dinheiro e prosperidade.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">4</div>
-                    <div class="area-content">
-                        <h4>Profissional</h4>
-                        <p>Desempenho, carreira e realizações.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">5</div>
-                    <div class="area-content">
-                        <h4>Intelectual</h4>
-                        <p>Aprendizado contínuo e expansão de conhecimento.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">6</div>
-                    <div class="area-content">
-                        <h4>Conjugal</h4>
-                        <p>Relacionamento amoroso e parceria de vida.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">7</div>
-                    <div class="area-content">
-                        <h4>Filhos</h4>
-                        <p>Qualidade da relação e papel de referência.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">8</div>
-                    <div class="area-content">
-                        <h4>Parentes</h4>
-                        <p>Vínculos e relações familiares.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">9</div>
-                    <div class="area-content">
-                        <h4>Social</h4>
-                        <p>Amizades e conexões interpessoais.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">10</div>
-                    <div class="area-content">
-                        <h4>Saúde</h4>
-                        <p>Cuidado físico, mental e bem-estar.</p>
-                    </div>
-                </div>
-
-                <div class="area-card">
-                    <div class="area-number">11</div>
-                    <div class="area-content">
-                        <h4>Servir</h4>
-                        <p>Contribuição para os outros e impacto no mundo.</p>
-                    </div>
-                </div>
+            <!-- O que você vai conquistar Section -->
+            <h2 class="benefits-title">O que você vai conquistar?</h2>
+            
+            <div class="benefits-container">
+                <ol class="benefits-list">
+                    <li class="benefit-item">
+                        Clareza para tomar decisões em todas as áreas da vida <span class="benefit-highlight">com segurança e confiança.</span>
+                    </li>
+                    <li class="benefit-item">
+                        Equilíbrio emocional e mais controle da rotina para uma <span class="benefit-highlight">vida mais harmoniosa.</span>
+                    </li>
+                    <li class="benefit-item">
+                        Alinhamento entre propósito, carreira e vida pessoal para uma existência mais significativa.
+                    </li>
+                    <li class="benefit-item">
+                        Estratégias para destravar seu potencial e <span class="benefit-highlight">atingir objetivos</span> de forma consistente.
+                    </li>
+                    <li class="benefit-item">
+                        Uma visão prática de onde você está e para onde quer ir em cada área da vida.
+                    </li>
+                </ol>
             </div>
+<h3 style="text-align: center;" class="cta-title">Quero iniciar minha transformação</h3>
+            <!-- Call to Action -->
+           
         </div>
     </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="container">
-            <h2 class="section-title">O que você vai conquistar</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Clareza para Decisões</h3>
-                    <p>Clareza para tomar decisões em todas as áreas da vida com segurança e confiança.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="benefit-icon">⚖️</div>
-                    <h3>Equilíbrio Emocional</h3>
-                    <p>Equilíbrio emocional e mais controle da rotina para uma vida mais harmoniosa.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="benefit-icon">🧭</div>
-                    <h3>Alinhamento de Propósito</h3>
-                    <p>Alinhamento entre propósito, carreira e vida pessoal para uma existência mais significativa.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="benefit-icon">🚀</div>
-                    <h3>Estratégias de Crescimento</h3>
-                    <p>Estratégias para destravar seu potencial e atingir objetivos de forma consistente.</p>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="benefit-icon">🗺️</div>
-                    <h3>Visão Clara do Futuro</h3>
-                    <p>Uma visão prática de onde você está e para onde quer ir em cada área da vida.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    
-                   
 
 
     <!-- Footer -->
