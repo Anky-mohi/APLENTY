@@ -1740,122 +1740,229 @@ function openWhatsAppDesenvolvimento() {
        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
     </a>
 
-    <!-- Hero Section -->
-   <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplenty - Educação Comportamental</title>
-
-
-</head>
-<style>/* Hero Section Container */
-.hero-section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 5%;
-  background-image: url('/decbanner.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Hero Content Wrapper */
-.hero-content {
-  max-width: 600px;
-  z-index: 2;
-}
-
-/* Main Title Styling */
-.hero-title {
-  font-family: 'Playfair Display', 'Times New Roman', serif;
-  font-size: clamp(2.5rem, 8vw, 6rem);
-  font-weight: 400;
-  line-height: 1.1;
-  color: #d4af8c;
-  margin: 0;
-  margin-bottom: -0.2em;
-  letter-spacing: -0.02em;
-}
-
-/* Subtitle Styling */
-.hero-subtitle {
-  font-family: 'Playfair Display', 'Times New Roman', serif;
-  font-size: clamp(1.8rem, 5vw, 3.5rem);
-  font-weight: 300;
-  line-height: 1.2;
-  color: #d4af8c;
-  margin: 0;
-  opacity: 0.9;
-  letter-spacing: -0.01em;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .hero-section {
-    background-image: url('/decbannerphone.jpeg');
-    padding: 0 8%;
-    text-align: left;
-  }
   
-  .hero-content {
-    max-width: 100%;
-  }
-  
-  .hero-title {
-    font-size: clamp(2rem, 12vw, 3.5rem);
-    margin-bottom: -0.1em;
-            margin-left: -10px;
-        margin-top: 90px;
-  }
-  
-  .hero-subtitle {
-    font-size: clamp(1.4rem, 8vw, 2.2rem);
-  }
-}
 
-@media (max-width: 480px) {
-  .hero-section {
-    padding: 0 6%;
-  }
-  
-  .hero-title {
-    font-size: clamp(1.8rem, 14vw, 3rem);
-  }
-  
-  .hero-subtitle {
-    font-size: clamp(1.2rem, 10vw, 1.8rem);
-  }
-}
 
-/* Alternative Google Fonts Import (add to your HTML head or CSS) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&display=swap');
+  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* If you prefer a different font, try these alternatives: */
-/*
-.hero-title, .hero-subtitle {
-  font-family: 'Cormorant Garamond', serif;
-  or
-  font-family: 'Crimson Text', serif;
-  or  
-  font-family: 'Lora', serif;
-}
-*/
-</style>
-<body>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2c1810 0%, #4a3428 50%, #2c1810 100%);
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.6) 70%);
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: #fff;
+        }
+
+        .brand-logo {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #d4a574;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            font-family: 'Georgia', serif;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #d4a574;
+            font-family: 'Georgia', serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #e5d4c1;
+            font-weight: 300;
+            line-height: 1.4;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+           
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #d4a574, #b8935d);
+            color: #2c1810;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+            background: linear-gradient(45deg, #e5b885, #d4a574);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .brand-logo {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                max-width: 300px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .brand-logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Floating particles effect */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(212, 165, 116, 0.3);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 0.5s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 1.5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+        }
+    </style>
+
     <section class="hero-section">
-  <div class="hero-content">
-    <h1 class="hero-title">Desenvolvimento</h1>
-    <p class="hero-subtitle">pessoal sistêmico</p>
-  </div>
-</section>
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
 
+        <div class="hero-container">
+            <div class="hero-content">
+                
+                <h1 class="hero-title">A maior autoridade em vendas do Brasil no palco do seu evento</h1>
+                <p class="hero-subtitle">Desenvolvimento pessoal sistêmico</p>
+                <a href="#contact" class="cta-button">Saiba Mais</a>
+            </div>
 
-    
+            <div class="hero-image">
+                <img src="/12.png" alt="Dani Martins - Especialista em Vendas" />
+            </div>
+        </div>
+    </section>
+
                    
 
 
