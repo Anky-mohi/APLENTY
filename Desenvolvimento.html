@@ -1742,8 +1742,12 @@ function openWhatsAppDesenvolvimento() {
 
   
 
-
-  
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
     <style>
         * {
             margin: 0;
@@ -1798,8 +1802,17 @@ function openWhatsAppDesenvolvimento() {
             font-weight: bold;
             color: #d4a574;
             letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .brand-subtitle {
+            font-size: 1rem;
+            color: #d4a574;
+            letter-spacing: 3px;
             margin-bottom: 40px;
             font-family: 'Georgia', serif;
+            opacity: 0.8;
         }
 
         .hero-title {
@@ -1829,7 +1842,8 @@ function openWhatsAppDesenvolvimento() {
             width: 100%;
             max-width: 400px;
             height: auto;
-           
+            border-radius: 10px;
+        
         }
 
         .cta-button {
@@ -1854,39 +1868,91 @@ function openWhatsAppDesenvolvimento() {
 
         /* Mobile Styles */
         @media (max-width: 768px) {
+            .hero-section {
+                background: linear-gradient(135deg, #2c1810 0%, #4a3428 50%, #2c1810 100%);
+                min-height: 100vh;
+                position: relative;
+            }
+
+            .hero-section::before {
+                background: linear-gradient(to bottom, 
+                    rgba(0,0,0,0.3) 0%, 
+                    rgba(0,0,0,0.1) 30%, 
+                    rgba(0,0,0,0.7) 70%, 
+                    rgba(44,24,16,0.95) 100%);
+            }
+
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 20px;
-                text-align: center;
-            }
-
-            .brand-logo {
-                font-size: 2rem;
-                margin-bottom: 20px;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-                margin-bottom: 20px;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 30px;
+                gap: 0;
+                padding: 0;
+                height: 100vh;
+                position: relative;
             }
 
             .hero-image {
-                order: -1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+                padding-top: 10vh;
             }
 
             .hero-image img {
-                max-width: 300px;
+                width: 100%;
+                max-width: none;
+                height: 70vh;
+                object-fit: cover;
+                object-position: center top;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+                .hero-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        /* padding: 40px 20px 60px; */
+        text-align: left;
+        background: linear-gradient(to top, rgb(44 24 16) 0%, rgb(44 24 16 / 88%) 40%, rgb(44 24 16 / 75%) 70%, #00000017 100%);
+    }
+}
+
+            .brand-logo {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+                line-height: 1.1;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 25px;
+                opacity: 0.95;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             }
 
             .cta-button {
                 padding: 12px 30px;
-                font-size: 1rem;
+                font-size: 0.9rem;
+                box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+            }
+
+            .particles {
+                display: none;
             }
         }
 
@@ -1936,7 +2002,8 @@ function openWhatsAppDesenvolvimento() {
             50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
         }
     </style>
-
+</head>
+<body>
     <section class="hero-section">
         <div class="particles">
             <div class="particle"></div>
@@ -1951,10 +2018,10 @@ function openWhatsAppDesenvolvimento() {
 
         <div class="hero-container">
             <div class="hero-content">
-                
+           
                 <h1 class="hero-title">A maior autoridade em vendas do Brasil no palco do seu evento</h1>
                 <p class="hero-subtitle">Desenvolvimento pessoal sistêmico</p>
-                <a href="#contact" class="cta-button">Saiba Mais</a>
+                
             </div>
 
             <div class="hero-image">
@@ -1962,6 +2029,8 @@ function openWhatsAppDesenvolvimento() {
             </div>
         </div>
     </section>
+</body>
+</html>
 
                    
 
