@@ -694,317 +694,6 @@ ease;
     </header>
 
 <style>
-
-        /* Footer Styles */
-        .footer {
-            background-color: #0d2d2c;
-            padding: 60px 0 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 200px 1fr 1fr 1fr 1fr 300px;
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .footer-logo-section {
-           display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 0;
-        }
-
-        .footer-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: #ceae5c;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #0B1426;
-            font-size: 18px;
-        }
-
-        .footer-brand {
-    font-family: 'Inter', sans-serif;
-    font-size: 23px;
-    font-weight: 500;
-    color: #ceae5c;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    margin-left: -10px;
-}
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer-column h3 {
-            font-size: 16px;
-            font-weight: 400;
-            color: #FFFFFF;
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            
-        }
-
-        .footer-column ul li a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 300;
-            transition: all 0.2s ease;
-        }
-
-        .footer-column ul li a:hover {
-            color: #ceae5c;
-        }
-
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .contact-icon {
-            width: 18px;
-            height: 18px;
-            color: #ceae5c;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        .contact-text {
-            flex: 1;
-        }
-
-        .contact-label {
-            font-weight: 600;
-            color: #FFFFFF;
-            margin-bottom: 2px;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-copyright {
-                font-size: 15px;
-    font-weight: 600;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            transition: all 0.2s ease;
-            font-weight: 600;
-        }
-
-        .footer-links a:hover {
-            color: #ceae5c;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-link {
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: red;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .social-link:hover {
-            background: #ceae5c;
-            color: #0B1426;
-            transform: translateY(-2px);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1200px) {
-            .footer-content {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 40px;
-            }
-            
-            .footer-contact {
-                grid-column: 1 / -1;
-                margin-top: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .footer-container {
-                padding: 0 20px;
-            }
-
-            .footer {
-                padding: 40px 0 30px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                text-align: left;
-            }
-
-            .footer-logo-section {
-                align-items: center;
-                text-align: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-        }
-
-
-        @media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr); /* two columns instead of full width */
-        gap: 20px;
-    }
-
-    .footer-column {
-        text-align: left;
-    }
-
-    .footer-logo-section {
-        grid-column: 1 / -1; /* logo takes full width */
-        margin-bottom: 20px;
-        align-items: center;
-    }
-
-    .footer-contact {
-        grid-column: 1 / -1; /* contact full width below */
-    }
-}
-
-    </style>
-<script>
-function openWhatsAppDesenvolvimento() {
-    const message = encodeURIComponent("Olá ! Gostaria de saber mais informações sobre desenvolvimento pessoal");
-    const phoneNumber = "+5534999326520"; // Substitua pelo número do WhatsApp com DDI e DDD, sem "+" ou espaços
-    const url = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(url, "_blank");
-}
-</script>
-
-
-    <script>
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileToggle.textContent = navMenu.classList.contains('active') ? '×' : '☰';
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileToggle.textContent = '☰';
-            });
-        });
-
-        // Header background on scroll
-       
-
-        // Smooth scrolling function
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }
-
-        // WhatsApp contact function
-        function openWhatsApp() {
-            const phoneNumber = '5534999326520';
-            const message = 'Olá';
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
-        }
-    </script>
-
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinamento de Alta Performance em Vendas - Aplenty</title>
-    <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         * {
@@ -1603,1272 +1292,493 @@ function openWhatsAppDesenvolvimento() {
 
     </main>
 
-    
+
+
+
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
         * {
+            box-sizing: border-box;
+        }
+
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-       
-
-        
-
-        .prime-logo {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #ceae5c, #ceae5c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-title {
-            font-family: 'Inter', sans-serif;
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: #FFFFFF;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-      
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 60px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #ceae5c, #ceae5c);
-            color: #0B1426;
-            padding: 18px 40px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-family: 'Inter', sans-serif;
-            text-transform: none;
-            letter-spacing: 0;
-            min-width: 200px;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        /* Content Sections */
-        .content-section {
-            background: linear-gradient(135deg, #0e2e32 0%, #0d2e30 50%, #0d2d2d 100%);
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(206, 174, 92, 0.08), transparent 50%);
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            font-weight: 600;
-            margin-bottom: 40px;
-            text-align: center;
-            letter-spacing: -0.5px;
-            color: #ceae5c;
-            position: relative;
-            z-index: 2;
-        }
-
-        .problem-section {
-            margin-bottom: 80px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .problem-text {
-            font-size: 1.2rem;
-            line-height: 1.7;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 40px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .problem-highlight {
-            background: rgba(206, 174, 92, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-            border-left: 5px solid #ceae5c;
-            margin: 40px 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        .problem-highlight p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #FFFFFF;
-        }
-
-        .problem-highlight strong {
-            color: #ceae5c;
-            font-weight: 600;
-        }
-
-        /* What We Deliver Section */
-        .delivery-section {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin: 60px 0;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            position: relative;
-            z-index: 2;
-        }
-
-        .delivery-title {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #ceae5c;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .delivery-intro {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(206, 174, 92, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            background: rgba(206, 174, 92, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .benefit-icon {
-            font-size: 1.5rem;
-            color: #ceae5c;
-            margin-top: 5px;
-        }
-
-        .benefit-text {
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-        }
-
-        /* Why It Works Section */
-        .why-works-section {
-            background: linear-gradient(135deg, rgba(206, 174, 92, 0.1), rgba(206, 174, 92, 0.05));
-            border-radius: 20px;
-            padding: 50px 40px;
-            margin: 60px 0;
-            border: 1px solid rgba(206, 174, 92, 0.2);
-            position: relative;
-            z-index: 2;
-        }
-
-        .why-works-title {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #ceae5c;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .why-works-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .result-highlight {
-            background: rgba(206, 174, 92, 0.15);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 30px;
-            text-align: center;
-            border: 1px solid rgba(206, 174, 92, 0.3);
-        }
-
-        .result-highlight .emoji {
-            font-size: 1.5rem;
-            margin-right: 10px;
-        }
-
-        .result-highlight strong {
-            color: #ceae5c;
-            font-weight: 600;
-        }
-
-        /* Target Audience Section */
-        .target-section {
-            margin: 60px 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        .target-title {
-            font-size: 2.2rem;
-            font-weight: 600;
-            color: #ceae5c;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .target-intro {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .target-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .target-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px;
-            margin-bottom: 15px;
-            background: rgba(206, 174, 92, 0.05);
-            border-radius: 15px;
-            border-left: 4px solid #ceae5c;
-            transition: all 0.3s ease;
-        }
-
-        .target-item:hover {
-            background: rgba(206, 174, 92, 0.1);
-            transform: translateX(10px);
-        }
-
-        .target-item .bullet {
-            color: #ceae5c;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-
-        .target-item p {
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-        }
-
-        .target-item strong {
-            color: #ceae5c;
-            font-weight: 600;
-        }
-
-        /* Final CTA Section */
-        .final-cta {
-            text-align: center;
-            padding: 60px 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        .final-cta-text {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            color: #ceae5c;
-            font-weight: 500;
-        }
-
-        .final-cta strong {
-            font-weight: 700;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #ceae5c, #d4b666);
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(13, 45, 44, 0.1), transparent 70%);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .cta-content h2 {
-            font-size: 2.8rem;
-            color: #0d2d2c;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .cta-content p {
-            font-size: 1.3rem;
-            color: #0d2d2c;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .benefit-icon{
-  width: 64px; /* fixed size */
-  height: 64px;
-  margin: 0 auto 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.benefit-icon img{
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-        .btn-cta {
-            background: #0d2d2c;
-            color: #FFFFFF;
-            padding: 20px 50px;
-            border: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            text-decoration: none;
-            display: inline-block;
-            min-width: 250px;
-        }
-
-        .btn-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(13, 45, 44, 0.4);
-            background: #1a4847;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-          
-
-            
-
-           
-
-            .delivery-title, .why-works-title, .target-title {
-                font-size: 1.8rem;
-            }
-
-            .btn-primary {
-                width: 100%;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .cta-content h2 {
-                font-size: 2.2rem;
-            }
-
-            .cta-content p {
-                font-size: 1.1rem;
-            }
-
-            .delivery-section, .why-works-section {
-                padding: 40px 20px;
-            }
-
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .target-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-        }
-
-        /* WhatsApp Floating Button */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            z-index: 1000;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #20b955;
-            transform: scale(1.1);
-        }
-
-        .whatsapp-float img {
-            width: 35px;
-            height: 35px;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-content > * {
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
-
-        .hero-title {
-            animation-delay: 0.1s;
-        }
-
-        .hero-subtitle {
-            animation-delay: 0.2s;
-        }
-
-        .hero-description {
-            animation-delay: 0.3s;
-        }
-
-        .hero-buttons {
-            animation-delay: 0.4s;
-        }
-    </style>
-</head>
-<body>
-    <!-- WhatsApp Floating Icon Button -->
-    <a href="https://wa.me/+5534999326520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Contratação%20Estratégica." 
-       class="whatsapp-float" target="_blank">
-       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    </a>
-
-    <style>
-        .sales-training-section * {
-            box-sizing: border-box;
         }
 
         .sales-training-section {
             font-family: 'Arial', sans-serif;
             background-image: url(/background.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            margin: 0;
         }
 
-        .sales-training-section .container {
+        .container {
             max-width: 1000px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
             padding: 60px 50px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             position: relative;
-            overflow: hidden;
+            width: 100%;
         }
 
-        .sales-training-section .container::before {
+        .container::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-            clip-path: polygon(100% 0, 100% 100%, 0 0);
-            opacity: 0.1;
-        }
-
-        .sales-training-section .vertical-line {
-            position: absolute;
             left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, #4a90e2, #9b59b6);
+            top: 50px;
+            width: 3px;
+            height: 60px;
+           
         }
 
-        .sales-training-section .main-title {
+        .container::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 50px;
+            width: 150px;
+            height: 2px;
+          
+            transform: rotate(15deg);
+            transform-origin: right center;
+        }
+
+        .main-title {
             font-size: 32px;
             font-weight: 300;
-            color: #2c3e50;
+            color: #333;
             margin-bottom: 40px;
             line-height: 1.4;
-            padding-left: 25px;
+            margin-left: 20px;
         }
 
-        .sales-training-section .main-title strong {
+        .main-title strong {
             font-weight: 700;
-            color: #34495e;
         }
 
-        .sales-training-section .content-text {
+        .content-text {
             font-size: 16px;
             line-height: 1.8;
-            color: #555;
+            color: #333;
             margin-bottom: 30px;
-            padding-left: 25px;
         }
 
-        .sales-training-section .content-text strong {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .sales-training-section .highlight-text {
+        .highlight-text {
             font-size: 18px;
             font-weight: 500;
-            color: #3498db;
+            color: #4a90e2;
             line-height: 1.6;
-            padding-left: 25px;
-            position: relative;
         }
 
-        .sales-training-section .highlight-text strong {
-            font-weight: 700;
-        }
-
-        .sales-training-section .highlight-text::before {
-            content: '○';
-            position: absolute;
-            left: 0;
-            color: #3498db;
-            font-size: 20px;
-        }
-
+        /* Mobile responsive styles */
         @media (max-width: 768px) {
-            .sales-training-section .container {
-                padding: 40px 30px;
-                margin: 20px;
+            .sales-training-section {
+                padding: 15px;
+                min-height: 100vh;
+                align-items: flex-start;
+                padding-top: 60px;
             }
 
-            .sales-training-section .main-title {
+            .container {
+                padding: 30px 20px;
+                max-width: 100%;
+            }
+
+            .container::before {
+                top: 20px;
+                height: 40px;
+                width: 2px;
+            }
+
+            .container::after {
+                width: 80px;
+                bottom: 20px;
+                right: 10px;
+            }
+
+            .main-title {
                 font-size: 24px;
-                padding-left: 20px;
+                margin-bottom: 25px;
+                margin-left: 15px;
+                line-height: 1.3;
             }
 
-            .sales-training-section .content-text,
-            .sales-training-section .highlight-text {
-                padding-left: 20px;
+            .content-text {
                 font-size: 15px;
+                line-height: 1.7;
+                margin-bottom: 20px;
+            }
+
+            .highlight-text {
+                font-size: 16px;
+                line-height: 1.5;
             }
         }
 
         @media (max-width: 480px) {
-            .sales-training-section .container {
-                padding: 30px 20px;
+            .sales-training-section {
+                padding: 10px;
+                padding-top: 40px;
             }
 
-            .sales-training-section .main-title {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .main-title {
                 font-size: 20px;
-                padding-left: 15px;
+                margin-left: 12px;
+                margin-bottom: 20px;
             }
 
-            .sales-training-section .content-text,
-            .sales-training-section .highlight-text {
-                padding-left: 15px;
+            .content-text {
                 font-size: 14px;
+                margin-bottom: 18px;
+            }
+
+            .highlight-text {
+                font-size: 15px;
+            }
+
+            .container::after {
+                width: 60px;
             }
         }
     </style>
 
     <div class="sales-training-section">
         <div class="container">
-        <div class="vertical-line"></div>
-        
-        <h1 class="main-title">
-            Aumente sua receita <strong>vendendo de forma assertiva e estruturada</strong>
-        </h1>
+            <h1 class="main-title">
+                Aumente sua receita <strong>vendendo de forma assertiva e estruturada</strong>
+            </h1>
 
-        <p class="content-text">
-            Com o <strong>Treinamento de Alta Performance em Vendas</strong>, você e sua equipe vão aprender a aplicar técnicas modernas de vendas, 
-            inteligência emocional e comportamental, além de estratégias de neurociência aplicadas ao processo comercial.
-        </p>
+            <p class="content-text">
+                Com o <strong>Treinamento de Alta Performance em Vendas</strong>, você e sua equipe vão aprender a aplicar técnicas modernas de vendas, 
+                inteligência emocional e comportamental, além de estratégias de neurociência aplicadas ao processo comercial.
+            </p>
 
-        <p class="highlight-text">
-            <strong>O resultado? Mais previsibilidade, aumento de conversão e uma mentalidade inabalável para atingir e superar objetivos.</strong>
-        </p>
+            <p class="highlight-text">
+                <strong>O resultado? Mais previsibilidade, aumento de conversão e uma mentalidade inabalável para atingir e superar objetivos.</strong>
+            </p>
         </div>
     </div>
 
-    <style>
-        .sales-comparison-section {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            padding: 60px 20px;
-            min-height: 100vh;
+
+
+
+
+
+
+
+<style>
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0d2d2c;
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr 1fr 1fr 300px;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo-section {
+           display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo {
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 12px;
+            margin-bottom: 0;
         }
 
-        .sales-comparison-section .container {
-            max-width: 1000px;
-            background: white;
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 50px 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .sales-comparison-section .main-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .sales-comparison-section .title {
-            font-size: 24px;
-            font-weight: 400;
-            color: #333;
-            line-height: 1.4;
-            margin-bottom: 15px;
-        }
-
-        .sales-comparison-section .subtitle {
-            font-size: 20px;
-            font-weight: 400;
-            color: #333;
-            margin-bottom: 40px;
-        }
-
-        .sales-comparison-section .description {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.6;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .sales-comparison-section .comparison-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .sales-comparison-section .comparison-header {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .sales-comparison-section .section-header {
-            text-align: center;
-            font-size: 20px;
-            font-weight: 600;
-            color: #333;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #ddd;
-        }
-
-        .sales-comparison-section .section-header.substitute {
-            text-decoration: underline;
-        }
-
-        .sales-comparison-section .comparison-lists {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .sales-comparison-section .comparison-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            transition: transform 0.2s ease;
-        }
-
-        .sales-comparison-section .comparison-item:hover {
-            transform: translateY(-2px);
-        }
-
-        .sales-comparison-section .icon {
-            width: 24px;
-            height: 24px;
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #ceae5c;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
             font-weight: bold;
+            color: #0B1426;
+            font-size: 18px;
+        }
+
+        .footer-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: #ceae5c;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-left: -10px;
+}
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-column h3 {
             font-size: 16px;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .sales-comparison-section .negative-icon {
-            background-color: #e74c3c;
-            color: white;
+        .footer-column ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            
         }
 
-        .sales-comparison-section .positive-icon {
-            background-color: #27ae60;
-            color: white;
-        }
-
-        .sales-comparison-section .item-text {
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
             font-size: 16px;
-            color: #555;
+            font-weight: 300;
+            transition: all 0.2s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ceae5c;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
             line-height: 1.5;
-            text-align: left;
         }
 
-        .sales-comparison-section .negative-item {
-            background-color: #fdf2f2;
-            border-left: 4px solid #e74c3c;
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            color: #ceae5c;
+            margin-top: 2px;
+            flex-shrink: 0;
         }
 
-        .sales-comparison-section .positive-item {
-            background-color: #f0f9f4;
-            border-left: 4px solid #27ae60;
+        .contact-text {
+            flex: 1;
         }
 
-        .sales-comparison-section .cta-section {
-            text-align: center;
-            margin-top: 50px;
+        .contact-label {
+            font-weight: 600;
+            color: #FFFFFF;
+            margin-bottom: 2px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding-top: 30px;
-            border-top: 2px solid #ddd;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .sales-comparison-section .cta-text {
-            font-size: 22px;
-            color: #173736;
+        .footer-copyright {
+                font-size: 15px;
+    font-weight: 600;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.2s ease;
             font-weight: 600;
         }
 
-        @media (max-width: 768px) {
-            .sales-comparison-section .container {
-                padding: 30px 20px;
-                margin: 10px;
-            }
-
-            .sales-comparison-section .comparison-container,
-            .sales-comparison-section .comparison-header,
-            .sales-comparison-section .comparison-lists {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .sales-comparison-section .title {
-                font-size: 20px;
-            }
-
-            .sales-comparison-section .subtitle {
-                font-size: 18px;
-            }
-
-            .sales-comparison-section .description {
-                font-size: 16px;
-            }
-
-            .sales-comparison-section .section-header {
-                font-size: 18px;
-            }
-
-            .sales-comparison-section .cta-text {
-                font-size: 18px;
-            }
+        .footer-links a:hover {
+            color: #ceae5c;
         }
 
-        @media (max-width: 480px) {
-            .sales-comparison-section .container {
-                padding: 20px 15px;
-            }
-
-            .sales-comparison-section .comparison-item {
-                padding: 12px;
-            }
-
-            .sales-comparison-section .item-text {
-                font-size: 14px;
-            }
+        .footer-social {
+            display: flex;
+            gap: 16px;
         }
-    </style>
 
-
-    <div class="sales-comparison-section">
-        <div class="container">
-            <div class="main-header">
-                <h1 class="title">Pare de vender apenas para quem quer comprar</h1>
-                <h2 class="subtitle">e perder vendas por falta de entendimento</h2>
-            </div>
-
-            <p class="description">
-                Se você realmente quer vender mais, aumentar competitividade e se manter no mercado,<br>
-                é hora de uma mudança radical na sua abordagem.
-            </p>
-
-            <div class="comparison-header">
-                <div class="section-header substitute">Substitua esse</div>
-                <div class="section-header">Por</div>
-            </div>
-
-            <div class="comparison-lists">
-                <div class="negative-list">
-                    <div class="comparison-item negative-item">
-                        <div class="icon negative-icon">✕</div>
-                        <div class="item-text">Insegurança</div>
-                    </div>
-
-                    <div class="comparison-item negative-item">
-                        <div class="icon negative-icon">✕</div>
-                        <div class="item-text">Vender intuitivamente</div>
-                    </div>
-
-                    <div class="comparison-item negative-item">
-                        <div class="icon negative-icon">✕</div>
-                        <div class="item-text">Comunicação genérica</div>
-                    </div>
-
-                    <div class="comparison-item negative-item">
-                        <div class="icon negative-icon">✕</div>
-                        <div class="item-text">Pressionar cliente</div>
-                    </div>
-
-                    <div class="comparison-item negative-item">
-                        <div class="icon negative-icon">✕</div>
-                        <div class="item-text">Confusão e falta foco</div>
-                    </div>
-                </div>
-
-                <div class="positive-list">
-                    <div class="comparison-item positive-item">
-                        <div class="icon positive-icon">✓</div>
-                        <div class="item-text">Conhecimento e preparo</div>
-                    </div>
-
-                    <div class="comparison-item positive-item">
-                        <div class="icon positive-icon">✓</div>
-                        <div class="item-text">Processo inteligente vendas</div>
-                    </div>
-
-                    <div class="comparison-item positive-item">
-                        <div class="icon positive-icon">✓</div>
-                        <div class="item-text">Adaptada a personalidade<br>do cliente</div>
-                    </div>
-
-                    <div class="comparison-item positive-item">
-                        <div class="icon positive-icon">✓</div>
-                        <div class="item-text">Entenda a mente do cliente<br>e conduza ao sim</div>
-                    </div>
-
-                    <div class="comparison-item positive-item">
-                        <div class="icon positive-icon">✓</div>
-                        <div class="item-text">Disciplina e clareza de<br>objetivos</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cta-section">
-                <p class="cta-text">Veja o que dizem nossos clientes</p>
-            </div>
-        </div>
-    </div>
-
-    <style>
-        .sales-cta-section {
-            font-family: 'Arial', sans-serif;
-            background-image: url(/background.jpeg);
-            min-height: 100vh;
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sales-cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-    
-            pointer-events: none;
-        }
-
-        .sales-cta-section .container {
-            max-width: 900px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .sales-cta-section .main-headline {
-            color: #2c3e50;
-            font-size: 32px;
-            font-weight: 600;
-            line-height: 1.3;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1);
-        }
-
-        .sales-cta-section .sub-headline {
-            color: #34495e;
-            font-size: 28px;
-            font-weight: 500;
-            line-height: 1.4;
-            margin-bottom: 10px;
-        }
-
-        .sales-cta-section .third-headline {
-            color: #2c3e50;
-            font-size: 28px;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 50px;
-        }
-
-        .sales-cta-section .description-intro {
-            color: #2c3e50;
-            font-size: 18px;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .sales-cta-section .description-main {
-            color: #34495e;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .sales-cta-section .description-bold {
-            color: #2c3e50;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 80px;
-        }
-
-        .sales-cta-section .transform-section {
-            margin-bottom: 50px;
-        }
-
-        .sales-cta-section .transform-title {
-            color: #2c3e50;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.1);
-        }
-
-        .sales-cta-section .transform-description {
-            color: #34495e;
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .sales-cta-section .transform-description-bold {
-            color: #2c3e50;
-            font-size: 20px;
-            line-height: 1.6;
-            font-weight: 600;
-            margin-bottom: 60px;
-        }
-
-        .sales-cta-section .cta-button {
-            background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
-            color: #2c3e50;
-            font-size: 20px;
-            font-weight: 700;
-            padding: 20px 60px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
+            color: red;
             text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 8px 25px rgba(241, 196, 15, 0.3);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: all 0.2s ease;
         }
 
-        .sales-cta-section .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(241, 196, 15, 0.4);
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        .social-link:hover {
+            background: #ceae5c;
+            color: #0B1426;
+            transform: translateY(-2px);
         }
 
-        .sales-cta-section .cta-button:active {
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(241, 196, 15, 0.3);
+        /* Mobile Responsive */
+        @media (max-width: 1200px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 40px;
+            }
+            
+            .footer-contact {
+                grid-column: 1 / -1;
+                margin-top: 20px;
+            }
         }
 
         @media (max-width: 768px) {
-            .sales-cta-section {
-                padding: 40px 20px;
+            .footer-container {
+                padding: 0 20px;
             }
 
-            .sales-cta-section .main-headline {
-                font-size: 24px;
+            .footer {
+                padding: 40px 0 30px;
             }
 
-            .sales-cta-section .sub-headline,
-            .sales-cta-section .third-headline {
-                font-size: 22px;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: left;
             }
 
-            .sales-cta-section .transform-title {
-                font-size: 28px;
+            .footer-logo-section {
+                align-items: center;
+                text-align: center;
             }
 
-            .sales-cta-section .description-intro,
-            .sales-cta-section .description-main,
-            .sales-cta-section .description-bold {
-                font-size: 16px;
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
             }
 
-            .sales-cta-section .transform-description,
-            .sales-cta-section .transform-description-bold {
-                font-size: 18px;
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
             }
 
-            .sales-cta-section .cta-button {
-                font-size: 18px;
-                padding: 18px 50px;
+            .footer-social {
+                justify-content: center;
             }
         }
 
-        @media (max-width: 480px) {
-            .sales-cta-section {
-                padding: 30px 15px;
-            }
 
-            .sales-cta-section .main-headline {
-                font-size: 20px;
-            }
+        @media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr); /* two columns instead of full width */
+        gap: 20px;
+    }
 
-            .sales-cta-section .sub-headline,
-            .sales-cta-section .third-headline {
-                font-size: 18px;
-            }
+    .footer-column {
+        text-align: left;
+    }
 
-            .sales-cta-section .transform-title {
-                font-size: 24px;
-            }
+    .footer-logo-section {
+        grid-column: 1 / -1; /* logo takes full width */
+        margin-bottom: 20px;
+        align-items: center;
+    }
 
-            .sales-cta-section .description-intro,
-            .sales-cta-section .description-main,
-            .sales-cta-section .description-bold {
-                font-size: 14px;
-            }
+    .footer-contact {
+        grid-column: 1 / -1; /* contact full width below */
+    }
+}
 
-            .sales-cta-section .transform-description,
-            .sales-cta-section .transform-description-bold {
-                font-size: 16px;
-            }
-
-            .sales-cta-section .cta-button {
-                font-size: 16px;
-                padding: 16px 40px;
-            }
-        }
     </style>
-
-    <div class="sales-cta-section">
-        <div class="container">
-            <h1 class="main-headline">Esse treinamento é para empresas e vendedores</h1>
-            <h2 class="sub-headline">Que querem sair do ciclo da estagnação e entrar</h2>
-            <h3 class="third-headline">e entrar no jogo da alta performance.</h3>
-
-            <p class="description-intro">Se você busca crescimento real, técnicas práticas e resultados consistentes,</p>
-            <p class="description-main"> </p>
-            <p class="description-bold">o próximo passo é simples:</p>
-
-            <div class="transform-section">
-                <h2 class="transform-title">Transforme Seu Potencial em Resultado</h2>
-                
-                <p class="transform-description">
-                    Contrate agora mesmo o Treinamento de Alta Performance em Vendas<br>
-                    e saia do ciclo da estagnação. Desenvolva uma mentalidade inabalável
-                </p>
-                <p class="transform-description-bold">
-                    e técnicas modernas que geram resultados consistentes.
-                </p>
-            </div>
-
-            <a href="#" class="cta-button">Quero Começar Agora</a>
-        </div>
-    </div>
+<script>
+function openWhatsAppDesenvolvimento() {
+    const message = encodeURIComponent("Olá ! Gostaria de saber mais informações sobre desenvolvimento pessoal");
+    const phoneNumber = "+5534999326520"; // Substitua pelo número do WhatsApp com DDI e DDD, sem "+" ou espaços
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, "_blank");
+}
+</script>
 
 
     <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.textContent = navMenu.classList.contains('active') ? '×' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.textContent = '☰';
+            });
+        });
+
+        // Header background on scroll
+       
+
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
         // WhatsApp contact function
         function openWhatsApp() {
             const phoneNumber = '5534999326520';
-            const message = 'Olá! Gostaria de saber mais sobre a Contratação Estratégica. Podem me enviar mais informações sobre o processo e valores?';
+            const message = 'Olá';
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappURL, '_blank');
         }
-
-        // Smooth scroll for any internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.benefit-item, .target-item, .delivery-section, .why-works-section').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease-out';
-            observer.observe(el);
-        });
     </script>
 
-
-    <script>
-        // WhatsApp contact function
-        function openWhatsApp() {
-            const phoneNumber = '5534999326520';
-            const message = 'Olá! Gostaria de contratar o Treinamento de Alta Performance em Vendas. Podem me enviar mais informações sobre o programa, metodologia e investimento?';
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappURL, '_blank');
-        }
-
-        // Smooth scroll for any internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.comparison-card, .target-highlight').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.8s ease-out';
-            observer.observe(el);
-        });
-    </script>
-</body>
-</html>
 
 
     <!-- Footer -->
