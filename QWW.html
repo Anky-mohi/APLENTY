@@ -1479,6 +1479,8 @@ ease;
 
 <br>
 
+<br><br><br>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1554,14 +1556,16 @@ ease;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
+            justify-items: center;
         }
 
         .comparison-item {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-start;
+            justify-content: flex-start;
             margin-bottom: 25px;
-            text-align: center;
+            text-align: left;
+            min-height: 50px;
         }
 
         .icon {
@@ -1593,7 +1597,8 @@ ease;
             font-size: 16px;
             color: #555;
             line-height: 1.5;
-            text-align: center;
+            text-align: left;
+            margin-top: 8px;
         }
 
         .footer-text {
@@ -1627,7 +1632,7 @@ ease;
         .comparison-column {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
         }
 
         /* Mobile Responsive Styles */
@@ -1732,7 +1737,7 @@ ease;
                 padding: 0 10px;
             }
 
-            .icon {
+            .comparison-item .icon {
                 width: 60px;
                 height: 60px;
                 margin-right: 0;
@@ -1935,10 +1940,7 @@ ease;
     </div>
 </body>
 </html>
-<br><br><br><br><br><br>
-
-
-    
+    <br><br>
     <style>
         * {
             box-sizing: border-box;
