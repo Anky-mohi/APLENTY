@@ -693,7 +693,9 @@ ease;
         </div>
     </header>
 
-<style>
+
+
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         * {
@@ -713,7 +715,9 @@ ease;
       /* Container: full-width background image */
 .hero{
   width: 100%;
-  /* desktop starting height */
+  height: 90vh; /* Reduced from default to 60% of viewport height */
+  min-height: 400px; /* Minimum height for smaller screens */
+  max-height: 500px; /* Maximum height cap */
   display: flex;
   align-items: flex-start;
   background-image: url("/qwwbanner.jpeg"); /* <- replace with your image path */
@@ -789,7 +793,8 @@ ease;
 /* Make sure text stays readable on small screens */
 @media (max-width: 520px){
   .hero{
-    min-height: 360px;
+    min-height: 300px; /* Reduced mobile height */
+    max-height: 350px; /* Reduced mobile max height */
     background-position: center 20%;
   }
   .hero-subtitle::after{
@@ -1272,8 +1277,7 @@ ease;
 
 
     </style>
-</head>
-<body>
+
     <!-- WhatsApp Floating Icon Button -->
     <a href="https://wa.me/+5534999326520?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Treinamento%20de%20Alta%20Performance%20em%20Vendas." 
        class="whatsapp-float" target="_blank">
@@ -1291,7 +1295,6 @@ ease;
 </div>
 
     </main>
-
 
 
 
@@ -1369,9 +1372,9 @@ ease;
         }
 
         .highlight-text {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 500;
-            color: #4a90e2;
+            color: #0e3057;
             line-height: 1.6;
         }
 
@@ -1476,7 +1479,6 @@ ease;
 
 <br>
 
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1484,8 +1486,6 @@ ease;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales Training Comparison</title>
     <style>
-       
-
         body {
             font-family: 'Arial', sans-serif;
             background-image: url(/background.jpeg);
@@ -1494,7 +1494,6 @@ ease;
             background-repeat: no-repeat;
             background-attachment: fixed;
             min-height: 100vh;
-            
         }
 
         .comparison-section {
@@ -1503,12 +1502,10 @@ ease;
         }
 
         .intro-text {
-            
             padding: 40px;
             border-radius: 15px;
             margin-bottom: 30px;
             text-align: center;
-            
         }
 
         .intro-text h2 {
@@ -1520,42 +1517,37 @@ ease;
         }
 
         .intro-text p {
-            font-size: 16px;
-            color: #666;
+            font-size: 19px;
+            color: #113131;
             line-height: 1.6;
             margin-bottom: 30px;
         }
 
         .comparison-container {
-           
             border-radius: 15px;
             padding: 40px;
-          
         }
 
         .comparison-headers {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             text-align: center;
         }
 
         .comparison-headers h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 600;
-            padding-bottom: 10px;
-        
+            padding-bottom: 15px;
         }
 
         .substitua {
             color: #113132;
-            
         }
 
         .por {
             color: #113132;
-            
         }
 
         .comparison-items {
@@ -1567,7 +1559,9 @@ ease;
         .comparison-item {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            justify-content: center;
+            margin-bottom: 25px;
+            text-align: center;
         }
 
         .icon {
@@ -1596,9 +1590,10 @@ ease;
         }
 
         .item-text {
-            font-size: 15px;
+            font-size: 16px;
             color: #555;
-            line-height: 1.4;
+            line-height: 1.5;
+            text-align: center;
         }
 
         .footer-text {
@@ -1611,6 +1606,13 @@ ease;
             font-size: 18px;
             font-weight: 600;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .footer-text:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
 
         /* Desktop/Mobile visibility */
@@ -1620,6 +1622,12 @@ ease;
 
         .desktop-only {
             display: block;
+        }
+
+        .comparison-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Mobile Responsive Styles */
@@ -1921,7 +1929,7 @@ ease;
         </div>
 
         <!-- Footer -->
-        <div class="footer-text">
+        <div class="footer-text" onclick="window.location.href='/#testimonials'">
             Veja o que dizem nossos clientes
         </div>
     </div>
@@ -2106,7 +2114,7 @@ ease;
             <h1 class="main-title">Esse treinamento é para empresas e vendedores</h1>
             <h2 class="subtitle">
                 Que querem sair do ciclo da estagnação e entrar<br>
-                e entrar no jogo da alta performance.
+                 no jogo da alta performance.
             </h2>
 
             <p class="description-intro">
@@ -2121,15 +2129,22 @@ ease;
                 e técnicas modernas que geram resultados consistentes.
             </p>
 
-            <button class="cta-button">
-                QUERO TRANSFORMAR MINHA EQUIPE AGORA
+            <button onclick="openWhatsAppquro()" class="cta-button">
+                Quero contratar treinamento
             </button>
         </div>
     </div>
 
 
 
-
+<script>
+function openWhatsAppquro() {
+    const message = encodeURIComponent("Olá! Gostaria de saber mais informações sobre o treinamento de vendas.");
+    const phoneNumber = "+5534999326520"; // Substitua pelo número do WhatsApp com DDI e DDD, sem "+" ou espaços
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(url, "_blank");
+}
+</script>
 <style>
 
         /* Footer Styles */
